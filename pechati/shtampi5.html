@@ -1,0 +1,99 @@
+<script type="text/javascript">
+function sortPechati(){
+    $('[w][h]').each(function(){
+        $(this).parent().parent()[
+        (
+            parseFloat($(this).attr("w")) >= parseFloat($('.st-width').val())
+            &&
+            parseFloat($(this).attr("h")) >= parseFloat($('.st-height').val())
+            )
+        ?"show":"hide"
+        ]();
+    });
+}
+    function calculate4() {
+        $('.inp').each(function() {
+            if ($('.st-width').val() > $('.st-height').val()) {
+            var clwidth = $('.st-width').val();
+            var clheight = $('.st-height').val();
+        } else {
+                var clheight = $('.st-width').val();
+                var clwidth = $('.st-height').val();
+            }
+            if (parseInt($(this).attr('w')) > parseInt($(this).attr('h'))) {
+                var owidth = parseInt($(this).attr('w'));
+                var oheight = parseInt($(this).attr('h'));
+            } else {
+                var owidth = parseInt($(this).attr('h'));
+                var oheight = parseInt($(this).attr('w'));
+            }
+          
+        });
+        if ($('.st-width').val() > 39 && $('.st-height').val() > 19) {
+            var price = 450;
+        } else {
+            var price = 350;
+        }
+        var order_total = 0;
+        $.each($('.radio2:checked'), function () {            
+                order_total += (parseFloat($(this).attr('osnastca-price')) + price) * $(this).closest('.absolute').find('.added_num').val();
+        });
+        $('#pw1').html(order_total);
+        $('.order_cost').html(order_total);
+    }
+    $(document).ready(function () {
+        $('input.first').trigger('click');
+        calculate4();
+        $(document).on('change', '.recalculate', function () {
+            sortPechati()
+            calculate4();
+        });
+        $('input.first78').trigger('click');
+    });
+</script>
+<section class="back" id="con10">
+    <section class="front1" id="stampstyleback">
+        <div class="number2"></div>
+        <p>РАЗМЕРЫ ШТАМПА (мм)</p>
+
+        <form action="#" method="POST" id="stampsize">
+            <div class="stamplength">
+                <input type="number" class="recalculate st-width Order-info" action="#" value="40">
+            </div>
+            <p>X</p>
+
+            <div class="stampwidth">
+                <input type="number" class="recalculate st-height Order-info" action="#" value="20">
+            </div>
+        </form>
+    </section>
+    <section class="front1" id="stampstyle2">
+        <div class="number3"></div>
+        <form action="#" method="POST" name="color">
+            <div class="leftcol1">
+                <div class="radiobutton">
+                    <input type="radio" class="first recalculate Order-info" name="rad" value="Стиль: Только текст"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate Order-info" name="rad"
+                           value="Стиль: Текст + рисунок"/>
+                </div>
+            </div>
+            <div class="textleftcol1">
+                <p id="p1"><strong>только текст</strong></p>
+
+                <p id="p2"><strong>текст + рисунок</strong></p>
+            </div>
+        </form>
+    </section>
+
+
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1">
+        <span id="pw1"></span>
+    </section>
+</section>

@@ -1,0 +1,67 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($('.hider').is(':checked')) {
+            $('.hidbutt').prop("disabled", true);
+            $('.hidbutt').css('opacity', '0.3');
+            $('.hidtext').css('opacity', '0.1');
+        }
+        $('.recalculate').on('change', function(){
+            calculate777();
+        });
+        calculate777();
+    });
+
+</script>
+<section class="back" id="con18a">
+    <section class="front1" id="wf2">
+        <div class="number2"></div>
+        <p id="numbername">РАЗМЕРЫ в см</p>
+
+        <form action="#" method="POST" id="size">
+            <input type="number" class="recalculate Order-info-num-custom width" value="40">
+            <input type="number" class="recalculate Order-info-num-custom height" value="20">
+            <strong><p style="margin-left: 153px;margin-top: -27px;">X</p></strong>
+        </form>
+        <p style="font-size: 9pt;text-align: center;">В случае большого количества<br/>разноформатных печатных
+            листов<br/>укажите это в комментариях</p>
+        </section>
+        <section class="front1" id="wf3">
+            <div class="number3"></div>
+            <strong><p style="margin-top: -45px;font-size: 11pt;margin-left: 89px;">разрешение печати</p></strong>
+
+            <form action="#" method="POST" name="#">
+                <div class="bottcol1">
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" checked class="recalculate firsttwo radio4 Order-info"
+                        value="Разрешение печати: 360 dpi" resol="low"/>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="recalculate radio4 Order-info hidbutt"
+                        value="Разрешение печати: 1440 dpi" resol="high"/>
+                    </div>
+                </div>
+            </form>
+            <div class="bottrow1">
+                <strong><p>360 dpi</p></strong>
+                <strong class="hidtext"><p>1440 dpi</p></strong>
+            </div>
+        </section>
+        <section class="front1" id="wf4">
+            <div class="number4"></div>
+            <form action="#" method="POST" class="imgquantity" id="stampsize1">
+                <strong><p>количество</p></strong>
+
+                <div class="quantity">
+                    <input type="number" action="#" class="recalculate quan Order-info-num" value="1">
+                </div>
+            </form>
+        </section>
+        <section class="front1" id="price1">
+            <div class="numbername" id="coloring">
+            </div>
+            <p><strong>рублей</strong></p>
+        </section>
+        <section class="front1" id="pricewin1">
+            <span id="pw1"></span>
+        </section>
+    </section>

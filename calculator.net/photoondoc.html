@@ -1,0 +1,317 @@
+<script type="text/javascript">
+    function totalPrice(){
+        var price = $('.qq-upload-success').length * parseFloat(calculate1());
+        $('.order_cost').html(price);
+        return price;
+    }
+
+    function calculate1() {
+        var order_total = 0;
+        var y = 300;
+
+        if ($('.costume').is(':checked')) {
+            y = 350;
+        } else {
+            if ($('.foto-file').is(':checked')) {
+                y = 300;
+            } else {
+                y = 300;
+            }
+        }
+        order_total = y + 100 * $('input.Order-info-num-dop').val();
+        $('#pw1').html(order_total);
+        //$('.order_cost').html(order_total);
+        $('#complect').html($('.doct option:selected').attr('Complect-foto'));
+        if($('.foto-file').is(':checked')){
+            $('.order_cost').html(order_total);
+        }
+        console.log(order_total);
+        return order_total;
+    }
+
+    $(document).ready(function () {
+        $('#pw1').html();
+        $('.order_cost').html();
+        $(document).on('change', 'select.doct', function () {
+            if ($(this).val() == '3.5 х 4.5 цветная') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            } else if ($(this).val() == '3x4 левый угол') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            } else if ($(this).val() == '3x4 правый угол') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            } else if ($(this).val() == '3x4 цветная') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == '3x4 чёрно-белая') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == '4x6 чёрно-белая') {
+                $(".photo-size option[id='3']").prop('selected', true);
+            }else if ($(this).val() == 'Анкета на загран. паспорт') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Ветеран войны') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Вид на жительство') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Австрия') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Англия') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Бельгия') {
+                $(".photo-size option[id='4']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Болгария') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Германия') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Греция') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Испания') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Канада') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Китай') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Латвия') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза ОАЭ') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза США') {
+                $(".photo-size option[id='4']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Финляндия') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Франция') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Чехия') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Шенген (другие)') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Виза Эстония') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Водительское удосг.') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Военный билет') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Временная регистрация') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Загран. паспорт') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Загран. паспорт (биометрический)') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Личное дело') {
+                $(".photo-size option[id='6']").prop('selected', true);
+            }else if ($(this).val() == 'Мать одиночка') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Медицинская книжка') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Паспорт РФ') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Паспорт РФ (новый)') {
+                $(".photo-size option[id='2']").prop('selected', true);
+            }else if ($(this).val() == 'Патент') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Пенсионное удосг.') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Пропуск 6x9') {
+                $(".photo-size option[id='6']").prop('selected', true);
+            }else if ($(this).val() == 'Разрешение на работу') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Студенческий билет') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }else if ($(this).val() == 'Удостоверение моряка') {
+                $(".photo-size option[id='1']").prop('selected', true);
+            }
+
+        });
+        $(document).on('change', 'select.photo-size', function () {
+            $(".doct option[id='another']").prop('selected', true);
+
+        });
+        $('select.doct').change();
+        $('input.first').trigger('click');
+        calculate1();
+        $(document).on('change', '.recalculate', function () {
+            totalPrice();
+            calculate1();
+        });
+    });
+</script>
+<section class="back" id="con14">
+    <section class="front1" id="fod">
+        <div class="number"><p>ВЫБРАТЬ ДОКУМЕНТ</p></div>
+        <form id="select" action="#" method="POST" name="selectform">
+            <select class="recalculate doct Order-info">
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="3.5 х 4.5 цветная">3x4 левый угол</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="3x4 левый угол">3x4 левый угол</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="3x4 правый угол">3x4 правый угол</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="3x4 цветная">3x4 цветная</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="3x4 чёрно-белая">3x4 чёрно-белая</option>
+                <option Complect-foto="4 шт." value="4x6 чёрно-белая">4x6 чёрно-белая</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Анкета на загран. паспорт">Анкета на загран. паспорт</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Ветеран войны">Ветеран войны</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Вид на жительство">Вид на жительство</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Австрия">Виза Австрия</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Англия">Виза Англия</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Бельгия">Виза Бельгия</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Болгария">Виза Болгария</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Германия">Виза Германия</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Греция">Виза Греция</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Испания">Виза Испания</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Канада">Виза Канада</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Китай">Виза Китай</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Латвия">Виза Латвия</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза ОАЭ">Виза ОАЭ</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза США">Виза США</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Финляндия">Виза Финляндия</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Франция">Виза Франция</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Чехия">Виза Чехия</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Шенген (другие)">Виза Шенген (другие)</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Виза Эстония">Виза Эстония</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Водительское удосг.">Водительское удосг.</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Военный билет">Военный билет</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Временная регистрация">Временная регистрация</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Загран. паспорт">Загран. паспорт</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Загран. паспорт (биометрический)">Загран. паспорт (биометрический)</option>
+                <option Complect-foto="1 шт." value="Личное дело">Личное дело</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Мать одиночка">Мать одиночка</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Медицинская книжка">Медицинская книжка</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см"  value="Паспорт РФ">Паспорт РФ</option>
+                <option Complect-foto="6 шт. Размер 3,5x4,5 см" value="Паспорт РФ (новый)">Паспорт РФ (новый)</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Патент">Патент</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Пенсионное удосг.">Пенсионное удосг.</option>
+                <option Complect-foto="1 шт." value="Пропуск 6x9">Пропуск 6x9</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Разрешение на работу">Разрешение на работу</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Студенческий билет">Студенческий билет</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" value="Удостоверение моряка">Удостоверение моряка</option>
+                <option Complect-foto="8 шт. Размер: 3х4 см" id="another" value="Другое">Другое</option>
+            </select>
+           <!--  <select class="recalculate Order-info photo-size" style="margin-top: 31px;">
+                <option id="1" value="Размер фото: 3,0 x 4,0 см" Complect-foto="8 шт. ">3,0 x 4,0 см</option>
+                <option id="2" value="Размер фото: 3,5 x 4,5 см" Complect-foto="6 шт. Размер 3,5x4,5 см">3,5 x 4,5 см</option>
+                <option id="3" value="Размер фото: 4,0 x 6,0 см" Complect-foto="4 шт.">4,0 x 6,0 см</option>
+                <option id="4" value="Размер фото: 5,0 x 5,0 см" Complect-foto="2 шт.">5,0 x 5,0 см</option>
+                <option id="5" value="Размер фото: 6,0 x 9,0 см" Complect-foto="1 шт.">6,0 x 9,0 см</option>
+                <option id="6" value="Размер фото: 9,0 x 12,0 см" Complect-foto="1 шт.">9,0 x 12,0 см</option>
+            </select> -->
+           
+            <p id="p3" style="
+            width: 300px;
+    margin-top: 85px;
+    margin-left: 20px;
+    position: absolute;
+">Комплект: <span id="complect"></span></p>
+        </form>
+ <form method="POST" id="custom-size-form">
+                <table style="line-height: 0; font-size:9pt; margin-top: 30px;margin-left: 375px;">
+                    <tr>
+                        <td style="margin-left: 120px;">
+                            <p>РАЗМЕРЫ В СМ</p>
+                            <input type="number"  name="rad" id="width" style="width: 70px;height: 22pt;" class="recalculate Order-info-num-custom" custom="Ширина: " value="0">
+                            &nbsp&nbsp x &nbsp&nbsp
+                            <input type="number" id="height" style="width: 70px;     height: 22pt;"  name="rad" class="recalculate Order-info-num-custom" custom="Высота: " value="0">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        
+
+    </section>
+    <section class="front1" id="fod1">
+        <div class="number2"></div>
+        <div class="numbername">БУМАГА</div>
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate first Order-info" value="Бумага: Матовая"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info" value="Бумага: Глянцевая"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <strong><p id="p1">матовая</p></strong>
+            <strong><p id="p2">глянцевая</p></strong>
+        </div>
+    </section>
+    <section class="front1" id="fod2">
+        <div class="number3"></div>
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate first Order-info foto-file"
+                           value="Изготовить с файла заказчика"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <strong><p id="p1">с файла заказчика</p></strong>
+        </div>
+    </section>
+    <section class="front1" id="fod3">
+        <div class="number4"></div>
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate Order-info costume"
+                           value="Дополнительно: замена костюма"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <strong><p id="p1">замена костюма</p></strong>
+        </div>
+    </section>
+    <section class="front1" id="fod4">
+        <div class="number5"></div>
+        <div class="numbername">ФОН</div>
+        <form id="select2" action="#" method="POST" name="selectform">
+            <select class="recalculate Order-info">
+                <option value="Фон: белый">белый</option>
+                <option value="Фон: серый">серый</option>
+                <option value="Фон: голубой">голубой</option>
+                <option value="Фон: не знаю">не знаю</option>
+                <option value="Фон: другой*">другой*</option>
+            </select>
+        </form>
+    </section>
+    <section class="front1" id="fod5">
+        <div class="number6"></div>
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate first Order-info" value="Цвет: цветное"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info" value="Цвет: черно-белое"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <strong><p id="p1">цветное</p></strong>
+            <strong><p id="p2">черно-белое</p></strong>
+        </div>
+    </section>
+    <section class="front1" id="fod6">
+        <div class="number7"></div>
+        <div class="numbername">УГОЛОК НА ФОТО</div>
+        <form id="select3" action="#" method="POST" name="selectform">
+            <select class="recalculate Order-info">
+                <option value="без уголка">без уголка</option>
+                <option value="левый уголок">левый уголок</option>
+                <option value="правый уголок">правый уголок</option>
+            </select>
+        </form>
+    </section>
+    <section class="front1" id="fod7">
+        <div class="number8"></div>
+        <strong><p>дополнит. комплект</p></strong>
+
+        <form action="#" method="POST" name="#">
+            <input type="number" name="#" class="recalculate Order-info-num-dop" value="0"/>
+        </form>
+    </section>
+    <section class="front1" id="price1">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1"><span id="pw1"></span>
+    </section>
+</section>

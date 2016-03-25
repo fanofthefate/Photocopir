@@ -1,0 +1,167 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+function calculate18(){
+
+			total = parseFloat($('input.radio:checked').attr('cost'));
+			order_total=total*$('input.Order-info-num').val();
+			$('#pw1').html(order_total);
+			$('.order_cost').html(order_total);
+		}
+		$('input.first').trigger('click');
+		calculate18();
+		$(document).on('change', '.recalculate', function () {
+			calculate18();
+		});
+	});
+</script>
+<div class="tarelka">
+	<section class="back" id="con21">
+		<p id="title">ВЫБРАТЬ ТАРЕЛКУ</p>
+		<section class="front1" id="kruzhki">
+			<div class="wrapper2">
+				<div class="relative2">
+					<form action="#" method="POST" name="stamps" id="colorus">
+						<div class="absolute2" >
+							<img id="kruzhka1" src="img/tarelka.png">
+							<div class="radiobutton" id="largebutt">
+							<input type="radio"  name="rad1" class="first recalculate radio Order-info" value="Тип тарелки: Белая" cost="650"/>
+								<p id="p1">Тарелка
+									<br/>белая
+									<br/>диаметром
+									<br/>200 мм
+								</p>
+								<p id="p3">диаметр
+									<br/>поля печати
+									<br/>115 мм
+								</p>
+							</div>
+						</div>
+						<div class="absolute2" >
+							<img id="kruzhka1" src="img/tarelka2.png">
+							<div class="radiobutton" id="largebutt">
+								<input type="radio"  name="rad1" class="recalculate radio Order-info" value="Тип тарелки: Белая с ободком" cost="700"/>
+								<p id="p1">Тарелка
+									<br/>белая с ободком
+									<br/>диаметром
+									<br/>200 мм
+								</p>
+								<p id="p3">диаметр
+									<br/>поля печати
+									<br/>115 мм
+								</p>
+							</div>
+						</div>
+						<div class="absolute2" >
+							<img id="kruzhka1" src="img/tarelka3.png">
+							<div class="radiobutton" id="largebutt">
+								<input type="radio"  name="rad1" class="recalculate radio Order-info" value="Тип тарелки: С окантовкой" cost="700"/>
+								<p id="p1">Тарелка
+									<br/>Беланя
+									<br/>с окантовкой
+									<br/>
+								</p>
+								<p id="p3">
+									<br/>
+									<br/>
+								</p>
+							</div>
+						</div>									
+						<div class="absolute2" >
+							<img id="kruzhka1" src="img/tarelka4.png">
+							<div class="radiobutton" id="largebutt">
+								<input type="radio"  name="rad1" class="recalculate radio Order-info" value="Тип тарелки: С растительным орнаментом" cost="700"/>
+								<p id="p1">Тарелка
+									<br/>Белая
+									<br/>С растительным
+									<br/>орнаментом
+								</p>
+								<p id="p3">
+									<br/>
+									<br/>
+								</p>
+							</div>
+						</div>
+						<div class="absolute2" >
+							<img id="kruzhka1" src="img/tarelka5.png">
+							<div class="radiobutton" id="largebutt">
+								<input type="radio"  name="rad1" class="recalculate radio Order-info" value="Тип тарелки: С окантовкой(клубничка)" cost="700"/>
+								<p id="p1">Тарелка
+									<br/>Беланя
+									<br/>с окантовкой
+									<br/>Клубничка
+								</p>
+								<p id="p3">диаметр
+									<br/>поля печати
+									<br/>115 мм
+								</p>
+							</div>
+						</div>
+						<div class="absolute2" >
+							<img id="kruzhka1" src="img/tarelka6.png">
+							<div class="radiobutton" id="largebutt">
+								<input type="radio"  name="rad1" class="recalculate radio Order-info" value="Тип тарелки: Металлическая" cost="1400"/>
+								<p id="p1">Металлическая
+									<br/>тарелка
+									<br/>
+									<br/>
+								</p>
+								<p id="p3">
+									<br/>
+									<br/>
+								</p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<section class="front1" id="kruzhki2">
+			<form action="#" method="POST" name="#" >
+				<div class="bottcol1">
+					<div class="radiobutton">
+						<input type="radio"  name="rad" class="first recalculate Order-info" value="Готовый макет"/>
+					</div>
+					<div class="radiobutton">
+						<input type="radio"  name="rad" class="recalculate Order-info" value="Изготовить макет"/>
+					</div>
+				</div>
+			</form>
+			<div class="bottrow1">
+				<p id="p1"><strong>готовый макет</strong></p>
+				<p id="p2"><strong>изготовить макет</strong></p>
+			</div>
+		</section>
+		<section class="front1" id="kruzhki3">
+			<form action="#" method="POST" name="#">
+				<div class="bottcol1">
+					<div class="radiobutton">
+						<input type="radio"  name="rad" class="first recalculate Order-info" value="Изготовление: Не срочно"/>
+					</div>
+					<div class="radiobutton">
+						<input type="radio"  name="rad" class="recalculate Order-info" value="Изготовление: Срочно"/>
+					</div>
+				</div>
+			</form>
+			<div class="bottrow1">
+				<p id="p1"><strong>не срочно</strong></p>
+				<p id="p2"><strong>срочно</strong></p>
+			</div>
+		</section>
+		<section class="front1" id="kruzhki4">
+			<div class="total" id="stamptotal"><strong>количество</strong>
+				<div class="quantity">
+					<input type="number" action="#" class="recalculate Order-info-num" value="1">
+				</div>
+			</div>
+		</section>
+		<section class="front1" id="price1">
+			<div class="numbername" id="coloring">
+			</div>	
+			<p><strong>рублей</strong></p>
+		</section>
+		<section class="front1" id="pricewin1">
+<span id="pw1"></span>
+			<div class="numbername" id="coloring"></div>	
+		</section>
+	</section>
+</div>

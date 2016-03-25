@@ -1,0 +1,181 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        function calculate16() {
+            if ($('.frontp').is(':checked') && $('.backp').is(':checked')) {
+                var total = 850;
+            } else {
+                var total = 650;
+            }
+            ;
+            var srochno = 0;
+            if($('#srochno').is(':checked')){
+              srochno = 200;
+          };
+          var format = 0;
+          if($('.a3').is(':checked')){
+              format = 200;
+          };
+          var order_total = (total +format) * $('input.Order-info-num').val() + srochno ;
+          $('#pw1').html(order_total);
+          $('.order_cost').html(order_total);
+      }
+      $('input.first').trigger('click');
+
+      calculate16();
+      $(document).on('change', '.recalculate', function () {
+        calculate16();
+    });
+      $(document).on('change','.pic', function() {
+
+        if ($('.pic').filter(':checked').length > 0) {
+
+        } else {$('.frontp').prop('checked', true);
+    }
+});
+    $('#size option').hide();
+    $('[data-sex]').on('click',function(){
+        $('#size option').hide();
+        $('#size option.' + $('[data-sex]:checked').attr('data-sex')).show();
+        $('#size').val($('#size option.' + $('[data-sex]:checked').attr('data-sex')+':eq(0)').val());
+    });
+    setTimeout(function(){
+        $('[data-sex]:eq(0)').trigger('click');
+    },1);
+  });
+</script>
+<section class="back" id="con22">
+    <section class="front1" id="futbolki1">
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="first recalculate Order-info" value="Готвый макет"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info" value="Изготовить макет"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>Готовый <br> макет</strong></p>
+
+            <p id="p2"><strong>Изготовить <br> макет</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="futbolki1" style="margin-left: 330px;">
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="first recalculate Order-info a4" value="A4 21x29,7 см"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info a3" value="А3 29,7x42 см"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>A4 <br>21x29,7 см</strong></p>
+
+            <p id="p2"><strong>А3 <br>29,7x42 см</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="futbolki2">
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="first recalculate Order-info"
+                    value="Изготовление: Не срочно"/>
+                </div>
+                <div class="radiobutton">
+                    <input id="srochno" type="radio" name="rad" class="recalculate Order-info" value="Изготовление: Срочно"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>не срочно</strong></p>
+
+            <p id="p2"><strong>срочно</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="futbolki3">
+        <p style="font-size: 11pt;margin-top: 13px;margin-left: 60px;"><strong>нанесение изображения</strong></p>
+
+        <form action="#" method="POST" name="#">
+            <div class="radiobutton">
+                <input type="checkbox" name="rad" class="first recalculate pic Order-info frontp"
+                value="Нанесение изображения: Спереди"/>
+            </div>
+            <div class="radiobutton">
+                <input type="checkbox" name="rad" class="recalculate pic Order-info backp"
+                value="Нанесение изображения: Сзади"/>
+            </div>
+        </form>
+        <div class="textmidrow">
+            <strong>спереди</strong>
+            <strong>сзади</strong>
+        </div>
+        <p style="    font-size: 8pt;
+        margin-left: 24px;
+        margin-top: 4px;
+        position: absolute;
+        color: grey;">точное местоположение укажите в комментариях</p>
+    </section>
+    <section class="front1" id="futbolki4">
+        <div class="total" id="stamptotal"><strong>количество</strong>
+
+            <div class="quantity">
+                <input type="number" action="#" class="recalculate Order-info-num" value="1">
+            </div>
+        </div>
+    </section>
+    <section class="front1" id="futbolki5">
+        <div class="total" id="stamptotal"><strong>Размер</strong>
+            <select class="recalculate Order-info size" id="size">
+                <option class="male famale" value="Размер: XS">XS</option>
+                <option class="male famale" value="Размер: S">S</option>
+                <option class="male famale" value="Размер: M">M</option>
+                <option class="male famale" value="Размер: L">L</option>
+                <option class="male famale" value="Размер: XL">XL</option>
+                <option class="male famale" value="Размер: 2XL">2XL</option>
+                <option class="male" value="Размер: 3XL">3XL</option>
+                <option class="male" value="Размер: 4XL">4XL</option>
+                <option class="male" value="Размер: 5XL">5XL</option>
+                <option class="male" value="Размер: 6XL">6XL</option>
+                <option class="kids" value="Размер: 98">98</option>
+                <option class="kids" value="Размер: 104">104</option>
+                <option class="kids" value="Размер: 110">110</option>
+                <option class="kids" value="Размер: 116">116</option>
+                <option class="kids" value="Размер: 122">122</option>
+                <option class="kids" value="Размер: 128">128</option>
+                <option class="kids" value="Размер: 134">134</option>
+                <option class="kids" value="Размер: 140">140</option>
+                <option class="kids" value="Размер: 146">146</option>
+            </select>
+        </div>
+    </section>
+    <section class="front1" id="futbolki6">
+        <div class="radios">
+            <div class="radiobutton">
+                <input type="radio" name="rad" class="first recalculate Order-info" data-sex="male" value="Футболка: Мужская"/>
+            </div>
+            <div class="radiobutton">
+                <input type="radio" name="rad" class="recalculate Order-info" data-sex="famale" value="Футболка: Женская"/>
+            </div>
+            <div class="radiobutton">
+                <input type="radio" name="rad" class="recalculate Order-info" data-sex="kids" value="Футболка: Детская"/>
+            </div>
+        </div>
+        <div class="text">
+            <strong>муж.</strong>
+            <strong>жен.</strong>
+            <strong>дет.</strong>
+        </div>
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1">
+        <span id="pw1"></span>
+    </section>
+</section>

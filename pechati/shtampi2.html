@@ -1,0 +1,68 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '[wrap-form-path]', function () {
+            $('.to_reset').remove();
+            $('#stamptype').after($("<div></div>").attr({class: 'wrapper to_reset'}));
+            $(".to_reset").load($(this).attr('wrap-form-path'));
+        });
+        function calculate2() {
+           var diametr = parseInt($('.radio1:checked').attr('diametr'));
+            $.each($('.radio2'), function(){
+                if(parseInt($(this).attr('osn-diametr')) == diametr){
+                    $(this).closest('.absolute').show();
+                } else {
+                    //$(this).closest('.absolute').hide();
+                }
+            });
+            var order_total = 0;
+            $.each($('.radio2:checked'), function () {
+                if ($('input.srochno').is(':checked')) {
+                    order_total += (parseFloat($(this).attr('osnastca-price'))  + (parseFloat($('.radio1:checked').attr('stamp-cost'))+200)) * $(this).closest('.absolute').find('.added_num').val();
+                } else {
+                    order_total += (parseFloat($(this).attr('osnastca-price'))  + parseFloat($('.radio1:checked').attr('stamp-cost'))) * $(this).closest('.absolute').find('.added_num').val();
+                }
+            });
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+        };
+        $('input.first').trigger('click');
+        calculate2();
+        $(document).on('change', '.recalculate', function () {
+            calculate2();
+        });
+    });
+</script>
+<section class="back" id="con7">
+    <section class="front1" id="stampstyleback">
+        <div class="number2"></div>
+        <strong id="ssb_strong">выберете тип печати</strong>
+
+        <form action="#" method="POST" name="stamps" id="stamptype">
+            <div class="radiobutton" id="radiotext">
+                <input id="type1" type="radio" name="rad" class="first recalculate Order-info"
+                       value="Тип печати: ООО, ОАО, ЗАО"
+                       wrap-form-path="pechaty_obshestvo.html">
+                <label for="type1">ООО, ОАО, ЗАО</label>
+            </div>
+            <div class="radiobutton" id="radiotext">
+                <input id="type2" type="radio" name="rad" class="recalculate Order-info" value="Тип печати: ИП"
+                       wrap-form-path="pechaty_ip.html"/>
+                <label for="type2">ИП</label>
+            </div>
+            <div class="radiobutton" id="radiotext">
+                <input id="type3" type="radio" name="rad" class="recalculate Order-info"
+                       value="Тип печати: ПЕЧАТЬ ВРАЧА"
+                       wrap-form-path="pechaty_vrach.html"/>
+                <label for="type3">ПЕЧАТЬ ВРАЧА</label>
+            </div>
+        </form>
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1" style="margin-top:770px;">
+        <span id="pw1"></span>
+    </section>
+</section>

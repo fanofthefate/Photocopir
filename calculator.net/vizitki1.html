@@ -1,0 +1,102 @@
+<script type="text/javascript">
+    $(document).ready(function () {      
+        $(document).on('click', '[form-remove]', function () {
+            $('#forma1').remove();
+            $('#forma2').remove();
+        });
+        $(document).on('click', '[form-form-path]', function () {
+            var x = $(this).attr('form-height');
+            var x2 = $(this).attr('secform-height');
+            $('#forma1').remove();
+            $('#forma2').remove();
+            $('#forma').after($("<section></section>").attr({id: 'forma1', style: x}));
+            $("#forma1").load($(this).attr('form-form-path'));
+            $('#forma1').after($("<section></section>").attr({id: 'forma2', style: x2}));
+            $("#forma2").load($(this).attr('secform-form-path'));
+        });
+        $('input.first').trigger('click');
+         $('.first12').trigger('click');
+    });
+</script>
+<section class="back con_viz">
+    <section class="front">
+        <div class="number"></div>
+        <div class="numbername" id="wayto">СПОСОБЫ СОЗДАНИЯ МАКЕТА</div>
+        <form action="#" method="POST" name="color" id="">
+            <div class="leftcol5">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio_des Order-info first"
+                           value="Способ создания макета: готовый макет
+(cdr, ai, pdf, eps)" design="0"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio_des Order-info"
+                           value="Способ создания макета: дизайн (только текст)" design="200"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio_des Order-info"
+                           value="Способ создания макета: дизайн (текст+графика)" design="350"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio_des Order-info"
+                           value="Способ создания макета: создание макета по предоставленному образцу" design="600"/>
+                </div>
+            </div>
+            <div class="textleftcol5">
+                <p id="p1"><strong>готовый макет</br>(cdr, ai, pdf, eps)</strong></p>
+
+                <p id="p2"><strong>дизайн (только текст)</strong></p>
+
+                <p id="p3"><strong>дизайн (текст+графика)</strong></p>
+
+                <p id="p3"><strong>создание макета по предоставленному образцу</strong></p>
+            </div>
+            <div class="rightcol5">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio_des Order-info"
+                           value="Способ создания макета: он-лайн макетирование" design="50"/>
+                </div>
+            </div>
+        </form>
+        <div class="textrightcol5">
+            <p id="p2"><strong>он-лайн макетирование</strong></p>
+        </div>
+    </section>
+    <section class="front1">
+        <div class="number2"></div>
+        <div class="numbername" id="print">ВЫБРАТЬ СПОСОБ ПЕЧАТИ</div>
+        <div class="print2">
+            <form action="#" method="POST" name="color" id="">
+                <div class="bottrow1">
+                    <div class="radiobutton">
+                        <input type="radio" name="rad"
+                               form-form-path="vizitki2.html"
+                               form-height="height:453px;" class="recalculate Order-info first12"
+                               value="Способ печати: цифровой"/>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" name="rad"
+                               form-form-path="vizitki_paper2.html"
+                               form-height="height:543px;"
+                               secform-form-path="vizitki3.html"
+                               secform-height="height:269px;" class=" recalculate Order-info"
+                               value="Способ печати: шелкография"/>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" name="rad"
+                               form-form-path="vizitki4.html"
+                               form-height="height:233px;" class="recalculate Order-info"
+                               value="Способ печати: офсет"/>
+                    </div>
+                </div>
+            </form>
+            <div class="textbottrow1">
+                <p id="p1"><strong>цифровой</strong></p>
+
+                <p id="p2"><strong>шелкография</strong></p>
+
+                <p id="p3"><strong>офсет</strong></p>
+            </div>
+        </div>
+    </section>
+</section>

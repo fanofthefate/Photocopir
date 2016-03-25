@@ -1,0 +1,2 @@
+[20-Nov-2014 12:17:08 UTC] PHP Fatal error:  Call to a member function getNewTrackerQuery() on a non-object in /var/www/u0043637/data/www/photocopir.ru/bitrix/modules/main/classes/general/database.php on line 657
+[20-Nov-2014 12:17:08 UTC] PHP Fatal error:  Call to a member function getQueries() on a non-object in /var/www/u0043637/data/www/photocopir.ru/bitrix/modules/perfmon/classes/general/keeper.php on line 125

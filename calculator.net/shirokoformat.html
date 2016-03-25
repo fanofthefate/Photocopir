@@ -1,0 +1,55 @@
+	<script type="text/javascript">
+		$(document).ready(function(){ 
+			$(document).on('click','[form-form-path]', function(){
+				var x = $(this).attr('form-height');
+				$('#forma1').remove();
+				$('#forma').after($("<section></section>").attr({id: 'forma1', style: x}));
+				$("#forma1").load($(this).attr('form-form-path'));
+			});
+			$(document).on('click','[formtwo-form-path]', function(){
+				var x = $(this).attr('form-height');
+				$('#forma2').remove();
+				$('#forma1').after($("<section></section>").attr({id: 'forma2', style: x}));
+				$("#forma2").load($(this).attr('formtwo-form-path'));
+			});
+			$(document).on('change','input.radio-kley',function(){
+				$('#second_form').trigger('reset');
+				if(!$('input.radio-kley-cvet').is(':checked')){
+					$('.first-cvet').click();
+				};
+			});
+			$(document).on('change','input.radio-kley-cvet',function(){
+				$('#second_form').trigger('reset');
+				if(!$('input.radio-kley').is(':checked')){
+					$('.first-mat').click();
+				}
+			});
+			$(document).on('change','input.radio-other',function(){
+				$('#first_form').trigger('reset');
+			});
+			$(document).is(':checked', '.shower', function(){
+				$('.hidbutt').prop( "disabled", false );
+				$('.hidbutt').css('opacity','1.0');
+				$('.hidtext').css('opacity','1.0');
+			});
+			$(document).is(':checked', '.hider', function(){
+				$('.hidbutt').prop( "disabled", true );
+				$('.hidbutt').css('opacity','0.3');
+				$('.hidtext').css('opacity','0.1');
+			});
+		});
+	</script>
+	<section class="back" id="con12">
+		<form action="#" method="POST" name="#" id="shirokiyform">
+			<div class="radiobutton" id="radiotext">
+				<input id="s1" type="radio"  name="rad" form-form-path="shirokoformat2.html"
+				form-height="height:575px;" class="Order-info" value="“ËÔ ÔÂ˜‡ÚË: »ÌÚÂ¸ÂÌ‡ˇ ÔÂ˜‡Ú¸"/>
+				<label for="s1" >»Õ“≈–‹≈–Õ¿ﬂ œ≈◊¿“‹</label>
+			</div>
+			<div class="radiobutton" id="radiotext">
+				<input id="s2" type="radio"  name="rad" form-form-path="shirokoformat3.html"
+				form-height="height:320px;" class="Order-info" value="“ËÔ ÔÂ˜‡ÚË: Õ‡ÛÊÌ‡ˇ ÔÂ˜‡Ú¸" />
+				<label for="s2" >Õ¿–”∆Õ¿ﬂ œ≈◊¿“‹</label>
+			</div>						
+		</form>
+	</section>

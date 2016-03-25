@@ -1,0 +1,3 @@
+#php_value upload_max_filesize 30M
+SetEnv PHPRC "/var/www/u0043637/data/www/photocopir.ru/zakaz-online"
+AddDefaultCharset windows-1251

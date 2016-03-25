@@ -1,0 +1,187 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        function calculate17() {
+
+            total = parseFloat($('input.radio:checked').attr('cost'));
+            order_total = total * $('input.Order-info-num').val();
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+        }
+
+        $('input.first').trigger('click');
+        calculate17();
+        $(document).on('change', '.recalculate', function () {
+            calculate17();
+        });
+        $(document).on('change', '.color', function () {
+            $(this).closest('.absolute2').find('.radio').trigger('click');
+        })
+        $(document).on('change', '.radio', function () {
+            var x = $('.color:checked').attr('id');
+            $('.color:checked').prop('checked', false);
+            $(this).closest('.absolute2').find('#' + x + '').trigger('click');
+        })
+    });
+</script>
+<div class="podushka">
+    <section class="back" id="con21">
+        <p id="title">ВЫБРАТЬ ПОДУШКУ</p>
+        <section class="front1" id="kruzhki">
+            <div class="wrapper2" id="podushka">
+                <div class="relative2">
+                    <form action="#" method="POST" name="stamps" id="colorus">
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/podushka.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="first recalculate radio Order-info"
+                                       value="Подушка: Квадратная"
+                                       cost="700"/>
+
+                                <p id="p1">Подушка квадратная
+                                </p>
+
+                                <p id="p2">
+                                    <br/>
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/podushka1.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="first recalculate radio Order-info"
+                                       value="Подушка: Квадратная с окантовкой"
+                                       cost="700"/>
+                                <p id="p1">Подушка квадратная
+                                </p>
+                                <p id="p2">С цветоной окаетовкой
+                                    <br/>
+                                    <br/>
+                                </p>
+                            </div>
+                            <div class="botcol1">
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="green" class="Order-info color"
+                                           value="Цвет: Зеленый"/>
+                                </div>
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="navy" class="Order-info color"
+                                           value="Цвет: Синий"/>
+                                </div>
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="yellow" class="Order-info color"
+                                           value="Цвет: Желтый"/>
+                                </div>
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="pink" class="Order-info color"
+                                           value="Цвет: Розовый"/>
+                                </div>
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="red" class="Order-info color"
+                                           value="Цвет: Красный"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/podushka2.gif">
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Подушка: Сердце"
+                                       cost="850"/>
+
+                                <p id="p1">Подушка «сердце»
+                                </p>
+                                <p id="p2">С цветоной окаетовкой
+                                    <br/>
+                                    <br/>
+                                </p>
+                            </div>
+                            <div class="botcol1">
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="green" class="Order-info color"
+                                           value="Цвет: Зеленый"/>
+                                </div>
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="navy" class="Order-info color"
+                                           value="Цвет: Синий"/>
+                                </div>
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="yellow" class="Order-info color"
+                                           value="Цвет: Желтый"/>
+                                </div>
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="pink" class="Order-info color"
+                                           value="Цвет: Розовый"/>
+                                </div>
+                                <div class="radiobutton">
+                                    <input type="radio" name="#" id="red" class="Order-info color"
+                                           value="Цвет: Красный"/>
+                                </div>
+                            </div>
+                            <div class="radiobutton" id="largebutt">
+                                <p id="p3">поле печати
+                                    <br/>200 x 95 мм
+                                </p>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="front1" id="kruzhki2">
+            <form action="#" method="POST" name="#">
+                <div class="bottcol1">
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="first recalculate Order-info" value="Готовый макет"/>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="recalculate Order-info" value="Изготовить макет"/>
+                    </div>
+                </div>
+            </form>
+            <div class="bottrow1">
+                <p id="p1"><strong>готовый макет</strong></p>
+
+                <p id="p2"><strong>изготовить макет</strong></p>
+            </div>
+        </section>
+        <section class="front1" id="kruzhki3">
+            <form action="#" method="POST" name="#">
+                <div class="bottcol1">
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="first recalculate Order-info"
+                               value="Изготовление:  Не срочно"/>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="recalculate Order-info" value="Изготовление:  Срочно"/>
+                    </div>
+                </div>
+            </form>
+            <div class="bottrow1">
+                <p id="p1"><strong>не срочно</strong></p>
+
+                <p id="p2"><strong>срочно</strong></p>
+            </div>
+        </section>
+        <section class="front1" id="kruzhki4">
+            <div class="total" id="stamptotal"><strong>количество</strong>
+
+                <div class="quantity">
+                    <input type="number" action="#" class="recalculate Order-info-num" value="1">
+                </div>
+            </div>
+        </section>
+        <section class="front1" id="price1">
+            <div class="numbername" id="coloring">
+            </div>
+            <p><strong>рублей</strong></p>
+        </section>
+        <section class="front1" id="pricewin1"><span id="pw1"></span>
+
+            <div class="numbername" id="coloring"></div>
+        </section>
+    </section>
+</div>

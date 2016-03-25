@@ -1,0 +1,255 @@
+<script type="text/javascript">
+    var Order_total;
+    var ord;
+
+    function totalPrice(){
+        var price = 0;
+        $('.qq-upload-success').each(function(key, value){
+            var tempPrice = 0;
+            var count = parseInt($(this).find('.file-count').val());
+            var format = $(this).find('.file-format').val();
+            var equal = {
+                'А6': 'r1',
+                'А5': 'r2',
+                'А4': 'r3',
+                'А3': 'r4',
+                'А2': 'r5',
+                'А1': 'r6'
+            };
+            var $inputPrice = $('#'+equal[format]+' input');
+            if ($('.hidbutt').is(':checked')) {
+                if ($('.pole').is(':checked')) {
+                    tempPrice = (parseFloat($inputPrice.attr(Order_total + '-pole')) + parseFloat($inputPrice.attr('satin-premium'))) * count;
+                } else {
+                    tempPrice = (parseFloat($inputPrice.attr(Order_total)) + parseFloat($inputPrice.attr('satin-premium'))) * count;
+                }
+
+            } else {
+                if ($('.pole').is(':checked')) {
+                    tempPrice = parseFloat($inputPrice.attr(Order_total + '-pole')) * count;
+                    ord = Order_total + '-pole';
+                } else {
+                    tempPrice = parseFloat($inputPrice.attr(Order_total)) * count;
+                    ord = Order_total;
+                }
+
+            }
+
+            price += tempPrice;
+        });
+        $('.order_cost').html(order_total);
+        return price;
+    }
+
+    function calculate() {
+        if ($('.hidbutt').is(':checked')) {
+            if ($('.pole').is(':checked')) {
+                order_total = (parseFloat($('.radio6:checked').attr(Order_total + '-pole')) + parseFloat($('.radio6:checked').attr('satin-premium'))) * $('.quantity').val();
+            } else {
+                order_total = (parseFloat($('.radio6:checked').attr(Order_total)) + parseFloat($('.radio6:checked').attr('satin-premium'))) * $('.quantity').val();
+            }
+
+        } else {
+            if ($('.pole').is(':checked')) {
+                order_total = parseFloat($('.radio6:checked').attr(Order_total + '-pole')) * $('.quantity').val();
+                ord = Order_total + '-pole';
+            } else {
+                order_total = parseFloat($('.radio6:checked').attr(Order_total)) * $('.quantity').val();
+                ord = Order_total;
+            }
+
+        }
+
+        $('#pw1').html(order_total);
+        
+
+    };
+
+    $(document).ready(function () {
+        $(document).on('change', '.radio4', function () {
+            Order_total = 'fast-print';
+        });
+        $(document).on('change', '.radio3', function () {
+            Order_total = 'normal-one';
+        });
+        $(document).on('click', '.show', function () {
+            $('.hidbutt').prop("disabled", false);
+            $('.hidbutt').css('opacity', '1.0');
+            $('.hidtext').css('opacity', '1.0');
+        });
+        $(document).on('click', '.hider', function () {
+            $('.hidbutt').prop("disabled", true);
+            $('#bumagaform').trigger('reset');
+            $('.hidbutt').css('opacity', '0.3');
+            $('.hidtext').css('opacity', '0.1');
+        });
+        $(document).on('change', '.quantity', function () {
+            if ($('.radio4').is(':checked')) {
+                Order_total = 'fast-print';
+            } else {
+                if ($(this).val() > 500) {
+                    Order_total = 'normal-three';
+                } else {
+                    if ($(this).val() > 20) {
+                        Order_total = 'normal-two';
+                    } else {
+                        Order_total = 'normal-one';
+                    }
+                    ;
+                }
+                ;
+            }
+            ;
+        });
+
+        $('input.first').trigger('click');
+        calculate();
+        $('#pw1').html();
+        $('.order_cost').html();
+        $(document).on('change', '.recalculate', function () {
+            calculate();
+            totalPrice();
+            getPhotoFormat();
+            getPhotoCount();
+        });
+    });
+
+</script>
+<section class="back" id="con11">
+    <section class="front1" id="photoprintback">
+        <div class="number" id="show_hide_added_files_options"></div>
+        <strong>выбирите формат по умолчанию</strong></br>
+        <p>При размере, большем чем А1</br>см.широкоформатная печать</p>
+        <img src="img/A6-A1.gif"/>
+
+        <div class="photoformat">
+            <p id='p1'>10x15</p>
+
+            <p id='p2'>14,8x21</p>
+
+            <p id='p3'>21x29,7</p>
+
+            <p id='p4'>29,7x42</p>
+
+            <p id='p5'>42x59,4</p>
+
+            <p id='p6'>59,4x84,1</p>
+        </div>
+        <form action="#" method="POST" id="photosizeform">
+            <div class="radiobutton" id="r1">
+                <input type="radio" class="recalculate first radio6  show" fast-print="15" normal-one="10"
+                       normal-two="8"
+                       normal-three="7" fast-print-pole="15" normal-one-pole="10" normal-two-pole="7.5"
+                       normal-three-pole="6.7" satin-premium="6" name="rad" value="Размер:A6 10x15"/>
+            </div>
+            <div class="radiobutton" id="r2">
+                <input type="radio" class="recalculate radio6  show" fast-print="40" normal-one="17"
+                       normal-two="16"
+                       normal-three="15" fast-print-pole="40" normal-one-pole="17" normal-two-pole="16"
+                       normal-three-pole="15" satin-premium="15" name="rad" value="Размер:A5 14,8x21"/>
+            </div>
+            <div class="radiobutton" id="r3">
+                <input type="radio" class="recalculate radio6  show" fast-print="80" normal-one="40"
+                       normal-two="35"
+                       normal-three="30" fast-print-pole="80" normal-one-pole="40" normal-two-pole="35"
+                       normal-three-pole="30" satin-premium="25" name="rad" value="Размер:A4 21x29,7"/>
+            </div>
+            <div class="radiobutton" id="r4">
+                <input type="radio" class="recalculate radio6  show" fast-print="150" normal-one="80"
+                       normal-two="75"
+                       normal-three="70" fast-print-pole="150" normal-one-pole="80" normal-two-pole="75"
+                       normal-three-pole="70" satin-premium="80" name="rad" value="Размер:A3 29,7x42"/>
+            </div>
+            <div class="radiobutton" id="r5">
+                <input type="radio" class="recalculate radio6  hider" fast-print="600" normal-one="400"
+                       normal-two="400"
+                       normal-three="400" fast-print-pole="600" normal-one-pole="400" normal-two-pole="400"
+                       normal-three-pole="400" name="rad" value="Размер:A2 42x59,4"/>
+            </div>
+            <div class="radiobutton" id="r6">
+                <input type="radio" class="recalculate radio6  hider" fast-print="900" normal-one="600"
+                       normal-two="600"
+                       normal-three="600" fast-print-pole="900" normal-one-pole="600" normal-two-pole="600"
+                       normal-three-pole="600" name="rad" value="Размер:A1 59,4x84,1"/>
+            </div>
+        </form>
+    </section>
+    <section class="front1" id="formatpechati">
+        <div class="number2"></div>
+        <img src="img/formatpechati.gif"/>
+
+        <form action="#" method="POST" id="formatpechatiform">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate radio5 Order-info pole" name="rad1" value="Поля: с полями"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate first radio5 Order-info" name="rad1"
+                           value="Поля: без полей"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow">
+            <p><strong>с полями</strong></p>
+
+            <p><strong>без полей</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="bumaga">
+        <div class="number3"></div>
+        <form action="#" method="POST" id="bumagaform">
+            <div class="rightcol1">
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate first radio2 Order-info" name="rad2"
+                           value="Бумага: матовая бумага 230 г/м2"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate radio2 Order-info" name="rad2"
+                           value="Бумага: глянцевая бумага 230 г/м2"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate radio2 Order-info hidbutt" name="rad2"
+                           value="Бумага: Satin Premium 270 г/м2"/>
+                </div>
+            </div>
+        </form>
+        <div class="textrightcol1">
+            <p><strong>матовая бумага 230 г/м<sup>2</sup></strong></p>
+
+            <p><strong>глянцевая бумага 230 г/м<sup>2</sup></strong></p>
+
+            <p class="hidtext"><strong>Satin Premium 270 г/м<sup>2</sup></strong></p>
+        </div>
+    </section>
+    <section class="front1" id="srochno">
+        <div class="number4"></div>
+        <form action="#" method="POST" id="srochnoform">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate first radio3 Order-info" print-cost="normal-one" name="rad3"
+                           value="Изготовление: Не срочно"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate radio4 Order-info" print-cost="fast-print" name="rad3"
+                           value="Изготовление: Срочно"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow">
+            <p><strong>не срочно</strong></p>
+
+            <p><strong>срочно</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="price1">
+        </div>
+        <p id="p1"><strong>рублей</strong></p>
+
+        <p id="p2"><strong>предварительный расчет</strong></p>
+
+        <p id="p3"><strong>количество</strong></p>
+        <input class="recalculate quantity Order-info-nu" type="number" value="1"/>
+    </section>
+    <section class="front1" id="pricewin1"><span id="pw1"></span>
+    </section>
+</section>

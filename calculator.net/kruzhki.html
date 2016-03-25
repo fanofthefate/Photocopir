@@ -1,0 +1,643 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        function calculate15() {
+
+           var total = parseFloat($('input.radio6:checked').attr('cost'));
+            if ($('.srochno').is(':checked')){
+           var order_total = (total+total*0.5) * $('input.Order-info-num').val()+parseFloat($('input.radio2:checked').attr('maket'));
+                } else {
+                var order_total = total * $('input.Order-info-num').val()+parseFloat($('input.radio2:checked').attr('maket'));
+            }
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+        }
+
+        $('input.first').trigger('click');
+        calculate15();
+        $(document).on('change', '.recalculate', function () {
+            calculate15();
+        });
+        $(document).on('change', '.color', function () {
+            $(this).closest('.absolute2').find('.radio6').trigger('click');
+        })
+        $(document).on('change', '.radio6', function () {
+            var x = $('.color:checked').attr('id');
+            $('.color:checked').prop('checked', false);
+            $(this).closest('.absolute2').find('#' + x + '').trigger('click');
+        })
+    });
+</script>
+<section class="back" id="con21">
+    <p id="title">ВЫБРАТЬ КРУЖКУ</p>
+    <section class="front1" id="kruzhki">
+        <div class="wrapper2">
+            <div class="relative2">
+                <form action="#" method="POST" name="stamps" id="colorus">
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/kruzhka1.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="first recalculate radio6 Order-info"
+                                   value="Кружка: Вся белая" cost="400">
+
+                            <p id="p1">Керамическая кружка
+                                <br/>диаметр: 80 мм
+                                <br/>высота: 95 мм
+                                <br/>объем: 330 мл
+                            </p>
+
+                            <p id="p2">Белая вся КЛАССИК
+                            </p>
+
+                            <p id="p3">поле печати
+                                <br/>200 x 95 мм
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_29.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Двойная Male+Female" cost="800">
+
+                            <p id="p1">Двойная кружка
+                                <br/>
+                                <br/>Male+Female
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_30.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class=" radio6 Order-info"
+                                   value="Кружка: Двойная(ручки в форме сердца)" cost="800">
+
+                            <p id="p1">Двойная кружка
+                                <br/>
+                                <br/>ручки в форме сердца
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_26.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: C мячиком" cost="500">
+
+                            <p id="p1">Кружка с мячиком
+                                <br/>
+                                <br/>
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_47.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Люминисцентная" cost="600">
+
+                            <p id="p1">Кружка люминисцентная
+                                <br/>
+                                <br/>Светится в темноте
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_01.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Пивная" cost="950">
+
+                            <p id="p1">Пивная кружка
+                                <br/>
+                                <br/>
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_38.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Стеклянная матовая" cost="550">
+
+                            <p id="p1">Кружка стеклянная
+                                <br/>
+                                <br/>Матовая
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_39.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Стеклянная прозрачная" cost="550">
+
+                            <p id="p1">Кружка стеклянная
+                                <br/>
+                                <br/>Прозрачная
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_27.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: С фигурной ручкой(гусеница)" cost="700">
+
+                            <p id="p1">Кружка с фигурной ручкой(гусеница)
+                                <br/>
+                                <br/>
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_28.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: С фигурной ручкой(дельфин)" cost="700">
+
+                            <p id="p1">Кружка с фигурной ручкой(дельфин)
+                                <br/>
+                                <br/>
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_50.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Хамелеон с ложкой" cost="850">
+
+                            <p id="p1">Кружка хамелеон с ложкой
+                                <br/>
+                                <br/>Цветная ложка,
+                                <br/>цветная внутри.
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+
+                            <p id="p4">ЦВЕТ</p>
+                        </div>
+                        <div class="botcol1">
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="black" class="Order-info color" value="Цвет: Черный"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="navy" class="Order-info color" value="Цвет: Синий"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="red" class="Order-info color" value="Цвет: Красный"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_42.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Хамелеон" cost="600">
+
+                            <p id="p1">Кружка хамелеон
+                                <br/>
+                                <br/>Цветная снаружи
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+
+                            <p id="p4">ЦВЕТ</p>
+                        </div>
+                        <div class="botcol1">
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="black" class="Order-info color" value="Цвет: Черный"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="navy" class="Order-info color" value="Цвет: Синий"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="blue" class="Order-info color" value="Цвет: Голубой"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="pink" class="Order-info color" value="Цвет: Розовый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="red" class="Order-info color" value="Цвет: Красный"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_45.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Хамелеон фото" cost="600">
+
+                            <p id="p1">Кружка хамелеон фото
+                                <br/>
+                                <br/>
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_46.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Хамелеон с сердцем" cost="600">
+
+                            <p id="p1">Кружка хамелеон с сердцем
+                                <br/>
+                                <br/>
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/auto_mug.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: Автомобильная" cost="1400">
+
+                            <p id="p1">Автомбильная кружка
+                                <br/>
+                                <br/>
+                                <br/>
+                            </p>
+
+                            <p id="p2">
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/kruzhka2.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info" color
+                                   value="Кружка: цветная ручка, цветная внутри" cost="450">
+
+                            <p id="p1">Керамическая кружка
+                                <br/>диаметр: 80 мм
+                                <br/>высота: 95 мм
+                                <br/>объем: 330 мл
+                            </p>
+
+                            <p id="p2">Белая снаружи,
+                                <br/>цветная внутри,
+                                <br/>цветная ручка.
+                            </p>
+
+                            <p id="p3">поле печати
+                                <br/>200 x 95 мм
+                            </p>
+
+                            <p id="p4">ЦВЕТ</p>
+                        </div>
+                        <div class="botcol1">
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="black" class="Order-info color" value="Цвет: Черный"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="green" class="Order-info color" value="Цвет: Зеленый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="navy" class="Order-info color" value="Цвет: Синий"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="blue" class="Order-info color" value="Цвет: Голубой"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="orange" class="Order-info color"
+                                       value="Цвет: Оранжевый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="yellow" class="Order-info color" value="Цвет: Желтый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="pink" class="Order-info color" value="Цвет: Розовый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="red" class="Order-info color" value="Цвет: Красный"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/kruzhka3.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: цветная внутри"
+                                   cost="450">
+
+                            <p id="p1">Керамическая кружка
+                                <br/>диаметр: 80 мм
+                                <br/>высота: 95 мм
+                                <br/>объем: 330 мл
+                            </p>
+
+                            <p id="p2">Белая снаружи,
+                                <br/>цветная внутри.
+                            </p>
+
+                            <p id="p3">поле печати
+                                <br/>200 x 95 мм
+                            </p>
+
+                            <p id="p4">ЦВЕТ</p>
+                        </div>
+                        <div class="botcol1">
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="black" class="Order-info color" value="Цвет: Черный"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="green" class="Order-info color" value="Цвет: Зеленый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="navy" class="Order-info color" value="Цвет: Синий"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="blue" class="Order-info color" value="Цвет: Голубой"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="orange" class="Order-info color"
+                                       value="Цвет: Оранжевый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="yellow" class="Order-info color" value="Цвет: Желтый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="pink" class="Order-info color" value="Цвет: Розовый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="red" class="Order-info color" value="Цвет: Красный"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/kruzhka4.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: цветная ручка, цветной ободок сверху" cost="450">
+
+                            <p id="p1">Керамическая кружка
+                                <br/>диаметр: 80 мм
+                                <br/>высота: 95 мм
+                                <br/>объем: 330 мл
+                            </p>
+
+                            <p id="p2">Белая снаружи,
+                                <br/>цветной ободок сверху,
+                                <br/>цветная ручка.
+                            </p>
+
+                            <p id="p3">поле печати
+                                <br/>200 x 95 мм
+                            </p>
+
+                            <p id="p4">ЦВЕТ</p>
+                        </div>
+                        <div class="botcol1">
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="black" class="Order-info color" value="Цвет: Черный"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="green" class="Order-info color" value="Цвет: Зеленый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="navy" class="Order-info color" value="Цвет: Синий"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="blue" class="Order-info color" value="Цвет: Голубой"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="orange" class="Order-info color"
+                                       value="Цвет: Оранжевый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="yellow" class="Order-info color" value="Цвет: Желтый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="pink" class="Order-info color" value="Цвет: Розовый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="red" class="Order-info color" value="Цвет: Красный"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute2">
+                        <img id="kruzhka1" src="img/Mug_32.gif">
+
+                        <div class="radiobutton" id="largebutt">
+                            <input type="radio" name="rad1" class="recalculate radio6 Order-info"
+                                   value="Кружка: цветная внутри, с ложкой" cost="500">
+
+                            <p id="p1">Кружка с ложкой
+                                <br/>
+                                <br/>цветная внутри,
+                                <br/>цветная ложка
+                            </p>
+
+                            <p id="p2">
+                                <br/>
+                                <br/>
+                            </p>
+
+                            <p id="p3">
+                                <br/>
+                            </p>
+
+                            <p id="p4">ЦВЕТ</p>
+                        </div>
+                        <div class="botcol1">
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="black" class="Order-info color" value="Цвет: Черный"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="green" class="Order-info color" value="Цвет: Зеленый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="navy" class="Order-info color" value="Цвет: Синий"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="orange" class="Order-info color"
+                                       value="Цвет: Оранжевый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="yellow" class="Order-info color" value="Цвет: Желтый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="brown" class="Order-info color" value="Цвет: Коричневый"/>
+                            </div>
+                            <div class="radiobutton">
+                                <input type="radio" name="#" id="red" class="Order-info color" value="Цвет: Красный"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="front1" id="kruzhki2">
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class=" first radio2 recalculate Order-info" maket="0" value="Готовый макет"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="radio2 recalculate Order-info" maket="200" value="Изготовить макет"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>готовый макет</strong></p>
+
+            <p id="p2"><strong>изготовить макет</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="kruzhki3">
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="first recalculate Order-info"
+                           value="Изготовление: Не срочно"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info srochno" value="Изготовление: Срочно"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>не срочно</strong></p>
+
+            <p id="p2"><strong>срочно</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="kruzhki4">
+        <div class="total" id="stamptotal"><strong>количество</strong>
+
+            <div class="quantity">
+                <input type="number" action="#" class="recalculate Order-info-num" value="1">
+            </div>
+        </div>
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring"></div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1"><span id="pw1"></span>
+
+        <div class="numbername" id="coloring"></div>
+    </section>
+</section>

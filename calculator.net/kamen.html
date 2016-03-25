@@ -1,0 +1,98 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+function calculate21(){
+
+			total = parseFloat($('input.radio:checked').attr('cost'));
+			order_total=total*$('input.Order-info-num').val();
+			$('#pw1').html(order_total);
+			$('.order_cost').html(order_total);
+		}
+		$('input.first').trigger('click');
+		calculate21();
+		$(document).on('change', '.recalculate', function () {
+			calculate21();
+		});
+	});
+</script>
+<div class="podushka" id="kamen">
+	<section class="back" id="con21">
+		<p id="title">ВЫБРАТЬ КАМЕНЬ</p>
+		<section class="front1" id="kruzhki">
+			<div class="wrapper2" >
+				<div class="relative2">
+					<form action="#" method="POST" name="stamps" id="colorus">
+						<div class="absolute2" >
+							<img id="kruzhka1" src="img/kamen1.gif">
+							<div class="radiobutton" id="largebutt">
+							<input type="radio"  name="rad1" class="first recalculate radio Order-info" value="Размер камня: 150 x 150 мм" cost="900"/>
+								<p id="p1">Исскуственный сланец
+								</p>
+								<p id="p3">поле печати
+									<br/>150 x 150 мм
+								</p>
+							</div>
+						</div>
+						<div class="absolute2" >
+							<img id="kruzhka1" src="img/kamen2.png">
+							<div class="radiobutton" id="largebutt">
+								<input type="radio"  name="rad1" class="recalculate radio Order-info" value="Размер камня: 200 x 150 мм" cost="900"/>
+								<p id="p1">Исскуственный сланец
+								</p>
+								<p id="p3">поле печати
+									<br/>200 x 150 мм
+								</p>
+							</div>
+						</div>							
+					</form>
+				</div>
+			</div>
+		</section>
+		<section class="front1" id="kruzhki2">
+			<form action="#" method="POST" name="#" >
+				<div class="bottcol1">
+					<div class="radiobutton">
+						<input type="radio"  name="rad" class="first recalculate Order-info" value="Готовый макет"/>
+					</div>
+					<div class="radiobutton">
+						<input type="radio"  name="rad" class="recalculate Order-info" value="Изготовить макет"/>
+					</div>
+				</div>
+			</form>
+			<div class="bottrow1">
+				<p id="p1"><strong>готовый макет</strong></p>
+				<p id="p2"><strong>изготовить макет</strong></p>
+			</div>
+		</section>
+		<section class="front1" id="kruzhki3">
+			<form action="#" method="POST" name="#">
+				<div class="bottcol1">
+					<div class="radiobutton">
+						<input type="radio"  name="rad" class="first recalculate Order-info" value="Изготовление: Не срочно"/>
+					</div>
+					<div class="radiobutton">
+						<input type="radio"  name="rad" class="recalculate Order-info" value="Изготовление: Срочно"/>
+					</div>
+				</div>
+			</form>
+			<div class="bottrow1">
+				<p id="p1"><strong>не срочно</strong></p>
+				<p id="p2"><strong>срочно</strong></p>
+			</div>
+		</section>
+		<section class="front1" id="kruzhki4">
+			<div class="total" id="stamptotal"><strong>количество</strong>
+				<div class="quantity">
+					<input type="number" action="#" class="recalculate Order-info-num" value="1">
+				</div>
+			</div>
+		</section>
+		<section class="front1" id="price1">
+					<div class="numbername" id="coloring">
+			</div>	
+			<p><strong>рублей</strong></p>
+		</section>
+		<section class="front1" id="pricewin1"><span id="pw1"></span>
+		<div class="numbername" id="coloring"></div>	
+		</section>
+	</section>
+</div>

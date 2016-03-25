@@ -1,0 +1,167 @@
+	<script type="text/javascript">
+		$('input.first').trigger('click');
+		$('#forma2').hide();
+		function calculate12(){
+			if($('input.radio').is(':checked')){
+				var total = parseFloat($('input.radio:checked').attr($('input.radio:checked').attr('format')+$('input.radio2:checked').attr('colorous')+$('.radio3:checked').attr('paper-type')));
+			} else {
+				var length = parseFloat($('#len').val());
+				var width = parseFloat($('#wid').val());
+				if (width > length){
+					var temp = length
+					length = width;
+					width = temp;
+				}
+				var p_metr = length * Math.ceil(width/91.4) / 100;
+				var total = parseFloat($('input.length').attr($('input.length').attr('format')+$('input.radio2:checked').attr('colorous')+$('.radio3:checked').attr('paper-type')))*p_metr;
+			}				total = Math.ceil(total); 
+			var order_total = total*$('.quan').val();
+			$('#pw1').html(order_total);
+			$('.order_cost').html(order_total);
+		}
+		function stampsizech(){
+			var length = parseFloat($('#len').val());
+			var width = parseFloat($('#wid').val());
+			if (width > length){
+				var temp = length
+				length = width;
+				width = temp;
+			}
+			var p_metr = length * Math.ceil(width/91.4) / 100;
+			if(width <= 4.2 && length <=59.4){
+				$('#rb1').find('input')[0].click();
+			} 
+			else if (width <=59.4 && length <=84.1){
+				$('#rb2').find('input')[0].click();
+			}
+			else if (width <=84.1 && length <=118.9){
+				$('#rb3').find('input')[0].click();
+			}
+			setTimeout(calculate12,0);
+		};
+		$(document).ready(function(){
+			$('#len,#wid').on('change',stampsizech).on('click',stampsizech).on('keyrelease',stampsizech);
+			$(document).on('click','input.Order-info-num-custom',function(){
+				$('#format').trigger('reset');
+			});
+			$('.first').trigger('click');
+			calculate12();	
+			$(document).on('change', '.recalculate', function () {
+				calculate12();	
+			});
+
+		});
+
+	</script>
+	<section class="back" id="con13">
+		<section class="front1" id="wf1">
+			<img src="img/shirokoformat.gif">
+			<div class="bottrow1">
+				<p id="p1"><strong style="font-size: 12pt;">A2</strong></p>
+				<p id="p2"><strong style="font-size: 12pt;">A1</strong></p>
+				<p id="p3"><strong style="font-size: 12pt;">A0</strong></p>
+			</div>
+			<div class="bottrow2">
+				<p id="p1"><strong style="color:#000; font-size: 11pt;">4,2x59,4</strong></p>
+				<p id="p2"><strong style="color:#000; font-size: 11pt;">59,4x84,1</strong></p>
+				<p id="p3"><strong style="color:#000; font-size: 11pt;">84,1x118,9</strong></p>
+			</div>
+			<form action="#" method="POST" name="#" id="format">
+				<div class="bottcol1">
+					<div class="radiobutton" id="rb1">
+						<input type="radio"  name="rad" class="recalculate first radio Order-info" value="Размеры: A2 42x594"
+						format="atwo-"
+						atwo-bw-ing="60"
+						atwo-color-ing="150"
+						atwo-bw-other="350"
+						atwo-color-other="350"
+						/>
+					</div>
+					<div class="radiobutton" id="rb2">
+						<input type="radio"  name="rad" class="recalculate radio Order-info" value="Размеры: A1 594x841"
+						format="aone-"
+						aone-bw-ing="100"
+						aone-color-ing="250"
+						aone-bw-other="550"
+						aone-color-other="550"/>
+					</div>
+					<div class="radiobutton" id="rb3">
+						<input type="radio"  name="rad" class="recalculate radio Order-info" value="Размеры: A0 841x1189"
+						format="azero-"
+						azero-bw-ing="150"
+						azero-color-ing="400"
+						azero-bw-other="850"
+						azero-color-other="850"/>
+					</div>
+				</div>
+			</form>
+			<p id="title">ДРУГИЕ РАЗМЕРЫ (мм)</p>
+			<form action="#" method="POST" id="stampsize">
+				<div class="stamplength">
+					<input type="number" id="len" action="#" class="recalculate Order-info-num-custom length" value="" placeholder="длина"
+					format ="custom-"
+					custom-bw-ing="140"
+					custom-color-ing="370"
+					custom-bw-other="800"
+					custom-color-other="800">
+				</div>
+				<p>X</p>
+				<div class="stampwidth">
+					<input type="number" action="#" id="wid" class="recalculate Order-info-num-custom width" value="" placeholder="ширина">
+				</div>
+			</form>
+			<strong>Максимальная ширина рулона 91,4 см</strong>
+			<form action="#" method="POST" name="#" id="shirokiyform">
+				<div class="radiobutton" id="radiotext">
+					<input id="colorbw" type="radio"  name="rad" class="recalculate radio2 Order-info" colorous="bw-" value="Цвет: Черно-белая"/>
+					<label for="colorbw" >ч/б</label>
+				</div>
+				<div class="radiobutton" id="radiotext">
+					<input id="colorcolor" type="radio"  name="rad" class="recalculate first radio2 Order-info" colorous="color-" value="Цвет: Цветная"/>
+					<label for="colorcolor" >цветная</label>
+				</div>						
+			</form>
+			<form action="#" method="POST" id="stampsize1">
+				<p>количество</p>
+				<div class="quantity">
+					<input type="number" action="#" class="recalculate quan Order-info-num" value="1">
+				</div>
+			</form>
+		</section>
+		<section class="front1" id="wf2">
+			<form action="#" method="POST" name="#" >
+				<div class="rightcol1">
+					<div class="radiobutton smal-margin-rb">
+						<input type="radio"  name="rad" class="recalculate radio3 Order-info" paper-type="ing" value="Бумага: чертежная бумага 90 г/м2"/>
+					</div>
+					<div class="radiobutton smal-margin-rb">
+						<input type="radio"  name="rad" class="recalculate radio3 Order-info" paper-type="other" value="Бумага: самоклеющаяся бумага 85 г/м2"/>
+					</div>
+				</div>
+				<div class="leftcol1">
+					<div class="radiobutton smal-margin-rb">
+						<input type="radio"  name="rad" class="recalculate first radio3 Order-info" paper-type="other" value="Бумага: матовая бумага 180 г/м2"/>
+					</div>
+					<div class="radiobutton smal-margin-rb">
+						<input type="radio"  name="rad" class="recalculate radio3 Order-info" paper-type="other" value="Бумага: глянцевая бумага 200 г/м2"/>
+					</div>
+				</div>
+			</form>
+			<div class="textleftcol1">
+				<p id="p1"><strong>матовая бумага 180 г/м<sup>2</sup></strong></p>
+				<p id="p2"><strong>глянцевая бумага 200 г/м<sup>2</sup></strong></p>
+			</div>
+			<div class="textrightcol1">
+				<p id="p1"><strong>чертежная бумага 90 г/м<sup>2</sup></strong></p>
+				<p id="p2"><strong>самоклеющаяся бумага 85 г/м<sup>2</sup></strong></p>
+			</div>
+		</section>
+		<section class="front1" id="price1">
+			<div class="numbername" id="coloring">
+			</div>	
+			<p><strong>рублей</strong></p>
+		</section>
+		<section class="front1" id="pricewin1">
+			<span id="pw1"></span>
+		</section>
+	</section>

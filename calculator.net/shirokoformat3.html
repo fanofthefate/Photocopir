@@ -1,0 +1,110 @@
+<script type="text/javascript">
+ function calculate777() {
+    var width = parseInt($('.width').val()),
+    height = parseInt($('.height').val()),
+    p_meter,
+    luversi = $('.luversi').is(':checked') ? 100 : 0;
+    if(width > height)
+    {
+        var temp = width;
+        width = height;
+        height = temp;
+    }
+    p_meter = (width + height)/50; //*2/100
+
+    var total = luversi + parseFloat($('input.radio8:checked').attr($('input.radio8:checked').attr('material') + $('input.radio4:checked').attr('resol')));
+
+    var order_total = total * p_meter * $('.quan').val();
+    if (order_total < 1000) order_total = 1000;
+
+    setTimeout(function(a){
+        console.log(a,
+        $('#pw1,.order_cost').html(a)
+        );
+    }(order_total),1);
+
+    setTimeout
+}
+$(document).ready(function () {
+    $('input.first-mat').trigger('click');
+    calculate777();
+});
+</script>
+<section class="back" id="con18">
+    <section class="front1" id="wf1">
+        <div class="number"><p>ВЫБРАТЬ МАТЕРИАЛ</p></div>
+        <hr id="hr1">
+        <strong style="display: block; margin-left: 30px;font-size: 10pt;"><p>Самоклеющаяся пленка</p></strong>
+
+        <form action="#" method="POST" name="#" id="first_form">
+            <div class="rightcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad1" class="recalculate radio-kley-cvet first-cvet Order-info"
+                    value="Цвет: белая"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad1" class="recalculate radio-kley-cvet Order-info"
+                    value="Цвет: прозрачная"/>
+                </div>
+            </div>
+            <div class="leftcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" formtwo-form-path="shirokoformat5.html"
+                    form-height="height:202px;" class="radio8 radio-kley first-mat Order-info shower"
+                    value="Материал: Самоклеющаяся пленка гляцевая" material="glue-"
+                    glue-low="700"
+                    glue-high="1100"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" formtwo-form-path="shirokoformat5.html"
+                    form-height="height:202px;" class="radio8 radio-kley Order-info shower"
+                    value="Материал: Самоклеющаяся пленка матовая" material="glue-"
+                    glue-low="700"
+                    glue-high="1100"/>
+                </div>
+            </div>
+            <div class="textleftcol1">
+                <p id="p1"><strong>глянцевая</strong></p>
+
+                <p id="p2"><strong>матовая</strong></p>
+            </div>
+            <div class="textrightcol1">
+                <p id="p1"><strong>белая</strong></p>
+
+                <p id="p2"><strong>прозрачная</strong></p>
+            </div>
+        </form>
+        <form action="#" method="POST" name="#" id="second_form">
+            <hr id="hr2">
+            <strong style="display: block; margin-left: 30px;font-size: 10pt;"><p>Пленка прозрачная</p></strong>
+
+            <div class="radiobutton" style=" margin-left: 261px;margin-top: -36px;">
+                <input type="radio" name="rad" formtwo-form-path="shirokoformat5.html"
+                form-height="height:202px;" class="radio8 radio2 radio-other Order-info shower"
+                value="Материал: Пленка прозрачная" material="prozr-"
+                prozr-low="1000"
+                prozr-high="1600"/>
+            </div>
+            <hr id="hr3">
+            <strong style="display: block; margin-left: 30px;font-size: 10pt;"><p>Перфорированная пленка</p></strong>
+
+            <div class="radiobutton" style=" margin-left: 261px;margin-top: -36px;">
+                <input type="radio" name="rad" formtwo-form-path="shirokoformat5.html"
+                form-height="height:202px;" class="radio8 radio2 radio-other Order-info hider"
+                value="Материал: Перфорированная пленка" material="perf-"
+                perf-low="1200"/>
+            </div>
+            <hr id="hr4">
+            <strong style="display: block; margin-left: 30px;font-size: 10pt;"><p>Баннер 440 г/м<sup>2</sup></p>
+            </strong>
+
+            <div class="radiobutton" style=" margin-left: 261px;margin-top: -36px;">
+                <input type="radio" name="rad" formtwo-form-path="shirokoformat4.html"
+                form-height="height:393px;" class="recalculate radio8 radio3 radio-other Order-info shower"
+                value="Материал: Баннер 440 г/м2" material="banner-"
+                banner-low="600"
+                banner-high="1000"/>
+            </div>
+        </form>
+    </section>
+</section>

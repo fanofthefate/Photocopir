@@ -1,0 +1,417 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        function calculate21() {
+
+            total = parseFloat($('input.radio:checked').attr('cost'));
+            order_total = total * $('input.Order-info-num').val();
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+        }
+        $('input.first').trigger('click');
+        calculate21();
+        $(document).on('change', '.recalculate', function () {
+            calculate21();
+        });
+    });
+</script>
+<div class="tarelka">
+    <section class="back" id="con21">
+        <p id="title">ВЫБРАТЬ СУВЕНИР</p>
+        <section class="front1" id="kruzhki">
+            <div class="wrapper2">
+                <div class="relative2">
+                    <form action="#" method="POST" name="stamps" id="colorus">
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other5.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="first recalculate radio Order-info"
+                                       value="Выбрано: Коробка под медаль(синяя)" cost="800"/>
+
+                                <p id="p1">Подарочная коробка
+                                    <br/>под медаль
+                                    <br/>Синяя
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other6.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Коробка под медаль(красная)" cost="800"/>
+
+                                <p id="p1">Подарочная коробка
+                                    <br/>под медаль
+                                    <br/>Красная
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other7.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Мягкая игрушка" cost="800"/>
+
+                                <p id="p1">
+                                    <br/>Мягкая игрушка
+                                    <br/>
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other8.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Металлическая табличка(на дереве)" cost="1050"/>
+
+                                <p id="p1">Металлическая табличка,
+                                    <br/>A4,
+                                    <br/>на деревянной
+                                    <br/>плакете
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other9.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано:  Металлическая табличка" cost="800"/>
+
+                                <p id="p1">Металлическая табличка,
+                                    <br/>A4
+                                    <br/>
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other10.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Медаль серебро" cost="550"/>
+
+                                <p id="p1">
+                                    <br/>Медаль
+                                    <br/>Серебряная
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other11.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Медаль золото" cost="550"/>
+
+                                <p id="p1">
+                                    <br/>Медаль
+                                    <br/>Золотая
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other12.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Медаль бронза" cost="550"/>
+
+                                <p id="p1">
+                                    <br/>Медаль
+                                    <br/>Бронзовая
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other13.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Костер" cost="250"/>
+
+                                <p id="p1">Костер
+                                    <br/>(подставка
+                                    <br/>под кружку)
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other14.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Коврик для мышки(прямоугольный)" cost="400"/>
+
+                                <p id="p1">Коврик для мышки
+                                    <br/>прямоугольный
+                                    <br/>
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other15.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Коврик для мышки(круглый)" cost="400"/>
+
+                                <p id="p1">Коврик для мышки
+                                    <br/>круглый
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other16.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Зеркальце" cost="400"/>
+
+                                <p id="p1">Зеркальце
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other17.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Зажигалка в коробке" cost="860"/>
+
+                                <p id="p1">Зажигалка в коробке
+                                    <br/>корпус цвета сталь, белый.
+                                    <br/>
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other18.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Джинсовое портмоне" cost="600"/>
+
+                                <p id="p1">Джинсовое
+                                    <br/>портмоне
+                                    <br/>
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other19.png">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Визитница" cost="420"/>
+
+                                <p id="p1">Визитница
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </p>
+
+                                <p id="p3">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other1.gif">
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Брелок с открывалкой для пива" cost="350"/>
+
+                                <p id="p1">Брелок
+                                    <br/>с открывалкой
+                                    <br/>для пива
+                                </p>
+
+                                <p id="p3">диаметр
+                                    <br/>поля печати
+                                    <br/>25 мм
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other2.gif">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info" value="Выбрано: Чехол для ipad"
+                                       cost="1200"/>
+
+                                <p id="p1">Чехол для
+                                    <br/>ipad
+                                </p>
+
+                                <p id="p3">поле печати
+                                    <br/>115x220 мм
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other3.gif">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Авторучка с прицепом" cost="200"/>
+
+                                <p id="p1">Авторучка
+                                    <br/>с прицепом
+                                </p>
+
+                                <p id="p3">диаметр
+                                    <br/>поля печати
+                                    <br/>15 мм
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute2">
+                            <img id="kruzhka1" src="img/other4.gif">
+
+                            <div class="radiobutton" id="largebutt">
+                                <input type="radio" name="rad1" class="recalculate radio Order-info"
+                                       value="Выбрано: Чехол для iphone" cost="700"/>
+
+                                <p id="p1">Чехол для
+                                    <br/>iphone
+                                    <br/>диаметром
+                                    <br/>200 мм
+                                </p>
+
+                                <p id="p3">поле печати
+                                    <br/>115x220 мм
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="front1" id="kruzhki2">
+            <form action="#" method="POST" name="#">
+                <div class="bottcol1">
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="first recalculate Order-info" value="Готовый макет"/>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="recalculate Order-info" value="Изготовить макет"/>
+                    </div>
+                </div>
+            </form>
+            <div class="bottrow1">
+                <p id="p1"><strong>готовый макет</strong></p>
+
+                <p id="p2"><strong>изготовить макет</strong></p>
+            </div>
+        </section>
+        <section class="front1" id="kruzhki3">
+            <form action="#" method="POST" name="#">
+                <div class="bottcol1">
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="first recalculate Order-info" value="Изготовление: Не срочно"/>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" name="rad" class="recalculate Order-info" value="Изготовление: Срочно"/>
+                    </div>
+                </div>
+            </form>
+            <div class="bottrow1">
+                <p id="p1"><strong>не срочно</strong></p>
+
+                <p id="p2"><strong>срочно</strong></p>
+            </div>
+        </section>
+        <section class="front1" id="kruzhki4">
+            <div class="total" id="stamptotal"><strong>количество</strong>
+
+                <div class="quantity">
+                    <input type="number" action="#" class="recalculate Order-info-num" value="1">
+                </div>
+            </div>
+        </section>
+        <section class="front1" id="price1">
+            <div class="numbername" id="coloring">
+            </div>
+            <p><strong>рублей</strong></p>
+        </section>
+        <section class="front1" id="pricewin1"><span id="pw1"></span>
+
+            <div class="numbername" id="coloring"></div>
+        </section>
+    </section>
+</div>

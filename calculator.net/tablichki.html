@@ -1,0 +1,191 @@
+	<script type="text/javascript">
+		$('.first').trigger('click');
+		function calculate33() {
+			var price = 0;
+			if($('[data-size-price]').is(':checked')) {
+				price += parseFloat($('[data-size-price]:checked').attr('data-size-price'));
+			} else {
+				price += parseFloat($('#width').val()) * parseFloat($('#height').val()) * 0.3;
+			}
+			var order_total = price + parseFloat($('[data-temp-price]:checked').attr('data-temp-price'));
+			order_total += parseFloat($('[data-mak-price]:checked').attr('data-mak-price'));
+			order_total *= parseFloat($('#count').val());
+			Math.round(order_total);
+			$('#pw1').html(Math.round(order_total));
+           	$('.order_cost').html(Math.round(order_total));
+		}
+		$(document).ready(function(){
+			$(document).on('click','.Order-info-num-custom',function(){
+				$('#form-of-sizes').trigger('reset');
+			});
+			$(document).on('click','.clear',function(){
+				$('#custom-size-form').trigger('reset');
+			});
+			// $('#width,#height').on('click',function(){
+			// 	document.getElementById('form-of-sizes').reset();
+			// });
+			// $('[data-size-price]').on('click',function(){
+			// 	document.getElementById('custom-size-form').reset();
+			// })
+			$('input.first').trigger('click');
+			calculate33();
+			$(document).on('change', '.recalculate', function () {
+				calculate33();
+				$('#pw1').html(total_price);
+           		$('.order_cost').html(total_price);
+			});
+		})
+	</script>
+</head>
+<body>
+	<section class="back" id="con26">
+		<section class="front1 tabl1">
+			<div class="number"></div>
+			<div class="numbername" style="margin-top:-39px;margin-left: 60px; 
+			font-size: 11pt;">ВЫБРАТЬ РАЗМЕР</div>
+			<form method="POST" id="custom-size-form">
+				<table style="line-height: 0; font-size:9pt; margin-top: 42px;margin-left: 56px;">
+					<tr>
+						<td style="margin-left: 120px;">
+							<p>ДРУГИЕ РАЗМЕРЫ в см</p>
+							<input type="number"  name="rad" id="width" style="width: 70px;height: 22pt;" class="recalculate Order-info-num-custom" custom="Ширина: " value="0">
+							&nbsp&nbsp x &nbsp&nbsp
+							<input type="number" id="height" style="width: 70px;     height: 22pt;"  name="rad" class="recalculate Order-info-num-custom" custom="Высота: " value="0">
+						</td>
+					</tr>
+				</table>
+			</form>
+			<form method="POST" id="form-of-sizes">
+				<table class="t_tablichki t2">
+					<tr>
+						<th>
+							<th><div class="radiobutton">
+								<input type="radio"  name="rad" data-size-price="1000" class="first recalculate Order-info clear" value="Размеры: 15x20"/>
+							</div></th>
+							<th><p><strong>15x20</strong></p></th>
+						</th>
+						<th class="th2">
+							<th><div class="radiobutton">
+								<input type="radio"  name="rad" data-size-price="1600" class="recalculate Order-info clear" value="Размеры: 30x40"/>
+							</div></th>
+							<th><p><strong>30x40</strong></p></th>
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<th><div class="radiobutton">
+								<input type="radio"  name="rad" data-size-price="1000" class="recalculate Order-info clear" value="Размеры: 10x30"/>
+							</div></th>
+							<th><p><strong>10x30</strong></p></th>
+						</th>
+						<th class="th2">
+							<th><div class="radiobutton">
+								<input type="radio"  name="rad" data-size-price="2000" class="recalculate Order-info clear" value="Размеры: 40x60"/>
+							</div></th>
+							<th><p><strong>40x60</strong></p></th>
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<th><div class="radiobutton">
+								<input type="radio"  name="rad" data-size-price="1200" class="recalculate Order-info clear" value="Размеры: 20x30"/>
+							</div></th>
+							<th><p><strong>20x30</strong></p></th>
+						</th>
+						<th class="th2">
+							<th><div class="radiobutton">
+								<input type="radio"  name="rad" data-size-price="2500" class="recalculate Order-info clear" value="Размеры: 60x80"/>
+							</div></th>
+							<th><p><strong>60x80</strong></p></th></th>
+						</tr>
+						<tr>
+							<th>
+								<th><div class="radiobutton">
+									<input type="radio"  name="rad" data-size-price="1200" class="recalculate Order-info clear" value="Размеры: 15x40"/>
+								</div></th>
+								<th><p><strong>15x40</strong></p></th></th>
+								<th class="th2">
+									<th><div class="radiobutton">
+										<input type="radio"  name="rad" data-size-price="3000" class="recalculate Order-info clear" value="Размеры: 80x120"/>
+									</div></th>
+									<th><p><strong>80x120</strong></p></th></th>
+								</tr>
+							</table>
+						</form>
+					</section>
+					<section class="front1" id="tablichki2">
+						<div class="number2"></div>
+						<form method="POST">
+							<table class="t_tablichki t3" style="margin-top: 10px;
+							margin-left: 85px;
+							text-align: right;">
+							<tr>
+								<td>
+									<p><strong>не срочно (сутки)</strong></p>
+								</td>
+								<td >
+									<div class="radiobutton">
+										<input type="radio"  name="rad" data-temp-price="0" class="first recalculate Order-info" value="Изготовление: Не срочно"/>
+									</div>
+								</td>
+								<tr>
+									<td>
+										<p><strong>срочно</strong></p>
+									</td>
+									<td>
+										<div class="radiobutton">
+											<input type="radio"  name="rad" data-temp-price="250" class="recalculate Order-info" value="Изготовление: Срочно"/>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</form>
+					</section>
+					<section class="front1" id="tablichki3">
+						<form method="POST">
+							<table class="t3 maket-text">
+								<tr>
+									<td><div class="number3"></div></td>
+									<td>
+										<p><strong>готовый макет</strong></p>
+									</td>
+									<td>
+										<div class="radiobutton">
+											<input type="radio" data-mak-price="0"  name="rad" class="first recalculate Order-info" value="Готовый макет"/>
+										</div>
+									</td>
+									<td>
+										<p><strong>изготовить макет</strong></p>
+									</td>
+									<td>
+										<div class="radiobutton">
+											<input type="radio" data-mak-price="350"  name="rad" class="recalculate Order-info " value="Изготовить макет"/>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</form>
+					</section>
+					<section class="front1" id="tablichki4">
+						<div class="number4" style="margin-top: -6px;"></div>
+						<p style="display: block;
+						margin-top: -33px;
+						margin-left: 55px;
+						">количество</p>
+						<form method="POST">
+							<input type="number" id="count" name="#" style="margin-top: -34px;
+							display: block;
+							margin-left: 150px;
+							width: 60px;
+							height: 27px;" class="recalculate Order-info-num" value="1"></form>
+						</section>
+						<section class="front1" id="price1" style="margin-top: 240px;height: 41px;">
+							<div class="numbername" id="coloring">
+							</div>	
+							<p style="margin-top: 8px;"><strong>рублей</strong></p>
+						</section>
+						<section class="front1" id="pricewin1" style="margin-top: 247px;">
+							<span id="pw1"></span>
+						</section>
+						<p id="total" style="margin-top: 250px;
+						margin-left: 358px;"><strong>итог</strong></p>

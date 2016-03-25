@@ -1,0 +1,201 @@
+<script type="text/javascript">
+	$(document).ready(function () {
+		function calculate23() {
+		}
+		$('input.first').trigger('click');
+		calculate23();
+		$(document).on('change', '.recalculate', function () {
+			calculate23();
+		});
+	});
+</script>
+	<section class="back" id="con25">
+		<section class="front1" id="otkritki1">
+			<form action="#" name="#" method="POST">
+				<table class="t_otkritki t1">
+					<tr>
+						<th style="margin-left: 2px;
+						margin-top: -34px;">
+						<div class="number"></div>
+					</th>
+					<th>
+						<p><strong class="color_violet">А6</strong></p>
+						<p><strong>10x15</strong></p>
+						<div class="radiobutton">
+							<input type="radio"  name="rad" class="first recalculate Order-info" value="Размеры:А6 10x15"/>
+						</div>
+					</th>
+					<th>
+						<p><strong class="color_violet">А5</strong></p>
+						<p><strong>21x9,8</strong></p>
+						<div class="radiobutton">
+							<input type="radio"  name="rad" class="recalculate Order-info" value="Размеры:А5 21x9,8"/>
+						</div>
+					</th>
+					<th>
+						<p><strong class="color_violet">А4</strong></p>
+						<p><strong>14,8x21</strong></p>
+						<div class="radiobutton">
+							<input type="radio"  name="rad" class="recalculate Order-info" value="Размеры:А4 14,8x21"/>
+						</div>							
+					</th>
+					<th>				
+						<p><strong class="color_violet">А3</strong></p>
+						<p><strong>21x29,7</strong></p>
+						<div class="radiobutton">
+							<input type="radio"  name="rad" class="recalculate Order-info" value="Размеры:А3 21x29,7"/>
+						</div>
+					</th>
+					<th style="margin-left: 120px;">
+						<p><strong class="color_violet">другой формат</strong></p>
+						<p><strong>указать (см)</strong></p>
+						<input type="number"  name="rad" style="width: 60px;height: 20px;" class="recalculate Order-info-num-custom" custom="Паремтр №1: " value=""/>
+						x 
+						<input type="number" style="width: 60px;height: 20px;"  name="rad" class="recalculate Order-info-num-custom" custom="Паремтр №2: " value=""/>
+					</th>
+				</tr>
+			</table>
+		</form>
+	</section>
+	<section class="front1" id="otkritki2">
+		<div class="number2"><strong style="display: block;
+			margin-left: 93px;
+			margin-top: 12px;">БУМАГА</strong></div>
+			<table class="t_otkritki t2">
+				<tr>
+					<td>
+						<p><strong>300 г/м<sup>2</sup></strong></p>
+					</td>
+					<td>
+						<div class="radiobutton">
+							<input type="radio"  name="rad" class="first recalculate Order-info" value="Бумага: 300 г/м2"/>
+						</div>
+					</td>
+					<td>
+						<p><strong>200 г/м<sup>2</sup></strong></p>
+					</td>
+					<td>
+						<div class="radiobutton">
+							<input type="radio"  name="rad" class="recalculate Order-info" value="Бумага: 200 г/м2"/>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</section>
+		<section class="front1" id="otkritki3">
+			<table class="t_otkritki t3">
+				<tr>
+					<td><div class="number3"></div></td>
+					<td>
+						<p><strong>односторонняя<br>печать</strong></p>
+					</td>
+					<td>
+						<div class="radiobutton">
+							<input type="radio"  name="rad1" class="first recalculate Order-info" value="Печать: односторонняя"/>
+						</div>
+					</td>
+					<td style="display: block;
+    margin-left: 35px;">
+						<p><strong>двусторонняя<br>печать</strong></p>
+					</td>
+					<td>
+						<div class="radiobutton">
+							<input type="radio"  name="rad1" class="recalculate Order-info" value="Печать: двусторонняя"/>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</section>
+		<section class="front1" id="otkritki4">
+			<table class="t_otkritki t3 t4">
+				<tr>
+					<td><div class="number4"></div></td>
+					<td style="display: block;margin-left: 6px;margin-top: 7px;">
+						<p><strong>готовый макет</strong></p>
+					</td>
+					<td>
+						<div class="radiobutton">
+							<input type="radio"  name="rad2" class="first recalculate Order-info" value="Готовый макет"/>
+						</div>
+					</td>
+					<td style=" display: block;margin-left: 19px;">
+						<p><strong>изготовить макет</strong></p>
+					</td>
+					<td>
+						<div class="radiobutton">
+							<input type="radio"  name="rad2" class="recalculate Order-info" value="Изготовить макет"/>
+						</div>
+					</td>
+				</tr>
+			</table>
+	</section>
+	<section class="front1" id="otkritki5">
+			<div class="number5"></div>
+			<table class="t_otkritki t3 t5">
+				<tr>
+					<td>
+						<p><strong>не срочно (сутки)</strong></p>
+					</td>
+					<td >
+						<div class="radiobutton">
+							<input type="radio"  name="rad3" class="first recalculate Order-info" value="Не срочно(сутки)"/>
+						</div>
+					</td>
+					<tr>
+						<td>
+							<p><strong>срочно</strong></p>
+						</td>
+						<td>
+							<div class="radiobutton">
+								<input type="radio"  name="rad3" class="recalculate Order-info" value="Срочно"/>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</section>
+			<section class="front1" id="otkritki6">
+				<div class="number6"><strong style=" display: block;width: 231px;margin-left: 85px;">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</strong></div>
+				<table class="t_otkritki t3 t6">
+					<tr>
+						<td>
+						<p><strong>ламинирование</strong></p>
+					</td>
+					<td style="margin-left: 16px;">
+						<div class="radiobutton">
+							<input type="checkbox"  name="rad4" class="recalculate Order-info" value="Дополнительно: Лиминирование"/>
+						</div>
+					</td>
+					<td style="    margin-left: 60px;
+					display: block;">
+					<p><strong>бигование</strong></p>
+				</td>
+				<td>
+					<div class="radiobutton">
+						<input type="checkbox"  name="rad4" class="recalculate Order-info" value="Дополнительно: Бигование"/>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section class="front1" id="otkritki7">
+				<div class="number7"></div>
+				<p style="display: block;
+				margin-top: -39px;
+				margin-left: 64px;
+				">количество</p>
+				<input type="number" name="#" style="margin-top: -39px;
+				display: block;
+				margin-left: 174px;
+				width: 60px;height: 27px;"  class="recalculate Order-info-num" value="1">
+			</section>
+			<section class="front1" id="price1" style="margin-top: 303px;">
+				<div class="numbername" id="coloring">
+				</div>	
+				<p><strong>рублей</strong></p>
+			</section>
+			<section class="front1" id="pricewin1" style="margin-top: 315px;">
+				<span id="pw1"></span>
+			</section>
+			<p id="total" style="margin-top: 320px;
+			margin-left: 358px;"><strong>итог</strong></p>
+		</section>

@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input.first2').trigger('click');
+        $('input.first3').trigger('click');
+        $('input.first3').trigger('click');
+    });
+</script>
+<div class="relative">
+    <form action="1" method="POST" name="stamps" id="colorus">
+        <div class="absolute">
+            <fieldset><img class="stamp" src="img/pechat_vracha.gif"></fieldset>
+            <div class="radiobutton">
+                <input type="radio" name="rad" class="recalculate first2 radio1 r_flash Order-info" value="Стиль печати: №1"
+                       stamp-cost="500"
+                       stamp-cost-fast="700" colors="1"/>
+            </div>
+            <span>d 38 мм</span>
+            <strong>500 р.</strong>
+        </div>
+        <div class="absolute">
+            <fieldset><img class="stamp" src="img/drugaya_pechat.gif"></fieldset>
+            <div class="radiobutton">
+                <input type="radio" name="rad" class="recalculate radio1 r_flash Order-info" value="Стиль печати: Другая печать"
+                       stamp-cost="0"
+                       stamp-cost-fast="0" colors="1"/>
+            </div>
+        </div>
+    </form>
+</div>
+

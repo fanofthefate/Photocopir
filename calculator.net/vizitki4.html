@@ -1,0 +1,226 @@
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        function calculate8() {
+            //   $(document).on('change', '.Order-info-num',function(){
+
+            //       var selected = $('.Order-info-num').val();
+            //      switch (selected) {
+            //           case 1:
+            //              $('#soletrader').show();
+            //             break;
+            //        case 2:
+            //          $('#publicsector').show();
+            //        break;
+            //  case 5:
+            //    $('#charity').show();
+            //    break;
+            //case 10:
+            //$('#charity').show();
+            //  break;
+            //     case 20:
+            //           $('#charity').show();
+            //       break;
+            // }
+            //});
+            var q = parseFloat($('input.radio_des:checked').attr('design'));
+            if ($('input.radio').is(':checked')) {
+                if ($('#sel').hasClass('sel2')){
+                $('.quantity').html();
+                $('.quantity').html(
+                        '<select id="sel" class="recalculate Order-info-num sel1">' +
+                        '<option value="1">1</option>' +
+                        '<option value="2">2</option>' +
+                        '<option value="5">5</option>' +
+                        '<option value="10">10</option>' +
+                        '<option value="20">20</option>' +
+                        '</select>'
+                );} else {}
+                if ($('input.lakirovanie').is(':checked')) {
+                    if ($('.Order-info-num').val() == 20) {
+                        var total = parseFloat($('input.radio').attr('stock-twentysett-lam'));
+                    } else {
+                        if ($('.Order-info-num').val() == 10) {
+                            var total = parseFloat($('input.radio').attr('stock-tensett-lam'));
+                        } else {
+                            if ($('.Order-info-num').val() == 5) {
+                                var total = parseFloat($('input.radio').attr('stock-fivesett-lam'));
+                            } else {
+                                if ($('.Order-info-num').val() == 2) {
+                                    var total = parseFloat($('input.radio').attr('stock-twoset-lam'));
+                                } else {
+                                    var total = parseFloat($('input.radio').attr('stock-oneset-lam'));
+                                }
+                                ;
+                            }
+                            ;
+                        }
+                        ;
+                    }
+                } else {
+
+                    if ($('.Order-info-num').val() == 20) {
+                        var total = parseFloat($('input.radio').attr('stock-twentyset'));
+                    } else {
+                        if ($('.Order-info-num').val() == 10) {
+                            var total = parseFloat($('input.radio').attr('stock-tenset'));
+                        } else {
+                            if ($('.Order-info-num').val() == 5) {
+                                var total = parseFloat($('input.radio').attr('stock-fiveset'));
+                            } else {
+                                if ($('.Order-info-num').val() == 2) {
+                                    var total = parseFloat($('input.radio').attr('stock-twoset'));
+                                } else {
+                                    var total = parseFloat($('input.radio').attr('stock-oneset'));
+                                }
+                                ;
+                            }
+                            ;
+                        }
+                        ;
+                    }
+                    ;
+                }
+            } else {
+                if ($('#sel').hasClass('sel1')){
+                $('.quantity').html();
+                $('.quantity').html(
+                        '<select id="sel" class="recalculate Order-info-num sel2">' +
+                        '<option value="1">1</option>' +
+                        '<option value="5">5</option>' +
+                        '<option value="10">10</option>' +
+                        '</select>'
+                );} else {}
+                if ($('.Order-info-num').val() == 10) {
+                    var total = parseFloat($('input.radio1').attr('stock-tenset'));
+                } else {
+                    if ($('.Order-info-num').val() == 5) {
+                        var total = parseFloat($('input.radio1').attr('stock-fiveset'));
+                    } else {
+                        var total = parseFloat($('input.radio1').attr('stock-oneset'));
+                    }
+                    ;
+                }
+                ;
+            }
+            ;
+            var srochno = total * 0.25;
+            if ($('input.angles').is(':checked')) {
+                var angles = parseFloat($('input.angles').attr('angles')) * $('select.Order-info-num').val();
+            }
+            else {
+                var angles = 0;
+            }
+            ;
+            if ($('input.srochno').is(':checked')) {
+                var Order_total = total + srochno + angles + q;
+            } else {
+                var Order_total = total + angles + q;
+            }
+            $('#pw1').html(Order_total);
+            $('.order_cost').html(Order_total);
+        }
+
+        $('input.first').trigger('click');
+        calculate8();
+        $(document).on('change', '.recalculate', function () {
+            calculate8();
+        });
+        $('input.radio').trigger('click');
+    });
+
+</script>
+<section class="back" id="con5">
+    <section class="front1" id="paperoption1">
+        <div class="number3"></div>
+        <div class="numbername" id="coloring">БУМАГА</div>
+        <div class="sidesquantity">
+            <strong>300 г/м&sup2</strong>
+            <strong>270 г/м&sup2</strong>
+        </div>
+        <form action="#" method="POST" name="color" id="colorus">
+            <div class="leftcol5">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate first radio Order-info"
+                           value="Бумага: 300 г/м&sup2" stock-oneset="1700" stock-twoset="2600" stock-fiveset="5600"
+                           stock-tenset="9600" stock-twentyset="17400" stock-oneset-lam="2000" stock-twoset-lam="3200"
+                           stock-fivesett-lam="7000" stock-tensett-lam="13000" stock-twentysett-lam="23000"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate  radio1 Order-info"
+                           value="Бумага: 270 г/м&sup2" stock-oneset="1400"
+                           stock-fiveset="4700"
+                           stock-tenset="8100"/>
+                </div>
+            </div>
+        </form>
+    </section>
+    <section class="front1" id="paperoption2">
+        <div class="number4"></div>
+        <div class="numbername" id="coloring">ДОПОЛНИТЕЛЬНО</div>
+        <form action="#" method="POST" name="color" id="colorus">
+            <div class="leftcol5">
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate Order-info angles"
+                           value="Дополнительно: скругление углов" angles="200"/>
+                </div>
+            </div>
+            <div class="textrightcol">
+                <p id="p3"><strong>скругление углов</strong></p>
+            </div>
+            <div class="rightcol5">
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate Order-info lakirovanie"
+                           value="Дополнительно: лакирование"/>
+                </div>
+            </div>
+            <div class="textleftcol">
+                <p id="p3"><strong>лакирование</strong></p>
+            </div>
+        </form>
+    </section>
+    <section class="front1" id="paperoption3">
+        <div class="number5"></div>
+        <div class="numbername" id="coloring"></div>
+        <form action="#" method="POST" name="color" id="colorus">
+            <div class="rightcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate first Order-info"
+                           value="Не срочно"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info srochno"
+                           value="Срочно"/>
+                </div>
+            </div>
+        </form>
+        <div class="textrightcol1">
+            <p id="p1"><strong>не срочно (8 рабочих дней)</strong></p>
+
+            <p id="p2"><strong>срочно (3 рабочих дня)</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="paperoption4">
+        <div class="number6"></div>
+        <div class="total"><strong>Количество</strong></br></br>
+            </div>
+        <div class="quantity">
+            <select id="sel" class="recalculate Order-info-num sel1">
+            <option value="1">1000 шт</option>
+            <option value="2">2000 шт</option>
+            <option value="5">5000 шт</option>
+            <option value="10">1000 шт</option>
+            <option value="20">2000 шт</option>
+            </select>
+        </div>
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1">
+        <span id="pw1"></span>
+    </section>
+    <div class="cost1"><strong>итог</strong></div>
+</section>

@@ -1,0 +1,540 @@
+<script type="text/javascript">
+
+  $(document).ready(function () {
+    $(document).on('click', '.client-prop', function () {
+      $('.radio').removeAttr('checked');
+      calculate11();
+    });
+    $(document).on('click', '.radio', function () {
+      $('.client-prop').val('');
+    });
+    function calculate11() {
+      var paper_quantity;
+      var laminirovanie;
+      var luvers;
+      var height =10 * $('.client-height').val();
+      var width =10 * $('.client-width').val();
+      console.log(height);
+      console.log(width);
+
+      if($('.laminirovanie').is(':checked')){
+        if($('.radio').is(':checked')) {
+          laminirovanie = Math.ceil(100 / parseFloat($('.radio:checked').attr('data-a3-col')));
+        } else {
+          laminirovanie =Math.ceil((height * width )/(30.5 * 43.5));
+          console.log('laminirovanie', laminirovanie);
+        }
+      } else {
+        laminirovanie = 0;
+      }
+      if($('.luvers').is(':checked')){
+        luvers = 5;
+      } else {
+        luvers = 0;
+      }
+      if ($('input.Order-info-num-tirazh').val() > 99) {
+        if ($('input.Order-info-num-tirazh').val() > 499) {
+          var quan = 'fivehundred'
+        } else {
+          var quan = 'hundred'
+        }
+        ;
+      } else {
+        var quan = 'ten'
+      }
+      if ($('.radio').is(':checked')) {
+        var total = parseFloat($('input.radio:checked').attr($('input.radio2:checked').attr('plotn') + $('input.radio:checked').attr('format') + $('.radio3:checked').attr('sides') + $('.radio3:checked').attr('colorous') + quan))+laminirovanie+luvers;
+
+        if ($('input.srochno').is(':checked')) {
+          var srochno = total * $('input.Order-info-num-tirazh').val() * 0.5;
+        } else {
+          var srochno = 0;
+        }
+        var order_total = Math.ceil(total * $('input.Order-info-num-tirazh').val() + srochno);
+      } else {
+        var total =1+parseFloat($('input.client').attr($('input.radio2:checked').attr('plotn') + 'athree-' + $('.radio3:checked').attr('sides') + $('.radio3:checked').attr('colorous') + quan))+laminirovanie+luvers;
+        console.log('total',total);
+        if (parseInt(305 / (parseFloat(width) + 4)) * parseInt(435 / (parseFloat(height) + 4)) > parseInt(305 / (parseFloat(height) + 4)) * parseInt(435 / (parseFloat(width) + 4))) {
+          paper_quantity = parseInt(305 / (parseFloat(width) + 4)) * parseInt(435 / (parseFloat(height) + 4));
+        } else {
+          paper_quantity = parseInt(305 / (parseFloat(height) + 4)) * parseInt(435 / (parseFloat(width) + 4));
+        }
+        console.log('paper_quantity', paper_quantity);
+        console.log(parseInt($('input.Order-info-num-tirazh').val() / paper_quantity));
+        if ($('input.srochno').is(':checked')) {
+          var srochno = total * $('input.Order-info-num-tirazh').val() * 0.5;
+        } else {
+          var srochno = 0;
+        }
+
+        var order_total = 100 + Math.ceil(total * ($('input.Order-info-num-tirazh').val() / paper_quantity) + srochno);
+      }    
+      $('#pw1').html(order_total);
+      $('.order_cost').html(order_total);
+
+    }
+
+    $('input.first').trigger('click');
+    calculate11();
+    $(document).on('change', '.recalculate', function () {
+      calculate11();
+    });
+  });
+
+</script>
+<section class="back" id="con17">
+  <section class="front1" id="spt2">
+    <div class="number2"></div>
+    <form action="#" name="#" method="POST">
+      <div class="bottcol1">
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate first  radio Order-info" value="Формат:А6 10x15"
+          data-a3-col="8"
+          format="asix-"
+          min-asix-oneside-bw-ten="3"
+          min-asix-oneside-bw-hundred="2"
+          min-asix-oneside-bw-fivehundred="1.5"
+          min-asix-oneside-color-ten="6"
+          min-asix-oneside-color-hundred="5"
+          min-asix-oneside-color-fivehundred="3.5"
+          min-asix-twoside-bw-ten="5"
+          min-asix-twoside-bw-hundred="3"
+          min-asix-twoside-bw-fivehundred="2"
+          min-asix-twoside-color-ten="8"
+          min-asix-twoside-color-hundred="6.5"
+          min-asix-twoside-color-fivehundred="5"
+
+          mid-asix-oneside-bw-ten="5"
+          mid-asix-oneside-bw-hundred="4"
+          mid-asix-oneside-bw-fivehundred="3"
+          mid-asix-oneside-color-ten="7"
+          mid-asix-oneside-color-hundred="6"
+          mid-asix-oneside-color-fivehundred="4.5"
+          mid-asix-twoside-bw-ten="7"
+          mid-asix-twoside-bw-hundred="5"
+          mid-asix-twoside-bw-fivehundred="4"
+          mid-asix-twoside-color-ten="9"
+          mid-asix-twoside-color-hundred="7.5"
+          mid-asix-twoside-color-fivehundred="6"
+
+          max-asix-oneside-bw-ten="5"
+          max-asix-oneside-bw-hundred="4"
+          max-asix-oneside-bw-fivehundred="3.5"
+          max-asix-oneside-color-ten="8"
+          max-asix-oneside-color-hundred="7"
+          max-asix-oneside-color-fivehundred="5.5"
+          max-asix-twoside-bw-ten="7"
+          max-asix-twoside-bw-hundred="5"
+          max-asix-twoside-bw-fivehundred="4"
+          max-asix-twoside-color-ten="10"
+          max-asix-twoside-color-hundred="8.5"
+          max-asix-twoside-color-fivehundred="7"
+
+          glue-asix-oneside-bw-ten="5"
+          glue-asix-oneside-bw-hundred="4"
+          glue-asix-oneside-bw-fivehundred="3.5"
+          glue-asix-oneside-color-ten="8"
+          glue-asix-oneside-color-hundred="7"
+          glue-asix-oneside-color-fivehundred="5.5"
+          glue-asix-twoside-bw-ten="7"
+          glue-asix-twoside-bw-hundred="5"
+          glue-asix-twoside-bw-fivehundred="4"
+          glue-asix-twoside-color-ten="10"
+          glue-asix-twoside-color-hundred="8.5"
+          glue-asix-twoside-color-fivehundred="7"/>
+        </div>
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate radio Order-info" value="Формат:флаер 21x9,8"
+          data-a3-col="6"
+          format="flaer-"
+          min-flaer-oneside-bw-ten="3"
+          min-flaer-oneside-bw-hundred="2"
+          min-flaer-oneside-bw-fivehundred="1.5"
+          min-flaer-oneside-color-ten="8"
+          min-flaer-oneside-color-hundred="7"
+          min-flaer-oneside-color-fivehundred="4.5"
+          min-flaer-twoside-bw-ten="5"
+          min-flaer-twoside-bw-hundred="3"
+          min-flaer-twoside-bw-fivehundred="2"
+          min-flaer-twoside-color-ten="10"
+          min-flaer-twoside-color-hundred="8"
+          min-flaer-twoside-color-fivehundred="6.5"
+
+          mid-flaer-oneside-bw-ten="5"
+          mid-flaer-oneside-bw-hundred="4"
+          mid-flaer-oneside-bw-fivehundred="3"
+          mid-flaer-oneside-color-ten="12"
+          mid-flaer-oneside-color-hundred="10"
+          mid-flaer-oneside-color-fivehundred="6"
+          mid-flaer-twoside-bw-ten="7"
+          mid-flaer-twoside-bw-hundred="5"
+          mid-flaer-twoside-bw-fivehundred="3.5"
+          mid-flaer-twoside-color-ten="12"
+          mid-flaer-twoside-color-hundred="10"
+          mid-flaer-twoside-color-fivehundred="8"
+
+          max-flaer-oneside-bw-ten="5"
+          max-flaer-oneside-bw-hundred="4"
+          max-flaer-oneside-bw-fivehundred="3.5"
+          max-flaer-oneside-color-ten="10"
+          max-flaer-oneside-color-hundred="9"
+          max-flaer-oneside-color-fivehundred="6.5"
+          max-flaer-twoside-bw-ten="7"
+          max-flaer-twoside-bw-hundred="5"
+          max-flaer-twoside-bw-fivehundred="4"
+          max-flaer-twoside-color-ten="12"
+          max-flaer-twoside-color-hundred="10"
+          max-flaer-twoside-color-fivehundred="8.5"
+
+          glue-flaer-oneside-bw-ten="5"
+          glue-flaer-oneside-bw-hundred="4"
+          glue-flaer-oneside-bw-fivehundred="3.5"
+          glue-flaer-oneside-color-ten="10"
+          glue-flaer-oneside-color-hundred="9"
+          glue-flaer-oneside-color-fivehundred="6.5"
+          glue-flaer-twoside-bw-ten="7"
+          glue-flaer-twoside-bw-hundred="5"
+          glue-flaer-twoside-bw-fivehundred="4"
+          glue-flaer-twoside-color-ten="12"
+          glue-flaer-twoside-color-hundred="10"
+          glue-flaer-twoside-color-fivehundred="8.5"/>
+
+        </div>
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate radio Order-info" value="Формат:А5 14,8x21"
+          data-a3-col="4"
+          format="afive-"
+          min-afive-oneside-bw-ten="4"
+          min-afive-oneside-bw-hundred="3"
+          min-afive-oneside-bw-fivehundred="2"
+          min-afive-oneside-color-ten="9"
+          min-afive-oneside-color-hundred="7.5"
+          min-afive-oneside-color-fivehundred="5"
+          min-afive-twoside-bw-ten="7"
+          min-afive-twoside-bw-hundred="5"
+          min-afive-twoside-bw-fivehundred="3"
+          min-afive-twoside-color-ten="14"
+          min-afive-twoside-color-hundred="12"
+          min-afive-twoside-color-fivehundred="9"
+
+          mid-afive-oneside-bw-ten="6"
+          mid-afive-oneside-bw-hundred="5"
+          mid-afive-oneside-bw-fivehundred="3.5"
+          mid-afive-oneside-color-ten="11"
+          mid-afive-oneside-color-hundred="9.5"
+          mid-afive-oneside-color-fivehundred="7"
+          mid-afive-twoside-bw-ten="9"
+          mid-afive-twoside-bw-hundred="7"
+          mid-afive-twoside-bw-fivehundred="5"
+          mid-afive-twoside-color-ten="16"
+          mid-afive-twoside-color-hundred="14"
+          mid-afive-twoside-color-fivehundred="11"
+
+          max-afive-oneside-bw-ten="7"
+          max-afive-oneside-bw-hundred="6"
+          max-afive-oneside-bw-fivehundred="5"
+          max-afive-oneside-color-ten="12"
+          max-afive-oneside-color-hundred="10.5"
+          max-afive-oneside-color-fivehundred="8"
+          max-afive-twoside-bw-ten="10"
+          max-afive-twoside-bw-hundred="8"
+          max-afive-twoside-bw-fivehundred="6"
+          max-afive-twoside-color-ten="17"
+          max-afive-twoside-color-hundred="15"
+          max-afive-twoside-color-fivehundred="12"
+
+          glue-afive-oneside-bw-ten="7"
+          glue-afive-oneside-bw-hundred="6"
+          glue-afive-oneside-bw-fivehundred="5"
+          glue-afive-oneside-color-ten="12"
+          glue-afive-oneside-color-hundred="10.5"
+          glue-afive-oneside-color-fivehundred="8"
+          glue-afive-twoside-bw-ten="10"
+          glue-afive-twoside-bw-hundred="8"
+          glue-afive-twoside-bw-fivehundred="6"
+          glue-afive-twoside-color-ten="17"
+          glue-afive-twoside-color-hundred="15"
+          glue-afive-twoside-color-fivehundred="12"/>
+        </div>
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate radio Order-info" value="Формат:А4 21x29,7"
+          data-a3-col="2"
+          format="afour-"
+          min-afour-oneside-bw-ten="6"
+          min-afour-oneside-bw-hundred="4"
+          min-afour-oneside-bw-fivehundred="3"
+          min-afour-oneside-color-ten="20"
+          min-afour-oneside-color-hundred="15"
+          min-afour-oneside-color-fivehundred="10"
+          min-afour-twoside-bw-ten="11"
+          min-afour-twoside-bw-hundred="7"
+          min-afour-twoside-bw-fivehundred="5"
+          min-afour-twoside-color-ten="30"
+          min-afour-twoside-color-hundred="26"
+          min-afour-twoside-color-fivehundred="18"
+
+          mid-afour-oneside-bw-ten="6"
+          mid-afour-oneside-bw-hundred="4"
+          mid-afour-oneside-bw-fivehundred="3"
+          mid-afour-oneside-color-ten="20"
+          mid-afour-oneside-color-hundred="15"
+          mid-afour-oneside-color-fivehundred="10"
+          mid-afour-twoside-bw-ten="11"
+          mid-afour-twoside-bw-hundred="7"
+          mid-afour-twoside-bw-fivehundred="5"
+          mid-afour-twoside-color-ten="30"
+          mid-afour-twoside-color-hundred="26"
+          mid-afour-twoside-color-fivehundred="18"
+
+          max-afour-oneside-bw-ten="12"
+          max-afour-oneside-bw-hundred="10"
+          max-afour-oneside-bw-fivehundred="8"
+          max-afour-oneside-color-ten="26"
+          max-afour-oneside-color-hundred="21"
+          max-afour-oneside-color-fivehundred="15"
+          max-afour-twoside-bw-ten="17"
+          max-afour-twoside-bw-hundred="13"
+          max-afour-twoside-bw-fivehundred="10"
+          max-afour-twoside-color-ten="36"
+          max-afour-twoside-color-hundred="32"
+          max-afour-twoside-color-fivehundred="23"
+
+          glue-afour-oneside-bw-ten="12"
+          glue-afour-oneside-bw-hundred="10"
+          glue-afour-oneside-bw-fivehundred="8"
+          glue-afour-oneside-color-ten="26"
+          glue-afour-oneside-color-hundred="21"
+          glue-afour-oneside-color-fivehundred="15"
+          glue-afour-twoside-bw-ten="17"
+          glue-afour-twoside-bw-hundred="13"
+          glue-afour-twoside-bw-fivehundred="10"
+          glue-afour-twoside-color-ten="36"
+          glue-afour-twoside-color-hundred="32"
+          glue-afour-twoside-color-fivehundred="23"/>
+        </div>
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate radio Order-info client" value="Формат:А3 29,7x42"
+          data-a3-col="1"
+          format="athree-"
+          min-athree-oneside-bw-ten="15"
+          min-athree-oneside-bw-hundred="8"
+          min-athree-oneside-bw-fivehundred="6"
+          min-athree-oneside-color-ten="40"
+          min-athree-oneside-color-hundred="30"
+          min-athree-oneside-color-fivehundred="20"
+          min-athree-twoside-bw-ten="25"
+          min-athree-twoside-bw-hundred="15"
+          min-athree-twoside-bw-fivehundred="11"
+          min-athree-twoside-color-ten="60"
+          min-athree-twoside-color-hundred="50"
+          min-athree-twoside-color-fivehundred="36"
+
+          mid-athree-oneside-bw-ten="23"
+          mid-athree-oneside-bw-hundred="16"
+          mid-athree-oneside-bw-fivehundred="12"
+          mid-athree-oneside-color-ten="48"
+          mid-athree-oneside-color-hundred="38"
+          mid-athree-oneside-color-fivehundred="26"
+          mid-athree-twoside-bw-ten="33"
+          mid-athree-twoside-bw-hundred="23"
+          mid-athree-twoside-bw-fivehundred="17"
+          mid-athree-twoside-color-ten="68"
+          mid-athree-twoside-color-hundred="58"
+          mid-athree-twoside-color-fivehundred="42"
+
+          max-athree-oneside-bw-ten="27"
+          max-athree-oneside-bw-hundred="20"
+          max-athree-oneside-bw-fivehundred="16"
+          max-athree-oneside-color-ten="52"
+          max-athree-oneside-color-hundred="42"
+          max-athree-oneside-color-fivehundred="30"
+          max-athree-twoside-bw-ten="37"
+          max-athree-twoside-bw-hundred="28"
+          max-athree-twoside-bw-fivehundred="22"
+          max-athree-twoside-color-ten="72"
+          max-athree-twoside-color-hundred="62"
+          max-athree-twoside-color-fivehundred="46"
+
+          glue-athree-oneside-bw-ten="27"
+          glue-athree-oneside-bw-hundred="20"
+          glue-athree-oneside-bw-fivehundred="16"
+          glue-athree-oneside-color-ten="52"
+          glue-athree-oneside-color-hundred="42"
+          glue-athree-oneside-color-fivehundred="30"
+          glue-athree-twoside-bw-ten="37"
+          glue-athree-twoside-bw-hundred="28"
+          glue-athree-twoside-bw-fivehundred="2"
+          glue-athree-twoside-color-ten="72"
+          glue-athree-twoside-color-hundred="62"
+          glue-athree-twoside-color-fivehundred="46"/>
+        </div>
+      </div>
+    </form>
+    <div class="bottrow1">
+      <p id="p1"><strong>А6</strong></p>
+
+      <p id="p2"><strong>флаер</strong></p>
+
+      <p id="p3"><strong>А5</strong></p>
+
+      <p id="p4"><strong>А4</strong></p>
+
+      <p id="p5"><strong>А3</strong></p>
+    </div>
+    <div class="bottrow2">
+      <p id="p1"><strong>10x15</strong></p>
+
+      <p id="p2"><strong>21x9,8</strong></p>
+
+      <p id="p3"><strong>14,8x21</strong></p>
+
+      <p id="p4"><strong>21x29,7</strong></p>
+
+      <p id="p5"><strong>29,7x42</strong></p>
+    </div>
+    <div class="drugoy"><strong>другой формат<br/>
+
+      <p style=" color: #000;
+      margin-top: 3px;
+      margin-left: 7px;">указать (см)</p></strong>
+    </div>
+    <form action="#" name="#" method="POST" id="form2">
+      <input type="number" name="#" class="recalculate client-prop client-width"/>
+      <input type="number" name="#" class="recalculate client-prop client-height"/>
+
+      <p>x</p>
+    </form>
+  </section>
+  <section class="front1" id="spt3">
+    <div class="number3"></div>
+    <p id="numbername">БУМАГА</p>
+
+    <form action="#" name="#" method="POST">
+      <div class="rightcol1">
+        <div class="radiobutton smal-margin-rb">
+          <input type="radio" name="rad" class="recalculate first radio2 Order-info"
+          value="Бумага: 120 г/м<sup>2</sup>"
+          plotn="min-"/>
+        </div>
+        <div class="radiobutton smal-margin-rb">
+          <input type="radio" name="rad" class="recalculate radio2 Order-info"
+          value="Бумага: 200 г/м<sup>2</sup>"
+          plotn="mid-"/>
+        </div>
+        <div class="radiobutton smal-margin-rb">
+          <input type="radio" name="rad" class="recalculate radio2 Order-info"
+          value="Бумага: 300 г/м<sup>2</sup>"
+          plotn="max-"/>
+        </div>
+        <div class="radiobutton smal-margin-rb">
+          <input type="radio" name="rad" class="recalculate radio2 Order-info" value="Бумага: самоклеющаяся"
+          plotn="glue-"/>
+        </div>
+      </div>
+    </form>
+    <div class="textrightcol1">
+      <p><strong>120 г/м<sup>2</sup></strong></p>
+
+      <p><strong>200 г/м<sup>2</sup></strong></p>
+
+      <p><strong>300 г/м<sup>2</sup></strong></p>
+
+      <p><strong>самоклеющаяся</strong></p>
+    </div>
+  </section>
+  <section class="front1" id="spt4">
+    <div class="number4"></div>
+    <form action="#" name="#" method="POST">
+      <div class="rightcol1">
+        <div class="radiobutton smal-margin-rb">
+          <input type="radio" name="rad" class="recalculate first Order-info"
+          value="Изгтовление: Не срочно (сутки)"/>
+        </div>
+        <div class="radiobutton smal-margin-rb">
+          <input type="radio" name="rad" class="recalculate Order-info srochno" value="Изгтовление: Срочно"/>
+        </div>
+      </div>
+    </form>
+    <div class="textrightcol1">
+      <p><strong>не срочно (сутки)</strong></p>
+
+      <p><strong>срочно</strong></p>
+    </div>
+  </section>
+  <section class="front1" id="spt5">
+    <div class="number5"></div>
+    <strong><p>тираж</p></strong>
+
+    <form action="#" method="POST" name="#">
+      <input type="number" min="10" name="#" class="recalculate Order-info-num-tirazh" value="10"/>
+    </form>
+  </section>
+  <section class="front1" id="spt6">
+    <div class="number6"></div>
+    <p id="numbername">ЦВЕТНОСТЬ</p>
+
+    <form action="#" name="#" method="POST">
+      <div class="rightcol1">
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate radio3 Order-info"
+          value="Цветность: двусторонние черно-белые" colorous="bw-" sides="twoside-"/>
+        </div>
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate radio3 Order-info"
+          value="Цветность: двусторонние цветные"
+          colorous="color-" sides="twoside-"/>
+        </div>
+      </div>
+      <div class="leftcol1">
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate radio3 Order-info"
+          value="Цветность: односторонние черно-белые" colorous="bw-" sides="oneside-"/>
+        </div>
+        <div class="radiobutton">
+          <input type="radio" name="rad" class="recalculate first radio3 dOrder-info"
+          value="Цветность: односторонние цветные"
+          colorous="color-" sides="oneside-"/>
+        </div>
+      </div>
+    </form>
+    <div class="textrightcol1">
+      <p><strong>двусторонние<br/>черно-белые</strong></p>
+
+      <p style="color:#419700;"><strong>двусторонние<br/><span style="color:#C4017B;">цветные</span></strong></p>
+    </div>
+    <div class="textleftcol1">
+      <p><strong>односторонние<br/>черно-белые</strong></p>
+
+      <p style="color:#C4017B;"><strong>односторонние<br/>цветные</strong></p>
+    </div>
+  </section>
+  <section class="front1" id="spt7">
+    <div class="number7"></div>
+    <p id="numbername">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</p>
+
+    <form action="#" name="#" method="POST">
+      <div class="bottcol1">
+        <div class="radiobutton">
+          <input type="checkbox" name="rad" class="recalculate Order-info laminirovanie"
+          value="Дополнительно: ламинирование"/>
+        </div>
+        <div class="radiobutton">
+          <input type="checkbox" name="rad" class="recalculate Order-info luvers"
+          value="Дополнительно: установка люверсов" />
+        </div>
+      </div>
+    </form>
+    <div class="bottrow1">
+      <strong><p>ламинирование</p></strong>
+      <strong><p>установка люверсов</p></strong>
+    </div>
+  </section>
+  <section class="front1" id="price1">
+    <div class="numbername" id="coloring">
+    </div>
+    <p><strong>рублей</strong></p>
+  </section>
+  <section class="front1" id="pricewin1"><span id="pw1"></span>
+  </section>
+  <p id="total"><strong>итог</strong></p>
+</section>

@@ -1,0 +1,103 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '[wrap-form-path]', function () {
+            $('.to_reset').remove();
+            $('#stamptype').after($("<div></div>").attr({class: 'wrapper to_reset'}));
+            $(".to_reset").load($(this).attr('wrap-form-path'));
+        });
+        function calculate5() {
+            var zapravka;
+            if ($('.zapravka').is(':checked')) {
+                zapravka = 200 * $('.color_quan').val();
+            } else {
+                zapravka = 0;
+            }
+            var color_quan = ($('.color_quan').val() - 1) * 500;
+            var service_cost = 900;
+            var order_total = 0;
+            $.each($('.r_flash'), function () {
+                if (parseInt($(this).attr('colors')) == $('.color_quan').val()) {
+                    $(this).closest('.absolute').show();
+                } else {
+                    $(this).closest('.absolute').hide();
+                }
+
+            });
+            $.each($('.radio2:checked'), function () {
+
+                order_total += (parseFloat($(this).attr('osnastca-price')) + parseFloat($('.radio1:checked').attr('stamp-cost')) + zapravka + color_quan) * $(this).closest('.absolute').find('.added_num').val();
+
+            });
+            $('#pw1').html(service_cost + order_total);
+            $('.order_cost').html(service_cost + order_total);
+        };
+        $('input.first').trigger('click');
+        calculate5();
+        $(document).on('change', '.recalculate', function () {
+            calculate5();
+        });
+    });
+</script>
+<section class="back flashp" id="con7">
+    <section class="front1" id="stampstyleback" style="margin-top: 66px;">
+        <div class="number3" style="position: absolute;"></div>
+        <strong id="ssb_strong">выберете тип печати</strong>
+
+        <form action="#" method="POST" name="stamps" id="stamptype">
+            <div class="radiobutton" id="radiotext">
+                <input id="type1" type="radio" name="rad" class="first recalculate Order-info"
+                       value="Тип печати: ООО, ОАО, ЗАО"
+                       wrap-form-path="pechaty_obshestvo_flash.html">
+                <label for="type1">ООО, ОАО, ЗАО</label>
+            </div>
+            <div class="radiobutton" id="radiotext">
+                <input id="type2" type="radio" name="rad" class="recalculate Order-info" value="Тип печати: ИП"
+                       wrap-form-path="pechaty_ip_flash.html"/>
+                <label for="type2">ИП</label>
+            </div>
+            <div class="radiobutton" id="radiotext">
+                <input id="type3" type="radio" name="rad" class="recalculate Order-info"
+                       value="Тип печати: ПЕЧАТЬ ВРАЧА"
+                       wrap-form-path="pechaty_vrach_flash.html"/>
+                <label for="type3">ПЕЧАТЬ ВРАЧА</label>
+            </div>
+        </form>
+    </section>
+    <section class="front1 " id="stampstyle3">
+        <div class="number2"></div>
+        <input type="number" class="recalculate color_quan" style="width: 33px;
+    margin-left: 225px;
+    height: 25px;
+      margin-top: 10px;
+    position: absolute;" value="2">
+
+        <div class="textrightcol1" style="width: 145px;
+       margin-top: 12px;
+    margin-left: 55px;">
+            <p id="p1"><strong>количество цветов</strong></p>
+        </div>
+    </section>
+    <section class="front1 " id="stampstyle4">
+        <div class="number4"></div>
+        <input type="checkbox" name="rad" class="first recalculate Order-info zapravka"
+               value="С заправкой" style="position: absolute;
+    margin-top: -38px;
+    margin-left: 228px;"/>
+
+        <div class="textrightcol1" style="    margin-top: -48px;
+    margin-left: 45px;">
+            <p id="p1"><strong>заправка</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="price1" style="margin-top: 783px;
+    margin-left: 302px;
+    height: 49px;
+    width: 337px;">
+        <div class="numbername" id="coloring">
+        </div>
+        <p style="    margin-left: 267px;"><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1">
+        <span id="pw1"></span>
+    </section>
+</section>

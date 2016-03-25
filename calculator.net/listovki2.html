@@ -1,0 +1,405 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '.shower', function () {
+            $('.hidbutt').prop("disabled", false);
+            $('.hidbutt').css('opacity', '1.0');
+            $('.hidtext').css('opacity', '1.0');
+        });
+        $(document).on('click', '.hider', function () {
+          if($('.showertwo:checked').val()  == undefined){
+            $('.hidbutt').prop("disabled", true);
+            $('.hidbutt').css('opacity', '0.3');
+            $('.hidtext').css('opacity', '0.1');
+            }
+            else{
+            $('#plotnost').trigger('reset');
+            $('.hidbutt').prop("disabled", true);
+            $('.hidbutt').css('opacity', '0.3');
+            $('.hidtext').css('opacity', '0.1');
+                }
+
+                     
+        });
+        $(document).on('click', '.showertwo', function () {
+            $('.hidbutt-two').prop("disabled", false);
+            $('.hidbutt-two').css('opacity', '1.0');
+            $('.hidtext-two').css('opacity', '1.0');
+        });
+        $(document).on('click', '.hidertwo', function () {
+          if($('.hidbutt-two:checked').val()  == undefined){
+            $('.hidbutt-two').prop("disabled", true);
+            $('.hidbutt-two').css('opacity', '0.3');
+            $('.hidtext-two').css('opacity', '0.1');
+            }
+            else{
+            $('#format_form input.first').trigger('click').attr('checked');;
+            $('.hidbutt-two').prop("disabled", true);
+            $('.hidbutt-two').css('opacity', '0.3');
+            $('.hidtext-two').css('opacity', '0.1');
+                }
+
+            
+
+          ;
+        });
+        function calculate10() {
+            if ($('select.Order-info-num-tirazh').val() > 999) {
+                if ($('select.Order-info-num-tirazh').val() > 1999) {
+                    if ($('select.Order-info-num-tirazh').val() > 2999) {
+                        if ($('select.Order-info-num-tirazh').val() > 4999) {
+                            if ($('select.Order-info-num-tirazh').val() > 9999) {
+                                var quan = 'tenthousand';
+                            } else {
+                                var quan = 'fivethousand';
+                            }
+                            ;
+                        } else {
+                            var quan = 'threethousand';
+                        }
+                        ;
+                    } else {
+                        var quan = 'twothousand';
+                    }
+                    ;
+                } else {
+                    var quan = 'thousand';
+                }
+                ;
+            } else {
+                var quan = 'fivehundred';
+            }
+            var total = parseFloat($('input.radio:checked').attr($('input.radio2:checked').attr('srok') + $('input.radio3:checked').attr('plotn') + $('.radio:checked').attr('format') + quan));
+            var order_total = Math.ceil(total);
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+
+        }
+        $('.hider').trigger('click');
+        $('input.first').trigger('click').attr('checked');
+
+        $(document).on('change', '.recalculate', function () {
+            calculate10();
+        });
+
+        $('input.first').trigger('click');
+        calculate10();
+    });
+
+</script>
+<section class="back" id="con16">
+    <section class="front1" id="spt2">
+        <div class="number2"></div>
+        <form action="#" name="#" method="POST" id="format_form">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="first recalculate radio Order-info" value="Формат:А6 10x15"
+                           format="asix-"
+                           normal-min-asix-thousand="2100"
+                           normal-min-asix-twothousand="3380"
+                           normal-min-asix-threethousand="4330"
+                           normal-min-asix-fivethousand="4500"
+                           normal-min-asix-tenthousand="7548"
+
+                           normal-max-asix-thousand="2839"
+                           normal-max-asix-twothousand="5049"
+                           normal-max-asix-threethousand="7191"
+                           normal-max-asix-fivethousand="10948"
+                           normal-max-asix-tenthousand="20383"
+
+                           fast-min-asix-fivehundred="2700"
+                           fast-min-asix-thousand="2700"
+                           fast-min-asix-twothousand="3550"
+                           fast-min-asix-threethousand="4440"
+                           fast-min-asix-fivethousand="5256"
+                           fast-min-asix-tenthousand="9198"
+
+                           fast-mid-asix-fivehundred="2200"
+                           fast-mid-asix-thousand="3100"
+                           fast-mid-asix-twothousand="4200"
+                           fast-mid-asix-threethousand="5100"
+                           fast-mid-asix-fivethousand="6162"
+                           fast-mid-asix-tenthousand="10878"
+
+                           fast-max-asix-fivehundred="4250"
+                           fast-max-asix-thousand="4650"
+                           fast-max-asix-twothousand="5600"
+                           fast-max-asix-threethousand="7400"
+                           fast-max-asix-fivethousand="10362"
+                           fast-max-asix-tenthousand="18608"
+
+                    />
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio Order-info" value="Формат:флаер 21x9,8"
+                           format="flaer-"
+                           normal-min-flaer-thousand="3290"
+                           normal-min-flaer-twothousand="5015"
+                           normal-min-flaer-threethousand="5440"
+                           normal-min-flaer-fivethousand="7140"
+                           normal-min-flaer-tenthousand="11883"
+
+                           normal-max-flaer-thousand="3893"
+                           normal-max-flaer-twothousand="6477"
+                           normal-max-flaer-threethousand="9163"
+                           normal-max-flaer-fivethousand=""
+                           normal-max-flaer-tenthousand=""
+
+                           fast-min-flaer-fivehundred="2800"
+                           fast-min-flaer-thousand="3300"
+                           fast-min-flaer-twothousand="3740"
+                           fast-min-flaer-threethousand="4580"
+                           fast-min-flaer-fivethousand="5878"
+                           fast-min-flaer-tenthousand="10790"
+
+                           fast-mid-flaer-fivehundred="2700"
+                           fast-mid-flaer-thousand="3400"
+                           fast-mid-flaer-twothousand="4550"
+                           fast-mid-flaer-threethousand="5500"
+                           fast-mid-flaer-fivethousand="6900"
+                           fast-mid-flaer-tenthousand="12568"
+
+                           fast-max-flaer-fivehundred="5100"
+                           fast-max-flaer-thousand="6600"
+                           fast-max-flaer-twothousand="9300"
+                           fast-max-flaer-threethousand="12800"
+                           fast-max-flaer-fivethousand="17462"
+                           fast-max-flaer-tenthousand="27248"
+                    />
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio Order-info" value="Формат:А5 14,8x21"
+                           format="afive-"
+                           normal-min-afive-thousand="3655"
+                           normal-min-afive-twothousand="5100"
+                           normal-min-afive-threethousand="7290"
+                           normal-min-afive-fivethousand="7460"
+                           normal-min-afive-tenthousand="11968"
+
+                           normal-max-afive-thousand="5049"
+                           normal-max-afive-twothousand="9163"
+                           normal-max-afive-threethousand="12937"
+                           normal-max-afive-fivethousand="20383"
+                           normal-max-afive-tenthousand="34663"
+
+                           fast-min-afive-fivehundred="3600"
+                           fast-min-afive-thousand="4510"
+                           fast-min-afive-twothousand="5880"
+                           fast-min-afive-threethousand="7200"
+                           fast-min-afive-fivethousand="9544"
+                           fast-min-afive-tenthousand="16234"
+
+                           fast-mid-afive-fivehundred="4200"
+                           fast-mid-afive-thousand="5100"
+                           fast-mid-afive-twothousand="6888"
+                           fast-mid-afive-threethousand="8340"
+                           fast-mid-afive-fivethousand="11238"
+                           fast-mid-afive-tenthousand="18852"
+
+                           fast-max-afive-fivehundred="7200"
+                           fast-max-afive-thousand="7980"
+                           fast-max-afive-twothousand="11500"
+                           fast-max-afive-threethousand="13956"
+                           fast-max-afive-fivethousand="19484"
+                           fast-max-afive-tenthousand="33598"
+                    />
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio Order-info" value="Формат:А4 21x29,7"
+                           format="afour-"
+                           normal-min-afour-thousand="5015"
+                           normal-min-afour-twothousand="8480"
+                           normal-min-afour-threethousand="11710"
+                           normal-min-afour-fivethousand="11883"
+                           normal-min-afour-tenthousand="22253"
+
+                           normal-max-afour-thousand="9163"
+                           normal-max-afour-twothousand="16507"
+                           normal-max-afour-threethousand="23647"
+                           normal-max-afour-fivethousand="34663"
+                           normal-max-afour-tenthousand=""
+
+                           fast-min-afour-fivehundred="6988"
+                           fast-min-afour-thousand="7396"
+                           fast-min-afour-twothousand="9768"
+                           fast-min-afour-threethousand="12074"
+                           fast-min-afour-fivethousand="15942"
+                           fast-min-afour-tenthousand="28494"
+
+                           fast-mid-afour-fivehundred="7826"
+                           fast-mid-afour-thousand="8394"
+                           fast-mid-afour-twothousand="11170"
+                           fast-mid-afour-threethousand="13832"
+                           fast-mid-afour-fivethousand="18672"
+                           fast-mid-afour-tenthousand="33240"
+
+                           fast-max-afour-fivehundred="14000"
+                           fast-max-afour-thousand="15660"
+                           fast-max-afour-twothousand="22802"
+                           fast-max-afour-threethousand="17644"
+                           fast-max-afour-fivethousand="38594"
+                           fast-max-afour-tenthousand="66546"
+                    />
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio Order-info hidbutt-two"
+                           value="Формат:А4(евробуклет) 21x29,7"
+                           format="euro-"
+                           normal-min-euro-thousand="5070"
+                           normal-min-euro-twothousand="8990"
+                           normal-min-euro-threethousand="12480"
+                           normal-min-euro-fivethousand="13158"
+                           normal-min-euro-tenthousand="24803"
+
+                           fast-min-euro-fivehundred="7588"
+                           fast-min-euro-thousand="8296"
+                           fast-min-euro-twothousand="10968"
+                           fast-min-euro-threethousand="13874"
+                           fast-min-euro-fivethousand="18342"
+                           fast-min-euro-tenthousand="33294"
+
+                           fast-mid-euro-fivehundred="8426"
+                           fast-mid-euro-thousand="9294"
+                           fast-mid-euro-twothousand="12370"
+                           fast-mid-euro-threethousand="15632"
+                           fast-mid-euro-fivethousand="21072"
+                           fast-mid-euro-tenthousand="38040"
+                    />
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio Order-info hidbutt-two" value="Формат:А3 29,7x42"
+                           format="athree-"
+                           normal-min-athree-thousand="8480"
+                           normal-min-athree-twothousand="15620"
+                           normal-min-athree-threethousand=""
+                           normal-min-athree-fivethousand="22253"
+                           normal-min-athree-tenthousand="41718"
+
+                           fast-min-athree-fivehundred="12550"
+                           fast-min-athree-thousand="14652"
+                           fast-min-athree-twothousand="18928"
+                           fast-min-athree-threethousand="23270"
+                           fast-min-athree-fivethousand="28764"
+                           fast-min-athree-tenthousand="42806"
+
+                           fast-mid-athree-fivehundred="13832"
+                           fast-mid-athree-thousand="16182"
+                           fast-mid-athree-twothousand="20746"
+                           fast-mid-athree-threethousand="24694"
+                           fast-mid-athree-fivethousand="33446"
+                           fast-mid-athree-tenthousand="53276"
+                    />
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>А6</strong></p>
+
+            <p id="p2"><strong>флаер</strong></p>
+
+            <p id="p3"><strong>А5</strong></p>
+
+            <p id="p4"><strong>А4</strong></p>
+
+            <p id="p5" class="hidtext-two"><strong>А4 <span style="font-size:8pt;">евробуклет<span></strong></p>
+
+            <p id="p6" class="hidtext-two"><strong>А3</strong></p>
+        </div>
+        <div class="bottrow2">
+            <p id="p1"><strong>10x15</strong></p>
+
+            <p id="p2"><strong>21x9,8</strong></p>
+
+            <p id="p3"><strong>14,8x21</strong></p>
+
+            <p id="p4"><strong>21x29,7</strong></p>
+
+            <p id="p5" class="hidtext-two"><strong>21x29,7</strong></p>
+
+            <p id="p6" class="hidtext-two"><strong>29,7x42</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="spt3">
+        <div class="number3"></div>
+        <p id="numbername">БУМАГА</p>
+
+        <form action="#" name="#" method="POST" id="plotnost">
+            <div class="rightcol1">
+                <div class="radiobutton smal-margin-rb">
+                    <input type="radio" checked  name="rad" class="first recalculate radio3 Order-info showertwo" plotn="min-"
+                           value="Бумага: 130 г/м<sup>2</sup>"/>
+                </div>
+                <div class="radiobutton smal-margin-rb">
+                    <input type="radio" name="rad" class="recalculate radio3 Order-info hidbutt showertwo" plotn="mid-"
+                           value="Бумага: 170 г/м<sup>2</sup>"/>
+                </div>
+                <div class="radiobutton smal-margin-rb">
+                    <input type="radio" name="rad" class="recalculate radio3 Order-info hidertwo" plotn="max-"
+                           value="Бумага: 300 г/м<sup>2</sup>"/>
+                </div>
+            </div>
+        </form>
+        <div class="textrightcol1">
+            <p><strong>130 г/м<sup>2</sup></strong></p>
+
+            <p class="hidtext"><strong>170 г/м<sup>2</sup></strong></p>
+
+            <p><strong>300 г/м<sup>2</sup></strong></p>
+        </div>
+    </section>
+    <section class="front1" id="spt4">
+        <div class="number4"></div>
+        <form action="#" name="#" method="POST">
+            <div class="rightcol1">
+                <div class="radiobutton smal-margin-rb">
+                    <input type="radio" name="rad" class="first recalculate radio2 Order-info hider" srok="normal-"
+                           value="Изготовление: Не срочно(7-8 календарных дней)"/>
+                </div>
+                <div class="radiobutton smal-margin-rb">
+                    <input type="radio" name="rad" class="recalculate radio2 Order-info shower" srok="fast-"
+                           value="Изготовление: Срочно (2-3 рабочих дня)"/>
+                </div>
+            </div>
+        </form>
+        <div class="textrightcol1">
+            <p><strong>не срочно (7-8 календарных дней)</strong></p>
+
+            <p><strong>срочно (2-3 рабочих дня)</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="spt5">
+        <div class="number5"></div>
+        <strong><p>количество фальцовок</p></strong>
+            <select class="recalculate Order-info-num-falts" style="margin-top: -30px;
+    height: 22px;
+    margin-left: 311px;
+    display: block;">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+    </section>
+    <section class="front1" id="spt6">
+        <div class="number6"></div>
+        <strong><p>Тираж</p></strong>
+        <form action="#" method="POST" name="#" style=" margin-left: 150px;margin-top: -29px;">
+            <!--<input type="number" name="#" class="recalculate Order-info-num-tirazh" value="1000" min="1000" step="500"/>-->
+            <select name="#" id="#"  class="recalculate Order-info-num-tirazh">
+              <option value="1000" selected>1000</option>
+              <option value="2000">2000</option>
+              <option value="3000">3000</option>
+              <option value="5000">5000</option>
+              <option value="10000">10000</option>
+            </select>
+        </form>
+        
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1"><span id="pw1"></span>
+    </section>
+    <p id="total"><strong>итог</strong></p>
+</section>

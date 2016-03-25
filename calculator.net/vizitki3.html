@@ -1,0 +1,86 @@
+
+<section class="back" id="con4">
+    <section class="front1" id="paperoption1">
+        <div class="number4"></div>
+        <div class="numbername" id="coloring">КОЛИЧЕСТВО ЦВЕТОВ</div>
+        <div class="sidesquantity">
+            <strong>первая сторона</strong>
+            <strong>вторая сторона</strong>
+        </div>
+        <div class="quantity">
+            <input type="number" action="#" class="recalculate Order-info-num-color colors_quan"
+                   colors="Количество цветов на первой стороне: " value="1">
+        </div>
+        <div class="quantity">
+            <input type="number" action="#" class="recalculate Order-info-num-color colors_quan1"
+                   colors="Количество цветов на второй стороне: " value="0">
+        </div>
+    </section>
+    <section class="front1" id="paperoption2">
+        <div class="number5"></div>
+        <form action="#" method="POST" name="color" id="colorus" required>
+            <div class="leftcol5">
+                <div class="radiobutton">
+                    <input type="checkbox" name="tisnenie" class="recalculate Order-info tisn_kon kon"
+                           value="Конгрев" price="1500"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info klishe hidbutt"
+                           value="Изготовление клише" price="1000"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info klishe hidbutt"
+                           value="Готовые клише" price="0"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate Order-info termopod hidbutt1"
+                           value="Термоподъем"/>
+                </div>
+            </div>
+            <div class="textrightcol">
+                <p id="p1"><strong>конгрев</strong></p>
+
+                <p id="p2" class="hidtext"><strong>изготовление клише</strong></p>
+
+                <p id="p3" class="hidtext"><strong>готовые клише</strong></p>
+
+                <p id="p3" class="hidtext1"><strong>термоподъем</strong></p>
+            </div>
+            <div class="rightcol5">
+                <div class="radiobutton">
+                    <input type="checkbox" name="tisnenie" class="recalculate Order-info tisn_kon tisn first111"
+                           value="Тиснение" price="1500"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate Order-info lak"
+                           value="Лакирование" price="500"/>
+                </div>
+            </div>
+            <div class="textleftcol">
+                <p id="p1"><strong>тиснение</strong></p>
+
+                <p id="p2"><strong>лакирование</strong></p>
+            </div>
+        </form>
+    </section>
+    <section class="front1" id="paperoption4">
+        <div class="number7"></div>
+        <div class="total" style="margin-top: -22px;"><strong>всего комплектов</strong></br>
+            <p>(100 шт. в комплекте)</p></div>
+        <div class="quantity">
+            <input type="number" action="#" class="recalculate Order-info-num"
+                   value="1">
+        </div>
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1"><span id="pw1"></span>
+    </section>
+    <div class="cost1"><strong>итог</strong></div>
+</section>
+<script>
+    $('.first111').trigger('click');
+</script>

@@ -1,0 +1,146 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '#show', function () {
+            $('#fs4').show();
+        });
+        $(document).on('click', '#hide', function () {
+            $('#fs4').hide();
+        });
+        $('#hide').trigger('click');
+        function calculate19() {
+
+            var order_total = parseFloat($('.radio2:checked').attr($('.radio1:checked').attr('material')))*$('.Order-info-num').val();
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+
+        }
+
+        $('input.first').trigger('click');
+        calculate19();
+        $(document).on('change', '.recalculate', function () {
+            calculate19();
+        });
+    });
+</script>
+<section class="back" id="con23">
+    <section class="front1" id="pazli1">
+        <div class="number"></div>
+        <p id="numbername">ВЫБРАТЬ ОСНОВУ</p>
+
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton" id='fc'>
+                    <input type="radio" name="rad" id="hide" material="paper" class="radio1 recalculate Order-info"
+                           value="Основа: Картон"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" id="show" material="magnetic" class="radio1 recalculate Order-info"
+                           value="Основа: Магнит"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>картонный</strong></p>
+
+            <p id="p2"><strong>магнитный</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="pazli2" style="overflow: auto;">
+        <div class="number2"></div>
+        <p id="numbername" style="margin-top: 13px;">ВЫБРАТЬ ФОРМАТ</p>
+
+        <form action="#" method="POST" name="#">
+            <div class="fs">
+                <fieldset id="fs1">
+                    <img src="img/pazli1.gif">
+                    <strong><p style="margin-left: 10px;">A4 29,7 x 21 см</p></strong>
+
+                    <div class="radiobutton" style="margin-top: -39px;margin-left: 224px;">
+                        <input type="radio" name="rad" class="radio2 first recalculate Order-info"
+                               value="Формат: A4 29,7 x 21 см"
+                               paper="450"
+                               magnetic="600"/>
+
+                </fieldset>
+                <fieldset id="fs2">
+                    <img src="img/pazli2.gif">
+                    <strong><p style="margin-left: 10px; margin-top: 56px;">A5 21 x 148 см</p></strong>
+
+                    <div class="radiobutton" style="margin-top: -39px;margin-left: 224px;">
+                        <input type="radio" name="rad" class="radio2 recalculate Order-info"
+                               value="Формат: A5 21 x 148 см"
+                               paper="400"
+                               magnetic="500"/>
+                    </div>
+                </fieldset>
+                <fieldset id="fs3">
+                    <img src="img/pazli3.gif">
+                    <strong><p style="margin-left: 10px; margin-top: 33px;">18 x 21 см «сердце»</p></strong>
+
+                    <div class="radiobutton" style="margin-top: -39px;margin-left: 224px;">
+                        <input type="radio" name="rad" class="radio2 recalculate Order-info"
+                               value="Формат: 18 x 21 см «сердце»"
+                               paper="450"
+                               magnetic="550"/>
+                    </div>
+                </fieldset>
+                 <fieldset id="fs5" style="margin-top: 250px; margin-left: 300px; ">
+                    <img src="img/A3_pazl.png">
+                    <strong><p style="margin-left: 10px; margin-top: 23px;">А3 29,7x42 см</p></strong>
+
+                    <div class="radiobutton" style="margin-top: -39px;margin-left: 224px;">
+                        <input style=" margin-top: -7px;" type="radio" name="rad" class="radio2 recalculate Order-info"
+                               value="Формат: А3 29,7x42 см"
+                               paper="450"
+                               magnetic="550"/>
+                    </div>
+                </fieldset>
+                <fieldset id="fs4">
+                    <img src="img/pazli4.gif">
+                    <strong><p style="margin-left: 10px; margin-top: 45px;">18 x 21 см детский</p></strong>
+
+                    <div class="radiobutton" style="margin-top: -39px;margin-left: 224px;">
+                        <input type="radio" name="rad" class="radio2 recalculate Order-info"
+                               value="Формат: 18 x 21 см детский"
+                               magnetic="450"/>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </section>
+    <section class="front1" id="pazli3">
+        <div class="number3"></div>
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="first recalculate Order-info" value="Не срочно"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate Order-info" value="Срочно"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>не срочно</strong></p>
+
+            <p id="p2"><strong>срочно</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="pazli5">
+        <div class="number4"></div>
+        <div class="total" id="stamptotal"><strong>количество</strong>
+
+            <div class="quantity">
+                <input type="number" action="#" class="recalculate Order-info-num" value="1">
+            </div>
+        </div>
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1">
+        <span id="pw1"></span>
+    </section>
+</section>

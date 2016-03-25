@@ -1,0 +1,84 @@
+<script type="text/javascript">
+$('input.first').trigger('click');
+    $(document).ready(function () {
+
+        function calculate3() {
+            var price = 700;
+            var force = 0;
+            $.each($('.force:checked'), function () {
+                force += parseInt($(this).attr('force-cost'));
+            });
+            console.log(force);
+            var order_total = 0;
+            $.each($('.radio2:checked'), function () {
+
+              
+                    order_total += (parseFloat($(this).attr('osnastca-price')) + price + force ) * $(this).closest('.absolute').find('.added_num').val();
+                
+            });
+
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+        }
+        calculate3();
+        $(document).on('change', '.recalculate', function () {
+
+            calculate3();
+        });
+    
+       
+    });
+</script>
+<section class="back" id="con9">
+    <section class="front1 border-ot" id="stampstyleback">
+        <div class="number2"></div>
+        <form action="#" method="POST" name="color">
+            <div class="leftcol1">
+                <div class="radiobutton">
+                    <input type="checkbox" class="recalculate Order-info force " name="simple_force"
+                           value="Защита: Микротест" force-cost="100"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="checkbox" class="recalculate Order-info force " name="normal_force"
+                           value="Защита: Cетка" force-cost="100"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="checkbox" class="recalculate Order-info force " name="normal_force"
+                           value="Защита: Окантовка" force-cost="100"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="checkbox" class=" recalculate Order-info force " name="simple_force"
+                           value="Защита: Логотип" force-cost="200"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="checkbox" class="recalculate Order-info force " name="normal_force"
+                           value="Защита: Сложные шрифты" force-cost="100"/>
+                </div>
+               
+            </div>
+            <div class=" textleftcol1" style="position: absolute;margin-top: -30px;">
+                <div class=" textleftcol1">
+                <p id="p1" class="po-1"><strong>Микротест</strong></p>
+
+                <p id="p2" class="po-2"><strong>Cетка</strong></p>
+
+                <p id="p3" class="po-3"><strong>Окантовка</strong></p>
+
+                <p id="p4" class="po-4"><strong>Логотип</strong></p>
+
+                <p id="p5" class="po-5"><strong>Сложные шрифты</strong></p>
+            </div>
+            </div>
+        </form>
+    </section>
+    
+
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1">
+        <span id="pw1"></span>
+    </section>
+</section>

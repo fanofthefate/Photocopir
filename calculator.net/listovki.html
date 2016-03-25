@@ -1,0 +1,43 @@
+<script type="text/javascript">
+
+	$(document).ready(function(){ 
+
+		$(document).on('click','[form-remove]', function(){
+			$('#forma1').remove();
+			$('#forma2').remove();
+		});
+		$(document).on('click','[form-form-path]', function(){
+			var x = $(this).attr('form-height');
+			var x2 = $(this).attr('secform-height');
+			$('#forma1').remove();
+			$('#forma2').remove();
+			$('#forma').after($("<section></section>").attr({id: 'forma1', style: x}));
+			$("#forma1").load($(this).attr('form-form-path'));
+
+		});
+		$('.first222').trigger('click');
+	});
+</script>
+					<section class="back" id="con15">						
+						<section class="front1" id="spt">
+							<div class="number"></div>
+							<p id="p1">ВЫБИРИТЕ СПОСОБ ПЕЧАТИ</p>
+							<p id="p2">Более 1000 экз. выгоднее офсетным способом</p>
+							<form action="#" name="#" method="POST">
+								<div class="bottcol1">
+									<div class="radiobutton">
+										<input type="radio"  name="rad" form-form-path="listovki3.html"
+										form-height="height:384px;" class="Order-info first222" value="Способ печати: Цифровой"/>
+									</div>
+									<div class="radiobutton">
+										<input type="radio"  name="rad" form-form-path="listovki2.html"
+										form-height="height:309px;" class="Order-info" value="Способ печати: Офсет"/>
+									</div>
+								</div>
+							</form>
+							<div class="bottrow1">
+								<p><strong>цифровой</strong></p>
+								<p><strong>офсет</strong></p>
+							</div>
+						</section>
+					</section>

@@ -1,0 +1,89 @@
+<script type="text/javascript">
+    $('.recalculate').on('change', calculate777);
+	$('.firsttwo').trigger('click');
+
+	$('.st4').on('click',function () {
+		$('#luv_img').attr('src','img/shirokoformat4.png');
+	})
+	$('.st2').on('click',function () {
+		$('#luv_img').attr('src','img/shirokoformat2.png');
+	})
+	$('.st').on('click',function () {
+		$('#luv_img').attr('src','img/shirokoformat3.png');
+	})
+	
+</script>
+<section class="back" id="con19a">
+	<section class="front1" id="wf2">
+		<div class="number2"></div>
+		<strong><p style="    margin-top: 13px;font-size: 10pt;margin-left: 50px;">Проклейка краев и установка люверсов</p></strong>
+		<form action="#" method="POST" name="#">
+			<div class="leftcol1">
+				<div class="radiobutton">
+					<input type="radio"  name="rad" class="recalculate firsttwo Order-info luversi st4" value="Проклейка краёв и установка люверсов: по 4 сторонам"/>
+				</div>
+				<div class="radiobutton">
+					<input type="radio"  name="rad" class="recalculate Order-info luversi2 st2" value="Проклейка краёв и установка люверсов: по 2 сторонам горизонтально"/>
+				</div>
+				<div class="radiobutton">
+					<input type="radio"  name="rad" class="recalculate Order-info luversi st2" value="Проклейка краёв и установка люверсов: по 2 сторонам вертикально"/>
+				</div>
+				<div class="radiobutton">
+					<input type="radio"  name="rad" class="recalculate Order-info st" value="Проклейка краёв и установка люверсов: без проклейки и люверсов"/>
+				</div>
+			</div>
+		</form>
+		<div class="textleftcol1">
+			<strong><p>по 4 сторонам</p></strong>
+			<strong><p>по 2 сторонам горизонтально</p></strong>
+			<strong><p>по 2 сторонам вертикально</p></strong>
+			<strong><p>без проклейки и люверсов</p></strong>
+		</div>
+		<img id="luv_img" src="img/shirokoformat4.png">
+	</section>
+	<section class="front1" id="wf3">
+		<div class="number3"></div>
+		<p id="numbername">РАЗМЕРЫ в см</p>
+		<form action="#" method="POST" id="size">
+			<input type="number" action="#" name="#" class="recalculate Order-info-num-custom width" value="20">
+			<input type="number" action="#" class="recalculate Order-info-num-custom height" value="20">
+			<strong><p style="margin-left: 153px;margin-top: -27px;">X</p></strong>
+		</form>
+		<p style="font-size: 9pt;text-align: center;">В случае большого количества<br/>разноформатных печатных листов<br/>укажите это в комментариях</p>
+	</section>
+	<section class="front1" id="wf4">
+		<div class="number4"></div>
+		<strong><p style="margin-top: -45px;font-size: 11pt;margin-left: 89px;">разрешение печати</p></strong>
+		<form action="#" method="POST" name="#">
+			<div class="bottcol1">
+				<div class="radiobutton">
+					<input type="radio"  name="rad" class="recalculate firsttwo radio4 Order-info" value="Разрешение печати: 360 dpi" resol="low"/>
+				</div>
+				<div class="radiobutton">
+					<input type="radio"  name="rad" class="recalculate radio4 Order-info hidbutt" value="Разрешение печати: 1440 dpi" resol="high"/>
+				</div>
+			</div>
+		</form>
+		<div class="bottrow1">
+			<strong><p>360 dpi</p></strong>
+			<strong class="hidtext"><p>1440 dpi</p></strong>
+		</div>
+	</section>
+	<section class="front1" id="wf5">
+		<div class="number5"></div>
+		<form action="#" method="POST"  class="imgquantity" id="stampsize1">
+			<strong><p >количество</p></strong>
+			<div class="quantity">
+				<input type="number" action="#" class="recalculate quan Order-info-num" value="1">
+			</div>
+		</form>
+	</section>
+	<section class="front1" id="price1">
+		<div class="numbername" id="coloring">
+		</div>	
+		<p><strong>рублей</strong></p>
+	</section>
+	<section class="front1" id="pricewin1">
+		<span id="pw1"></span>
+	</section>
+</section>

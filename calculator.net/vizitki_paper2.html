@@ -1,0 +1,354 @@
+<script type="text/javascript">
+
+    function calculate9 () {
+        var colors = parseFloat($('input.colors_quan').val()) + parseFloat($('input.colors_quan1').val());
+        var colors_price = 1050 + colors * 450;
+        var q = parseFloat($('input.radio_des:checked').attr('design'));
+        var y = parseFloat($('input.radio:checked').attr('paper-price'));
+        if ($('input.termopod').is(':checked')) {
+            var termo =  500;
+        } else {
+            var termo = 0;
+        }
+        if ($('input.lak').is(':checked')) {
+            var lak = 500;
+        } else {
+            var lak = 0;
+        }
+        if ($('input.tisn').is(':checked')) {
+            var tisn = 1500;
+        } else {
+            var tisn = 0;
+        }
+        if ($('input.kon').is(':checked')) {
+            var kon = 1500;
+        } else {
+            var kon = 0;
+        }
+        if ($('input.tisn_kon').is(':checked')) {
+            var tisn_kon = parseFloat($('input.tisn_kon:checked').attr('price'));
+        } else {
+            var tisn_kon = 0;
+        }
+        if ($('input.klishe').is(':checked')) {
+            var klishe = parseFloat($('input.klishe:checked').attr('price'));
+        } else {
+            var klishe = 0;
+        }
+         if ($('input.tisn').is(':checked') && $('input.kon').is(':checked')) {
+            var klishe = parseFloat($('input.klishe:checked').attr('price'))*2;
+        } else if ($('#')){};
+
+        if ($('input.Order-info-num').val() > 4) {
+            var discount = (y + q + colors_price + termo + klishe + tisn +kon + lak) * $('input.Order-info-num').val() * 0.15;
+        } else {
+            var discount = 0;
+        }
+        var Order_total = (y + q + colors_price + termo + klishe + tisn +kon + lak) * $('input.Order-info-num').val() - discount;
+        $('#pw1').html(Order_total);
+        $('.order_cost').html(Order_total);
+    }
+    $(document).ready(function () {
+        $(document).on('change', '.paper_type', function () {
+  //          $('.vizitka_abs_one').html('');
+            $('.span_sel').html('');
+  //          $('.vizitka_abs_one').html($(this).attr('annotation'));
+            $('.span_sel').html($(this).attr('selected-color'));
+        });
+        $(document).on('change','.tisn_kon',function(){
+
+            if($('input[name=tisnenie]:checked').length < 1){
+
+                $('input.hidbutt').removeAttr('checked');
+                $('.hidbutt').prop("disabled", true);
+                $('.hidbutt').css('opacity', '0.3');
+                $('.hidtext').css('opacity', '0.1');
+            } else {
+                $('.hidbutt').prop("disabled", false);
+                $('.hidbutt').css('opacity', '1.0');
+                $('.hidtext').css('opacity', '1.0');
+            }
+
+        });
+
+        $(document).on('change','.Order-info-num-color',function(){
+
+            if(($('.colors_quan').val()+$('.colors_quan1').val()) < 1){
+
+                $('input.hidbutt1').removeAttr('checked');
+                $('.hidbutt1').prop("disabled", true);
+                $('.hidbutt1').css('opacity', '0.3');
+                $('.hidtext1').css('opacity', '0.1');
+            } else {
+                $('.hidbutt1').prop("disabled", false);
+                $('.hidbutt1').css('opacity', '1.0');
+                $('.hidtext1').css('opacity', '1.0');
+            }
+
+        });
+
+        $('.first').trigger('click');
+        $('input.first').trigger('click');
+        calculate9();
+        $(document).on('change', '.recalculate', function () {
+            calculate9();
+        });
+        $('.tisn_kon').change();
+    })
+
+</script>
+
+<section class="back" id="con3">
+    <div class="number3"></div>
+    <div class="numbername" id="selpaper">ВЫБРАТЬ БУМАГУ</div>
+    <section class="front" id="front7">
+        <div class="typeofpaper"></div>
+        <div class="wrapper vizitka_wrap">
+            <div class="relative">
+                <form action="1" method="POST" name="stamps" id="colorus">
+                    <div class=" vizitka_abs_one">
+                        <p>Touch Cover &nbsp&nbsp<span>Fiber Mark, США</span> &nbsp &nbsp300 г/м<sup>2</sup></p>
+                        <p style='font-size: 9pt;
+                            margin-top: -14px;'>Благодаря двустороннему напылению латекса имеет матовую фактуру. Устойчива к истиранию и грязи. Идеальна для изделий, требующих сочетания тактильного удовольствия и прочности.</p>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf1.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="first recalculate radio Order-info paper_type first"
+                                   value="Бумага: Touch Cover оранжевая"
+                                   selected-color="Touch Cover оранжевая"
+                                   paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf2.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover голубая" selected-color="Touch Cover голубая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf3.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover натуральная белая" selected-color="Touch Cover натуральная белая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf4.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover слоновая кость" selected-color="Touch Cover слоновая кость" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf5.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover бордовая" selected-color="Touch Cover бордовая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf6.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover коричневая" selected-color="Touch Cover коричневая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf7.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover сине-зелёная" selected-color=" Touch Cover сине-зелёная" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf8.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover черная" selected-color="Touch Cover черная" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf9.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover сливовая" selected-color="Touch Cover сливовая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf10.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info paper_type"
+                                   value="Бумага: Touch Cover ярко-красная" selected-color="Touch Cover ярко-красная" paper-price="500">
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf11.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover парижски синяя" selected-color="Touch Cover парижски синяя" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/shelkograf12.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Touch Cover бежевая" selected-color="Touch Cover бежевая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class=" vizitka_abs_one">
+                        <p>Majestic &nbsp&nbsp<span></span></p>
+                        <p style='font-size: 9pt;
+                            margin-top: -14px;'></p>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/majestic_mramor.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Majestic мараморно-белая" selected-color="Majestic мараморно-белая" paper-price="300"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/majestic_silver.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Majestic настоящее серебро" selected-color="Majestic настоящее серебро" paper-price="300"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/majestic_gold.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Majestic настоящее золото" selected-color="Majestic настоящее золото" paper-price="300"/>
+                        </div>
+                    </div>
+                    <div class=" vizitka_abs_one">
+                        <p>Plike &nbsp&nbsp<span></span></p>
+                        <p style='font-size: 9pt;
+                            margin-top: -14px;'></p>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_white.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike белая" selected-color="Plike белая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_bordo.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike бордовая" selected-color="Plike бордовая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_green.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike зелёная" selected-color="Plike зелёная" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_red.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike красная" selected-color="Plike красная" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_orange.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike оранжквая" selected-color="Plike оранжквая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_grey.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike серая" selected-color="Plike серая" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_blue.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike синяя" selected-color="Plike синяя" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_bone.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike слоновая кость" selected-color="Plike слоновая кость" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/Plike_black.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Plike черная" selected-color="Plike черная" paper-price="500"/>
+                        </div>
+                    </div>
+                    <div class=" vizitka_abs_one">
+                        <p>Картон матовый &nbsp&nbsp<span></span> &nbsp &nbsp300 г/м<sup>2</sup></p>
+                        <p style='font-size: 9pt;
+                            margin-top: -14px;'></p>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/karton_matoviy.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Картон матовый" selected-color="Картон матовый" paper-price="0"/>
+                        </div>
+                    </div>
+                    <div class=" vizitka_abs_one">
+                        <p>Картон глянцевый &nbsp&nbsp<span></span> &nbsp &nbsp250 г/м<sup>2</sup></p>
+                        <p style='font-size: 9pt;
+                            margin-top: -14px;'></p>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/karton_glanec.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Картон глянцевый" selected-color="Картон глянцевый" paper-price="0"/>
+                        </div>
+                    </div>
+                    <div class=" vizitka_abs_one">
+                        <p>Лён &nbsp&nbsp<span></span></p>
+                        <p style='font-size: 9pt;
+                            margin-top: -14px;'></p>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/white_len.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Лён белый" selected-color="Лён белый" paper-price="200"/>
+                        </div>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/bone_len.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Лён слоновая кость" selected-color="Лён слоновая кость" paper-price="200"/>
+                        </div>
+                    </div>
+                    <div class=" vizitka_abs_one">
+                        <p>Прозрачный пластик &nbsp&nbsp<span></span></p>
+                        <p style='font-size: 9pt;
+                            margin-top: -14px;'></p>
+                    </div>
+                    <div class="absolute vizitka_abs"><img id="shelk_paper" src="img/plastic.gif">
+
+                        <div class="radiobutton">
+                            <input type="radio" name="rad" class="recalculate radio Order-info  paper_type"
+                                   value="Бумага: Прозрачный пластик" selected-color="Прозрачный пластик" paper-price="500"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <strong id="selectedpaper">Выбрано: <span class="span_sel"></span></strong>
+</section>

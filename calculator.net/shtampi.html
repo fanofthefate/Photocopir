@@ -1,0 +1,107 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '[form-remove]', function () {
+            $('#forma1').remove();
+            $('#forma2').remove();
+        });
+        $(document).on('click', '[form-form-path]', function () {
+            var x = $(this).attr('form-height');
+            var x2 = $(this).attr('secform-height');
+            $('#forma1').remove();
+            $('#forma2').remove();
+            $('#forma').after($("<section></section>").attr({id: 'forma1', style: x}));
+            $("#forma1").load($(this).attr('form-form-path'));
+            $('#forma1').after($("<section></section>").attr({id: 'forma2', style: x2}));
+            $("#forma2").load($(this).attr('secform-form-path'));
+        });
+        $(document).on('change', '.inp', function () {
+            if ($(this).is(':checked')) {
+                $(this).closest('.added').after('<input type="number" action="#" class="recalculate added_num" value="1">');
+            } else {
+                $(this).closest('.absolute').find('.added_num').remove();
+            }
+        });
+        $(document).on('change', '.added_num', function () {
+
+            if($('.added_num').val() < 1){
+                $(this).closest('.absolute').find('.inp').prop('checked', false);
+                $(this).remove();
+            }
+
+        });
+
+        $('.newest').trigger('click');
+    });
+</script>
+<section class="back" id="con6">
+    <div class="number1"></div>
+    <form action="#" method="POST" name="color" id="colorus" style="margin-top: -43px;
+	margin-left: 11px;font-size: 10pt;">
+        <div class="leftcol5">
+            <div class="radiobutton">
+                <input type="radio" class="newest Order-info" value="Услуга: Новая печать" name="rad"
+                       form-form-path="shtampi2.html"
+                       form-height="height:845px;" secform-form-path="shtampi3.html"
+                       secform-height="height:474px;"/>
+            </div>
+            <div class="radiobutton">
+                <input type="radio" class="Order-info" value="Услуга: Новый штамп" name="rad"
+                       form-form-path="shtampi5.html"
+                       form-height="height:272px;" secform-form-path="shtampi6.html"
+                       secform-height="height:474px;"/>
+            </div>
+            <div class="radiobutton">
+                <input type="radio" class="Order-info" value="Услуга: Новая флеш печать" name="rad"
+                       form-form-path="shtampi7.html"
+                       form-height="height:845px;"secform-form-path="osnastka_flash.html"
+                       secform-height="height:474px;"/>
+            </div>
+        </div>
+        <div class="textleftcol">
+            <p id="p1"><strong>новая печать</strong></p>
+
+            <p id="p2"><strong>новый штамп</strong></p>
+
+            <p id="p3"><strong>новая флеш печать</strong></p>
+        </div>
+        <div class="midcol5">
+            <div class="radiobutton">
+                <input type="radio" class="Order-info stamp_ottisk" value="Услуга: Печать по оттиску" name="rad"
+                       form-form-path="shtampi4.html"
+                       form-height="height:300px;" secform-form-path="shtampi3.html"
+                       secform-height="height:474px;"/>
+            </div>
+            <div class="radiobutton">
+                <input type="radio" class="Order-info" value="Услуга: Штамп по оттиску" name="rad"
+                       form-form-path="shtampi5.html"
+                       form-height="height:272px;" secform-form-path="shtampi6.html"
+                       secform-height="height:474px;"/>
+            </div>
+            <div class="radiobutton">
+                <input type="radio" class="Order-info stamp_ottisk" value="Услуга: Флешь печать по оттиску" name="rad"
+                       form-form-path="ottisk_flash.html"
+                       form-height="height:300px;" secform-form-path="osnastka_flash.html"
+                       secform-height="height:474px;"/>
+            </div>
+        </div>
+        <div class="textmidcol">
+            <p id="p1"><strong>печать по оттиску</br>(копия существующей)</strong></p>
+
+            <p id="p2"><strong>штамп по оттиску</br>(копия существующего)</strong></p>
+
+            <p id="p3"><strong>флешь печать по оттиску</br>(копия существующей)</strong></p>
+        </div>
+        <div class="rightcol5">
+            <div class="radiobutton">
+                <input type="radio" class="Order-info" value="Услуга: Факсимиле" name="rad"
+                       form-form-path="faksimile.html"
+                       form-height="height:197px;"
+                       secform-form-path="shtampi6.html"
+                       secform-height="height:474px;">
+            </div>
+        </div>
+        <div class="textrightcol">
+            <p id="p1"><strong>факсимиле <br> (Подпись руководителя)</strong></p>
+        </div>
+    </form>
+</section>

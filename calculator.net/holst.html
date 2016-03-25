@@ -1,0 +1,167 @@
+<script type="text/javascript">
+     function calculate14() {
+            var c_width;
+            var c_height;
+            var c_price = 2300;
+            var podramnik;
+            var  square = parseInt($('.client-height').val())*parseInt($('.client-height').val())/1000;
+            var perimetr = 2*(parseInt($('.client-height').val())+parseInt($('.client-height').val()))/1000;
+            var width = parseFloat($('input.radio:checked').attr('width'));
+            var height = parseFloat($('input.radio:checked').attr('height'));
+
+            if(parseInt($('.client-width').val()) < parseInt($('.client-height').val())){
+
+                c_width = $('.client-width').val() * 10 ;
+                console.log(c_width);
+                c_height = $('.client-height').val() * 10 ;
+                if(c_width >= 915){
+                    $('.client-width').val(91,4);
+                }
+            } else {
+                c_height = $('.client-width').val() * 10;
+                c_width = $('.client-height').val() * 10;
+                if(c_width >= 915){
+                    $('.client-height').val(9,14);
+                }
+            }
+            if ($('input.check-gal').is(':checked')) {
+                total = parseFloat($('input.radio:checked').attr('stock-gal'));
+            } else {
+                total = parseFloat($('input.radio:checked').attr('stock'));
+            }
+            if($('.client-height').val() == '' && $('.client-width').val() == ''){
+
+            } else {
+                if (parseFloat($('input.a4').attr('width')) >= c_width && parseFloat($('input.a4').attr('height')) >= c_height) {
+                    $('.a4').prop('checked', true);
+                } else if (parseFloat($('input.a3').attr('width')) >= c_width && parseFloat($('input.a3').attr('height')) >= c_height) {
+                    $('.a3').prop('checked', true);
+                } else if (parseFloat($('input.a2').attr('width')) >= c_width && parseFloat($('input.a2').attr('height')) >= c_height) {
+                    $('.a2').prop('checked', true);
+                } else if (parseFloat($('input.a1').attr('width')) >= c_width && parseFloat($('input.a1').attr('height')) >= c_height) {
+                    $('.a1').prop('checked', true);
+                } else if (parseFloat($('input.a0').attr('width')) >= c_width && parseFloat($('input.a0').attr('height')) >= c_height) {
+                    $('.a0').prop('checked', true);
+                } else {
+                    $('.radio').removeAttr('checked');
+                    if($('.check-gal').is(':checked')){
+                        console.log($('.client-height').val());
+                        console.log($('.client-width').val());
+                        console.log(square);
+                        console.log(perimetr);
+                        podramnik = Math.ceil(5280*square + 770*perimetr);
+                    } else {
+                        podramnik = 0;
+                    }
+                    total = parseFloat((c_height/1000)*c_price) + podramnik;
+                }
+            }
+            $(document).on('click','.radio',function(){
+
+                $('.Order-info-num-custom').val('');
+
+            });
+
+            var order_total = parseInt(total * $('input.Order-info-num').val());
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+        }
+    $(document).ready(function () {
+   
+
+        $('input.first').trigger('click');
+        calculate14();
+        $(document).on('change', '.recalculate', function () {
+           calculate14();
+        });
+    });
+
+</script>
+<section class="back" id="con20">
+    <section class="front1" id="holst">
+        <img src="img/holst.gif"/>
+
+        <div class="bottrow1">
+            <strong><p id='p1'>A4</p></strong>
+            <strong><p id='p2'>A3</p></strong>
+            <strong><p id='p3'>A2</p></strong>
+            <strong><p id='p4'>A1</p></strong>
+            <strong><p id='p5'>A0</p></strong>
+        </div>
+        <div class="bottrow2">
+            <strong><p id='p1'>21x29,7</p></strong>
+            <strong><p id='p2'>29,4x42</p></strong>
+            <strong><p id='p3'>42x59,4</p></strong>
+            <strong><p id='p4'>59,4x84,1</p></strong>
+            <strong><p id='p5'>84,1x118,9</p></strong>
+        </div>
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton" id="r1">
+                    <input type="radio" name="rad" class="recalculate first radio Order-info a4" value="Размер:A4 21x29,7"
+                           stock="450" stock-gal="1300" width="210" height="297"/>
+                </div>
+                <div class="radiobutton" id="r2">
+                    <input type="radio" name="rad" class="recalculate radio Order-info a3" value="Размер:A3 29,4x42"
+                           stock="600" stock-gal="1900" width="294" height="420"/>
+                </div>
+                <div class="radiobutton" id="r3">
+                    <input type="radio" name="rad" class="recalculate radio Order-info a2" value="Размер:A2 42x59,4"
+                           stock="1050" stock-gal="2799" width="420" height="594"/>
+                </div>
+                <div class="radiobutton" id="r4">
+                    <input type="radio" name="rad" class="recalculate radio Order-info a1" value="Размер:A1 59,4x84,1"
+                           stock="1500" stock-gal="4734" width="594" height="841"/>
+                </div>
+                <div class="radiobutton" id="r5">
+                    <input type="radio" name="rad" class="recalculate radio Order-info a0" value="Размер:A0 84,1x118,9"
+                           stock="2700" stock-gal="8259" width="841" height="1189"/>
+                </div>
+            </div>
+        </form>
+        <p id="title">ДРУГИЕ РАЗМЕРЫ В СМ</p>
+
+        <form action="#" method="POST" id="size" name="#">
+            <input type="number" action="#" name="#" class="recalculate Order-info-num-custom client-width" custom="Ширина: " value="">
+            <input type="number" action="#" name="#" class="recalculate Order-info-num-custom client-height" custom="Высота: " value="">
+            <strong><p style="margin-left: 153px;margin-top: -27px;">X</p></strong>
+        </form>
+        <strong style="    color: #C4017B; font-size: 10pt;margin-left: 200px;margin-top: -3px;display: block;">Максимальная
+            ширина рулона 91,4 СМ</strong>
+    </section>
+    <section class="front1" id="holst2">
+        <strong style="font-size: 10pt;margin-left: 18px;">Изготовление подрамника +<br/>
+
+            <p style="margin-top: -3px;margin-left: 19px;">галерейная натяжка холста</p></strong>
+
+        <form action="#" method="POST" name="#">
+            <div class="radiobutton" style="    margin-left: 100px;
+    margin-top: -15px;">
+                <input type="checkbox" name="rad" class="recalculate check-gal Order-info"
+                       value="Дополнительно: Изготовление подрамника + галерейная натяжка холста"/>
+            </div>
+        </form>
+        <img src="img/holst_dop.gif" style="position: absolute;
+    margin-top: -77px;
+    margin-left: 231px;"/>
+    </section>
+    <section class="front1" id="holst3">
+        <form action="#" method="POST" name="#" id="qform">
+            <strong><p style="font-size: 11pt;margin-top: 15px;display: inline-block;margin-left: 65px;">количество</p>
+            </strong>
+            <input type="number" style="width: 50px;
+    height: 20px;
+    display: inline-block;  margin-left: 5px;" class="recalculate Order-info-num" value="1">
+        </form>
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p id="p1"><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin1">
+        <span id="pw1"></span>
+
+        <div class="numbername" id="coloring"></div>
+    </section>
+</section>

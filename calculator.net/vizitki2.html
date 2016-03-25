@@ -1,0 +1,254 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+ $('.fitst22').trigger('click');
+    $(document).ready(function () {
+        $(document).on('change','.radio', function(){
+
+            $('.digital_print_paper img').attr('src', 'img/'+$(this).attr('digital_paper')+'');
+
+        });
+        $(document).on('click', '#show', function () {
+            $('#front4').show();
+        });
+        $(document).on('click', '#hide', function () {
+            $('#front4').hide();
+            $('#laminirovanie').trigger('reset');
+        });
+        $(document).on('click', '.shower', function () {
+            $('.hidbutt').prop("disabled", false);
+            $('.hidbutt').css('opacity', '1.0');
+            $('.hidtext').css('opacity', '1.0');
+        });
+        $(document).on('click', '.hider', function () {
+            $('#colorus').trigger('reset');
+            $('.hidbutt').prop("disabled", true);
+            $('.hidbutt').css('opacity', '0.3');
+            $('.hidtext').css('opacity', '0.1');
+        });
+
+        function calculate7() {
+            var y;
+            var z;
+            y = parseFloat($('input.radio4:checked').attr('srochno'));
+            z = parseFloat($('input.radio:checked').attr($('input.radio2:checked').attr('colorous')));
+            if ($('.radio3:checked').is(':checked')) {
+                var w = parseFloat($('input.radio3:checked').attr('laminirovanie'));
+            } else {
+                var w = 0;
+            }
+            var q = parseFloat($('input.radio_des:checked').attr('design'));
+            if ($('input#show').is(':checked')) {
+                if ($('input.checkbox').is(':checked')) {
+                    var total = (z + w) * $('input.quantity').val() + parseFloat($('input.checkbox').attr('angles')) + q;
+                } else {
+                    var total = (z + w) * $('input.quantity').val() + q;
+                }
+                ;
+            } else {
+                var total = z * $('input.quantity').val() + q;
+            }
+            if ($('input.quantity').val() > 4) {
+                if ($('input.quantity').val() > 9) {
+                    var discount = (total + total * y) * 0.35;
+                } else {
+                    var discount = (total + total * y) * 0.25;
+                }
+                ;
+            } else {
+                var discount = 0;
+            }
+            ;
+
+            var order_total = total + total*y - discount;
+            console.log(y);
+            console.log(z);
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+
+        }
+        $('input.first').trigger('click');
+        $(document).on('change', '.recalculate', function () {
+            calculate7();
+        });
+        $('.colorcopy').on('click', function(){
+            $('.fitst22').trigger('click');
+        });
+
+
+        $(document).on('click', '.glanec', function () {
+            $(".matov").prop("checked", false);
+        });
+        $(document).on('click', '.matov', function () {
+            $(".glanec").prop("checked", false);
+        });
+
+        calculate7();
+    });
+</script>
+<section class="back" id="con_viz">
+    <section class="front" id="front2">
+        <div class="number3"></div>
+        <div class="numbername" id="selpaper">ВЫБРАТЬ БУМАГУ <span>(300г/м&sup2)</span></div>
+        <form action="#" method="POST" name="color" id="">
+            <div class="leftcol3">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" digital_paper="white.color.png" id="show" class="recalculate first radio Order-info shower colorcopy" value="Бумага: ColorCopy "
+                           color-oneside="450" color-doubleside="600" bw-onesibe="350" bw-doubleside="450"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" digital_paper="white_len.gif" id="hide" class="recalculate radio Order-info shower" value="Бумага: Лён белый"
+                           color-oneside="650" color-doubleside="800" bw-onesibe="550" bw-doubleside="650"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" digital_paper="bone_len.gif" id="hide" class="recalculate radio Order-info shower"
+                           value="Бумага: Лён слоновая кость" color-oneside="650" color-doubleside="800"
+                           bw-onesibe="550" bw-doubleside="650"/>
+                </div>
+            </div>
+            <div class="midcol">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" digital_paper="mramor.gif" id="hide" class="recalculate radio Order-info shower"
+                           value="Бумага: Majesic белый" color-oneside="750" color-doubleside="900" bw-onesibe="650"
+                           bw-doubleside="750"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" digital_paper="gold.gif" id="hide" class="recalculate radio Order-info hider gold"
+                           value="Бумага: Majesic чистое золото" bw-onesibe="650" bw-doubleside="750"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" digital_paper="silver.gif" id="hide" class="recalculate radio Order-info hider gold"
+                           value="Бумага: Majesic чистое серебро" bw-onesibe="650" bw-doubleside="750"/>
+                </div>
+            </div>
+            <div class="rightcol">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" digital_paper="shelkograf4.gif" id="hide" class="recalculate radio Order-info shower"
+                           value="Бумага: Touch Cover слоновая кость" color-oneside="1000" color-doubleside="1300"
+                           bw-onesibe="900" bw-doubleside="1100"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" digital_paper="shelkograf3.gif" id="hide" class="recalculate radio Order-info shower"
+                           value="Бумага: Touch Cover белый" color-oneside="1000" color-doubleside="1300"
+                           bw-onesibe="900" bw-doubleside="1100"/>
+                </div>
+            </div>
+        </form>
+        <div class="textleftcol3">
+            <p id="p1"><strong>ColorCopy</strong></p>
+
+            <p id="p2"><strong>Лён</br>белый</strong></p>
+
+            <p id="p3"><strong>Лён</br>слоновая кость</strong></p>
+        </div>
+        <div class="textmidcol">
+            <p id="p1"><strong>Majesty</br>белый</strong></p>
+
+            <p id="p2"><strong>Majesty</br>чистое золото</strong></p>
+
+            <p id="p3"><strong>Majesty</br>чистое серебро</strong></p>
+        </div>
+        <div class="textrightcol">
+            <p id="p1"><strong>Touch Cover</br>слоновая кость</strong></p>
+
+            <p id="p2"><strong>Touch Cover</br>белый</strong></p>
+        </div>
+        <fieldset class="digital_print_paper">
+            <img src="" style="width: 100%; height: 100%;">
+        </fieldset>
+    </section>
+    <section class="front1" id="front3">
+        <div class="number4"></div>
+        <div class="numbername" id="coloring">ЦВЕТНОСТЬ</div>
+        <form action="#" method="POST" id="colorus">
+            <div class="leftcol4">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate first radio2 Order-info hidbutt"
+                           value="Цветность: цветная односторонняя" colorous="color-oneside"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio2 Order-info hidbutt"
+                           value="Цветность: цветная двусторонняя" colorous="color-doubleside"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio2 Order-info g_first" value="Цветность: чернобелая односторонняя"
+                           colorous="bw-onesibe"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio2 Order-info" value="Цветность: чернобелая двусторонняя"
+                           colorous="bw-doubleside"/>
+                </div>
+            </div>
+        </form>
+        <div class="textleftcol4">
+            <p id="p1" class="color_green hidtext"><strong>цветная односторонняя</strong></p>
+
+            <p id="p2" class="color_violet hidtext"><strong>цветная двусторонняя</strong></p>
+
+            <p id="p3"><strong>чернобелая односторонняя</strong></p>
+
+            <p id="p3"><strong>чернобелая двусторонняя</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="front4" disabled="true">
+        <div class="number5"></div>
+        <div class="numbername" id="coloring">ЛАМИНИРОВАНИЕ</div>
+        <form action="#" method="POST" name="color" id="laminirovanie">
+            <div class="bottrow">
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate radio3 Order-info glanec fitst22" laminirovanie="200"
+                           value="Ламинирование: Глянцевое"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate radio3 Order-info matov " laminirovanie="300"
+                           value="Ламинирование: Матовое"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="checkbox" name="rad" class="recalculate checkbox Order-info" angles="200"
+                           value="Дополнительно: Скругление углов"/>
+                </div>
+            </div>
+        </form>
+        <div class="textbottrow">
+            <p id="p1"><strong>глянцевое</strong></p>
+
+            <p id="p2"><strong>матовое</strong></p>
+
+            <p id="p3"><strong>скругление углов</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="front5">
+        <div class="number6"></div>
+        <div class="numbername" id="coloring"></div>
+        <form action="#" method="POST" name="color" id="">
+            <div class="rightcol1">
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate first radio4 Order-info" srochno="0" value="Не срочно"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" name="rad" class="recalculate radio4 Order-info" srochno="0.5" value="Срочно"/>
+                </div>
+            </div>
+        </form>
+        <div class="textrightcol1 sroch-text">
+            <p id="p1"><strong>не срочно (сутки)</strong></p>
+
+            <p id="p2"><strong>срочно (от 1 часа)</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="front6">
+        <div class="number7"></div>
+        <div class="total"><strong>всего комплектов</strong></br>
+            <p>(100 шт. в комплекте)</p></div>
+        <input type="number" style="display: block;
+				margin-top: -40px; margin-left: 213px;
+				width: 78px; height: 27px;" class="recalculate quantity Order-info-num" value="1">
+    </section>
+    <section class="front1" id="price">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <section class="front1" id="pricewin"><span id="pw1"></span>
+    </section>
+    <div class="cost"><strong>итог</strong></div>
+</section>

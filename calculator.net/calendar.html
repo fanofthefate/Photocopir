@@ -1,0 +1,371 @@
+<script type="text/javascript">
+    var quantity;
+    function calculate22() {
+            /* order_total = parseFloat($('#quant option:selected').attr('cost'));*/
+            var order_total;
+            if ($('.radio4').is(':checked')) {
+                order_total = parseFloat($('#quant option:selected').attr($('.radio2:checked').attr('format'))) + parseFloat($('.radio9:checked').attr('maket'));
+            } else {
+                order_total = ((parseFloat(($('.radio2:checked').attr('price-' + quantity)))) * $('.order-info-num').val())+ parseFloat($('.radio9:checked').attr('maket'));
+            }
+            $('#pw1').html(order_total);
+            $('.order_cost').html(order_total);
+        }
+    $(document).ready(function () {
+        $(document).on('change', '#cal1', function () {
+            $('.fright img').attr('src', 'img/calendar1.gif');
+            $('fieldset.options').remove();
+            z = 0;
+            $('.quantity').html();
+            $('.quantity').html(
+                    '<select  class="recalculate Order-info" id="quant">' +
+                    '<option cost=400" value="Количество: 20 шт.">20 шт.</option>' +
+                    '<option cost="880" value="Количество: 60 шт.">60 шт.</option>' +
+                    '<option cost="1150" value="Количество: 120 шт.">120 шт.</option>' +
+                    '<option cost="1560" value="Количество: 250 шт.">250 шт.</option>' +
+                    '</select>');
+        });
+        $(document).on('change', '#cal2', function () {
+            $('.fright img').attr('src', 'img/calendar2.gif');
+            $('fieldset.options').remove();
+            z = 0;
+            $('.fleft').append('<fieldset class="options" id="op1">' +
+                    '<strong><p>ВЫБРАТЬ ФОРМАТ</p></strong>' +
+                    '<form action="#" method="POST" name="#">' +
+                    '<div class="rightcol1">' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio" ' +
+                    'class="firsttwo recalculate radio2 Order-info" format="costa3"  name="#"' +
+                    ' value="Формат: 29,7 x 42 см"' +
+                    'price-one="100"' +
+                    'price-five="90"' +
+                    'price-ten="80"' +
+                    'price-thirty="74"' +
+                    'price-fifty="70"' +
+                    '>' +
+                    '</div> ' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio" ' +
+                    'class="recalculate radio2 Order-info" format="costa2" name="#"' +
+                    ' value="Формат: 42 x 59,4 см"' +
+                    'price-one="300"' +
+                    'price-five="280"' +
+                    'price-ten="250"' +
+                    'price-thirty="234"' +
+                    'price-fifty="200"' +
+                    '>' +
+                    '</div> ' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio"' +
+                    'class="recalculate radio2 Order-info" format="costa1" name="#" ' +
+                    ' value="Формат: 59,4 x 84 см"' +
+                    'price-one="500"' +
+                    'price-five="460"' +
+                    'price-ten="400"' +
+                    'price-thirty="334"' +
+                    'price-fifty="280"' +
+                    '>' +
+                    '</div> ' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio"' +
+                    'class="recalculate radio2 Order-info" format="costa0" name="#" ' +
+                    ' value="Формат: 84 x 119 см"' +
+                    'price-one="700"' +
+                    'price-five="600"' +
+                    'price-ten="550"' +
+                    'price-thirty="467"' +
+                    'price-fifty="400"' +
+                    '>' +
+                    '</div> ' +
+                    '</div>' +
+                    '</form>' +
+                    '<div class="textrightcol1">' +
+                    '<strong><p><span style="color:#6aa843;">A3</span>&nbsp; &nbsp; ' +
+                    '&nbsp; 29,7 x 42 см</p></strong>' +
+                    '<strong><p><span style="color:#6aa843;">A2</span>&nbsp; &nbsp; ' +
+                    '&nbsp; 42 x 59,4 см</p></strong>' +
+                    '<strong><p><span style="color:#6aa843;">A1</span>&nbsp; &nbsp; ' +
+                    '&nbsp; 59,4 x 84 см</p></strong>' +
+                    '<strong><p><span style="color:#6aa843;">A0</span>&nbsp; &nbsp; ' +
+                    '&nbsp; 84 x 119 см</p></strong></div>' +
+                    '</fieldset>');
+            $('.quantity').html();
+            $('.quantity').html('<input type="number" class="order-info-num recalculate" value="1" ' +
+                    'style="margin-top: -3px;' +
+                    'height: 21px;' +
+                    'width: 55px;">');
+            if ($('.order-info-num').val() >= 50) {
+                quantity = 'fifty';
+            } else if ($('.order-info-num').val() >= 30) {
+                quantity = 'thirty';
+            } else if ($('.order-info-num').val() >= 10) {
+                quantity = 'ten';
+            } else if ($('.order-info-num').val() >= 5) {
+                quantity = 'five';
+            } else {
+                quantity = 'one';
+            }
+     
+            $('.firsttwo').trigger('click');
+
+
+        });
+
+        $(document).on('change', '#cal3', function () {
+            $('.fright img').attr('src', 'img/calendar3.gif');
+            $('fieldset.options').remove();
+            z = 0;
+            $('.fleft').append('<fieldset class="options" id="op1" ' +
+                    'style="height:136px;margin-top:32px;">' +
+                    '<strong><p>ВЫБРАТЬ ФОРМАТ</p></strong>' +
+                    '<form action="#" method="POST" name="#">' +
+                    '<div class="rightcol1">' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio" ' +
+                    'class="firsttwo recalculate radio2 Order-info"  name="#"' +
+                    ' value="Формат: 21 x 29,7 см"' +
+                    'price-one="500"' +
+                    'price-five="400"' +
+                    'price-ten="284"' +
+                    '>' +
+                    '</div> ' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio" ' +
+                    'class="recalculate radio2 Order-info"  name="#"' +
+                    ' value="Формат: 29,7 x 42 см"' +
+                    'price-one="750"' +
+                    'price-five="600"' +
+                    'price-ten="520"' +
+                    '>' +
+                    '</div> ' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio"' +
+                    'class="recalculate radio2 Order-info"  name="#"' +
+                    ' value="Формат: 42 x 59,4 см"' +
+                    'price-one="2100"' +
+                    'price-five="1972"' +
+                    'price-ten="1890"' +
+                    '>' +
+                    '</div>' +
+                    '</div>' +
+                    '</form>' +
+                    '<div class="textrightcol1" style="margin-top: -122px;">' +
+                    '<strong><p><span style="color:#6aa843;">A4</span>&nbsp; &nbsp; ' +
+                    '&nbsp; 21 x 29,7 см</p></strong>' +
+                    '<strong><p><span style="color:#6aa843;">A3</span>&nbsp; &nbsp; ' +
+                    '&nbsp; 29,7 x 42 см</p></strong>' +
+                    '<strong><p><span style="color:#6aa843;">A2</span>&nbsp; &nbsp; ' +
+                    '&nbsp; 42 x 59,4 см</p></strong>' +
+                    '</fieldset>');
+            $('.quantity').html();
+            $('.quantity').html('<input type="number" class="order-info-num recalculate" value="1" ' +
+                    'style="margin-top: -3px;' +
+                    'height: 21px;' +
+                    'width: 55px;">');
+            if ($('.order-info-num').val() >= 10) {
+                quantity = 'ten';
+            } else if ($('.order-info-num').val() >= 5) {
+                quantity = 'five';
+            } else {
+                quantity = 'one';
+            }
+            $('.firsttwo').trigger('click');
+        });
+        $(document).on('change', '#cal4', function () {
+            $('.fright img').attr('src', 'img/calendar4.gif');
+            $('fieldset.options').remove();
+            z = 0;
+            $('.fleft').append('<fieldset class="options" id="op1" ' +
+                    'style="height: 71px; margin-top: 97px;">' +
+                    '<form action="#" method="POST" name="#">' +
+                    '<div class="rightcol1">' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio"' +
+                    'class="recalculate firsttwo radio2 Order-info" format="cost_pole" name="#"' +
+                    ' value="Поле: с рекламным полем">' +
+                    '</div> ' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio"' +
+                    'class="recalculate radio2 Order-info" format="cost_pole_off" name="#"' +
+                    ' value="Поле: без рекламного поля">' +
+                    '</div> ' +
+                    '</div>' +
+                    '</form>' +
+                    '<div class="textrightcol1" style="margin-top: -85px;margin-left: 74px;">' +
+                    '<strong><p>с рекламным полем</p></strong>' +
+                    '<strong><p>без рекламного поля</p></strong>' +
+                    '</fieldset>');
+            $('.quantity').html();
+            $('.quantity').html(
+                    '<select  class="recalculate Order-info" id="quant">' +
+                    '<option cost_pole="10000" cost_pole_off="9000" value="Количество: 50 шт.">50 шт.</option>' +
+                    '<option cost_pole="18000" cost_pole_off="17000"" value="Количество: 100 шт.">100 шт.</option>' +
+                    '<option cost_pole="32000" cost_pole_off="30000" value="Количество: 200 шт.">200 шт.</option>' +
+                    '</select>');
+            $('.firsttwo').trigger('click');
+        });
+        $(document).on('change', '#cal6', function () {
+            $('.fright img').attr('src', 'img/calendar5.gif');
+            $('fieldset.options').remove();
+            z = 0;
+            $('.fleft').append('<fieldset class="options" id="op1" ' +
+                    'style="height: 105px;margin-top: 63px;">' +
+                    '<form action="#" method="POST" name="#">' +
+                    '<div class="rightcol1">' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio" ' +
+                    'class="firsttwo recalculate radio2 Order-info" name="#"' +
+                    ' value="Тип: Безблочный"' +
+                    'price-one="200"' +
+                    'price-five="180"' +
+                    'price-ten="150"' +
+                    'price-fifty="80"' +
+                    'price-hundred="60"' +
+                    'price-threehundred="50"' +
+                    '>' +
+                    '</div> ' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio" ' +
+                    'class="recalculate radio2 Order-info" name="#"' +
+                    ' value="Тип: 6 страниц в блоке"' +
+                    'price-one="300"' +
+                    'price-five="280"' +
+                    'price-ten="250"' +
+                    'price-fifty="180"' +
+                    'price-hundred="120"' +
+                    'price-threehundred="80"' +
+                    '>' +
+                    '</div> ' +
+                    '<div class="radiobutton">' +
+                    '<input type="radio"' +
+                    'class="recalculate radio2 Order-info" name="#"' +
+                    ' value="Тип: 12 страниц в блоке"' +
+                    'price-one="400"' +
+                    'price-five="380"' +
+                    'price-ten="350"' +
+                    'price-fifty="280"' +
+                    'price-hundred="210"' +
+                    'price-threehundred="100"' +
+                    '>' +
+                    '</div>' +
+                    '</div>' +
+                    '</form>' +
+                    '<div class="textrightcol1" style="margin-top: -119px;margin-left: 69px;">' +
+                    '<strong><p>безблочный</p></strong>' +
+                    '<strong><p>6 страниц в блоке</p></strong>' +
+                    '<strong><p>12 страниц в блоке</p></strong>' +
+                    '</fieldset>');
+            $('.quantity').html();
+            $('.quantity').html('<input type="number" class="order-info-num recalculate" value="1" ' +
+                    'style="margin-top: -3px;' +
+                    'height: 21px;' +
+                    'width: 55px;">');
+
+            if ($('.order-info-num').val() >= 300) {
+                quantity = 'threehundred';
+            } else if ($('.order-info-num').val() >= 100) {
+                quantity = 'hundred';
+            } else if ($('.order-info-num').val() >= 50) {
+                quantity = 'fifty';
+            } else if ($('.order-info-num').val() >= 30) {
+                quantity = 'thirty';
+            } else if ($('.order-info-num').val() >= 10) {
+                quantity = 'ten';
+            } else if ($('.order-info-num').val() >= 5) {
+                quantity = 'five';
+            } else {
+                quantity = 'one';
+            }
+            $('.firsttwo').trigger('click');
+        });
+        
+
+        $(document).on('change', '.recalculate', function () {
+            calculate22();
+        });
+    $('document').on('click','#cal6', function(){
+    $('#cal6').prop('checked',true);
+    });
+         $('input.first333').trigger('click');
+         $('input.first444').trigger('click');
+    });
+
+</script>
+<section class="back" id="con24">
+    <section class="front1" id="calendar">
+        <fieldset class="fleft">
+            <p style="margin-top: -3px;margin-left: 35px;">ВЫБРАТЬ ТИП КАЛЕНДАРЯ</p>
+
+            <form action="#" method="POST">
+                <div class="rightcol1">
+                    <div class="radiobutton">
+                        <input id="cal1" type="radio" class="first333 recalculate radio radio2 radio4 Order-info"
+                               format="cost"
+                               name="tc"
+                               value="Тип календаря: карманный 10 х 7 см">
+                    </div>
+                    <div class="radiobutton">
+                        <input id="cal2" type="radio" class="recalculate radio Order-info" name="tc"
+                               value="Тип календаря: календарь-плакат">
+                    </div>
+                    <div class="radiobutton">
+                        <input id="cal3" type="radio" class="recalculate radio Order-info" name="tc"
+                               value="Тип календаря: перекидной на 13 страниц">
+                    </div>
+                    <div class="radiobutton">
+                        <input id="cal4" type="radio" class="recalculate radio radio4  Order-info" name="tc"
+                               value="Тип календаря: квартальный настенный">
+                    </div>
+                    <div class="radiobutton">
+                        <input id="cal6" type="radio" class="recalculate radio Order-info" name="tc"
+                               value="Тип календаря: настольный «домик»">
+                    </div>
+                </div>
+            </form>
+            <div class="textrightcol1">
+                <strong><p>карманный 10 х 7 см</p></strong>
+                <strong><p>календарь-плакат</p></strong>
+                <strong><p>перекидной на 13 страниц</p></strong>
+                <strong><p>квартальный настенный</p></strong>
+                <strong><p>настольный «домик»</p></strong>
+            </div>
+        </fieldset>
+        <fieldset class="fright">
+            <img src="" style="width: 100%;  height: 100%;">
+        </fieldset>
+    </section>
+    <section class="front1" id="calendar2">
+        <form action="#" method="POST" name="#">
+            <div class="bottcol1">
+                <div class="radiobutton">
+                    <input type="radio" class="first444 recalculate radio9 Order-info" maket="0" name="rad"
+                           value="Готовый макет"/>
+                </div>
+                <div class="radiobutton">
+                    <input type="radio" class="recalculate radio9 Order-info" maket="200" name="rad"
+                           value="Изготовить макет"/>
+                </div>
+            </div>
+        </form>
+        <div class="bottrow1">
+            <p id="p1"><strong>готовый макет</strong></p>
+
+            <p id="p2"><strong>изготовить макет</strong></p>
+        </div>
+    </section>
+    <section class="front1" id="calendar3">
+        <div class="total" id="stamptotal"><strong>количество</strong>
+
+            <div class="quantity" style="margin-top: -18px;">
+
+            </div>
+        </div>
+    </section>
+    <section class="front1" id="price1">
+        <div class="numbername" id="coloring">
+        </div>
+        <p><strong>рублей</strong></p>
+    </section>
+    <textarea id="pw1" name="#" readonly="on" style="resize:none" placeholder="Стоимость"
+              class="Order-info-comment"></textarea>
+</section>

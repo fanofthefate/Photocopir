@@ -1,0 +1,240 @@
+<script type="text/javascript">
+    $('#first-osn').trigger('click');
+    $('#type3').on('click',function(){
+        $( ".inp" ).prop( "checked", false );
+        $('.first-osn').trigger('click');
+            });
+    $(document).ready(function () { 
+        $('#type1, #type2').on('click',function(){
+            $('[osn-diametr]').each(function(){
+                if(parseFloat($(this).attr('osn-diametr')) < 40) {
+                    $(this).parent().parent().hide();
+                } else {
+                    $(this).parent().parent().show();
+                }
+            });
+        });
+        $('#type1').trigger('click');
+    });
+</script>
+<section class="back" id="con8">
+    <strong id="ssb_strong">ВЫБИРИТЕ ОСНАСТКУ <span>(если нужно)</span></strong>
+
+    <div class="wrapper">
+        <div class="relative">
+            <form action="#" method="POST" name="stamps" id="colorus">
+ <!--               <div class="absolute">
+                    <fieldset>
+                        <div style="width: 136px;
+    border: solid 1px;
+    border-radius: 153px;
+    height: 139px;" class="stamp"><p style="margin-top: 60px;">БЕЗ ОСНАСТКИ</p></div>
+                    </fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" class="first3 recalculate radio2 inp" value="Оснастка: Без оснастки" name="rad"
+                               osnastca-price="0" osn-diametr="30"/>
+                    </div>
+                    <strong style="margin-top: 0px">0 р.</strong>
+                </div>-->
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/free_d30.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class=" first-osn recalculate radio2 inp" value="Оснастка: Бесплатная d30"
+                        osnastca-price="0" osn-diametr="30"/>
+                    </div>
+                    <span>d 30 мм</span>
+                    <strong>0 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/free_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" id="first-osn" class=" recalculate radio2 inp" value="Оснастка: Бесплатная d40"
+                        osnastca-price="0" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>0 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N1_d30.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N1_d30"
+                        osnastca-price="1100" osn-diametr="30"/>
+                    </div>
+                    <span>d 30 мм</span>
+                    <strong>1100 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N2_d30.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N2_d30"
+                        osnastca-price="1200" osn-diametr="30"/>
+                    </div>
+                    <span>d 30 мм</span>
+                    <strong>1200 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N3_d30.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N3_d30"
+                        osnastca-price="2050" osn-diametr="30"/>
+                    </div>
+                    <span>d 30 мм</span>
+                    <strong>2050 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/shiny-R-532_d32.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: shiny-R-532_d32"
+                        osnastca-price="350" osn-diametr="32"/>
+                    </div>
+                    <span>d 32 мм</span>
+                    <strong>350 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/colop-3040.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: colop-3040"
+                        osnastca-price="1600" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>1600 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/colop-mouse.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: colop-mouse"
+                        osnastca-price="350" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>350 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/colop-pocket-R40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: colop-pocket-R40"
+                        osnastca-price="" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong> р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/colop-R40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: colop-R40"
+                        osnastca-price="350" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>350 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N1_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N1_d40"
+                        osnastca-price="1500" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>1500 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N2_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N2_d40"
+                        osnastca-price="1450" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>1450 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N3_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N3_d40"
+                        osnastca-price="2100" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>2100 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N4_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N4_d40"
+                        osnastca-price="1350" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>1350 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N6_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N6_d40"
+                        osnastca-price="1700" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>1700 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N10_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N10_d40"
+                        osnastca-price="1100" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>1100 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N15_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: "
+                        osnastca-price="700" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>700 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N16_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: N16_d40 "
+                        osnastca-price="700" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>700 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/N17_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: "
+                        osnastca-price="700" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>700 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/trodat-4940_d40.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: trodat-4940_d40"
+                        osnastca-price="350" osn-diametr="40"/>
+                    </div>
+                    <span>d 40 мм</span>
+                    <strong>350 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/shiny-R-542_d42.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: shiny-R-542_d42"
+                        osnastca-price="350" osn-diametr="42"/>
+                    </div>
+                    <span>d 42 мм</span>
+                    <strong>350 р.</strong>
+                </div>
+                <div class="absolute">
+                    <fieldset><img class="stamp" src="img/pechat_equip/trodat-46045_d45.gif"></fieldset>
+                    <div class="radiobutton added">
+                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: trodat-46045_d45"
+                        osnastca-price="600" osn-diametr="45"/>
+                    </div>
+                    <span>d 45 мм</span>
+                    <strong>600 р.</strong>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
