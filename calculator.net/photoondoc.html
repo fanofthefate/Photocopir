@@ -203,9 +203,9 @@
                     <tr>
                         <td style="margin-left: 120px;">
                             <p>РАЗМЕРЫ В СМ</p>
-                            <input type="number"  name="rad" id="width" style="width: 70px;height: 22pt;" class="recalculate Order-info-num-custom" custom="Ширина: " value="0">
+                            <input type="number"  name="rad" id="width" style="width: 70px;height: 22pt;" class="recalculate Order-info-num-custom" custom="Ширина: " min="0" max="10" value="0">
                             &nbsp&nbsp x &nbsp&nbsp
-                            <input type="number" id="height" style="width: 70px;     height: 22pt;"  name="rad" class="recalculate Order-info-num-custom" custom="Высота: " value="0">
+                            <input type="number" id="height" style="width: 70px;     height: 22pt;"  name="rad" class="recalculate Order-info-num-custom" custom="Высота: " min="0" max="12" value="0">
                         </td>
                     </tr>
                 </table>
@@ -305,7 +305,7 @@
         <strong><p>дополнит. комплект</p></strong>
 
         <form action="#" method="POST" name="#">
-            <input type="number" name="#" class="recalculate Order-info-num-dop" value="0"/>
+            <input type="number" name="#" class="recalculate Order-info-num-dop" min="0" value="0"/>
         </form>
     </section>
     <section class="front1" id="price1">

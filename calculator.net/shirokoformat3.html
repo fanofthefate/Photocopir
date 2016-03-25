@@ -17,15 +17,12 @@
     var order_total = total * p_meter * $('.quan').val();
     if (order_total < 1000) order_total = 1000;
 
-    setTimeout(function(a){
-        console.log(a,
-        $('#pw1,.order_cost').html(a)
-        );
-    }(order_total),1);
-
-    setTimeout
+        $('#pw1,.order_cost').html(order_total)
 }
 $(document).ready(function () {
+        $(document).on('change', '.recalculate', function () {
+                calculate777();  
+            });
     $('input.first-mat').trigger('click');
     calculate777();
 });

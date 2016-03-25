@@ -24,7 +24,13 @@ body {
     min-width: 320px !important;
     position: relative !important;
 }
-
+.absolute b {
+    position: absolute;
+    font-size: 10pt;
+    color: #878787;
+    margin-top: 180px;
+    margin-left: 5px;
+    }
 .big {
 	font-size:18px;
 }
@@ -855,6 +861,7 @@ input[type="radio"]:checked {
 }
 
 #con3 {
+    margin-left: 30px;
     width: 650px;
     height: 536px;
 }
@@ -999,6 +1006,7 @@ input[type="radio"]:checked {
 }
 
 #con4 {
+    margin-left: 30px;
     width: 650px;
     height: 263px;
 }
@@ -1280,7 +1288,7 @@ input[type="radio"]:checked {
 #con6 .textrightcol {
     position: absolute;
     margin-left: 495px;
-    margin-top: 20px;
+    margin-top: 5px;
 
 }
 
@@ -2080,7 +2088,7 @@ p{
 
 #con13 #wf2 .leftcol1 {
     margin-left: 234px;
-    margin-top: -60px;
+    margin-top: -64px;
 
 }
 
@@ -2094,7 +2102,7 @@ p{
 
 #con13 #wf2 .textrightcol1 {
     margin-left: 332px;
-    margin-top: -50px;
+    margin-top: -56px;
     width: 210px;
 }
 
@@ -3022,6 +3030,7 @@ p{
 }
 
 #con19a {
+    margin-left: 30px;
     height: 388px;
 }
 

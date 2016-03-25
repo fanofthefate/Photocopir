@@ -99,11 +99,12 @@ $email->From      = 'zm@photocopir.ru';
 $email->FromName  = utf('Мультифон');
 $email->Subject   = utf('Новый заказ #').$PRODUCT_ID;
 $email->Body      = $pismo;
-$email->AddAddress( 'zm@photocopir.ru' );
+// $email->AddAddress( 'zm@photocopir.ru' );
+// $email->AddAddress( 'dedtorpedodet@gmail.com' );
 
 foreach ($_COOKIE as $key => $pa) {
     if (strripos($key, 'path_') !== false) {
-//$format = utf($format);
+$format = utf($format);
         $dir0 = '/Online-zakazi/Orders/K'.$PRODUCT_ID;
         ftp_mkdir($connect, $dir0);
         $dir = $dir0.'/'.$format;
@@ -112,20 +113,21 @@ foreach ($_COOKIE as $key => $pa) {
         $link = 'ftp://' . $host . $dir0;
         $filesString = '<br><a href="' . $link . '">' . $link . '</a><br>';
         ftp_put($connect, $path, $pa, FTP_ASCII);
-        unlink($pa);
+        // unlink($pa);
         setcookie($key, null);
-        $format = next($format_folder);
+        // $format = next($format_folder);
 
 
-        $fname = $_SERVER['DOCUMENT_ROOT'].'/zakazonline/pechati/files/'.basename($pa);
-        // $email->AddAttachment( $fname , basename($pa) );
+        $fname = $_SERVER['DOCUMENT_ROOT'].'/zakazonline/pechati/files/bear-side-view-silhouette.png';
+        $email->AddAttachment( $fname , 'bear-side-view-silhouette.png' );
         // $email->AddAttachment( $pa , basename($pa) );
 
         $email->Body .= '<br/>'.$fname;
     }
 }
 ftp_quit($connect);
-$email->Send();
+// $email->Send();
+// echo $email->ErrorInfo;
 
 $headers = 'Content-type: text/html; charset=utf-8' . "\r\n" .
     'MIME-Version: 1.0' . "\r\n" .
@@ -134,7 +136,9 @@ $headers = 'Content-type: text/html; charset=utf-8' . "\r\n" .
 
 
 
-$mail = 'dedtorpedodet@gmail.com';
+// $mail = 'dedtorpedodet@gmail.com';
+    $mail = 'zm@photocopir.ru';
+
 
 
 str_replace('undefined', '', $string);

@@ -13,7 +13,7 @@
                 zapravka = 0;
             }
             var color_quan = ($('.color_quan').val() - 1) * 500;
-            var service_cost = 900;
+            var service_cost = 0;
             var order_total = 0;
             $.each($('.r_flash'), function () {
                 if (parseInt($(this).attr('colors')) == $('.color_quan').val()) {
@@ -65,7 +65,7 @@
     </section>
     <section class="front1 " id="stampstyle3">
         <div class="number2"></div>
-        <input type="number" class="recalculate color_quan" style="width: 33px;
+        <input type="number" min="1" class="recalculate color_quan" style="width: 33px;
     margin-left: 225px;
     height: 25px;
       margin-top: 10px;
@@ -84,7 +84,7 @@
     margin-top: -38px;
     margin-left: 228px;"/>
 
-        <div class="textrightcol1" style="    margin-top: -48px;
+        <div class="textrightcol1" style="    margin-top: -35px;
     margin-left: 45px;">
             <p id="p1"><strong>заправка</strong></p>
         </div>

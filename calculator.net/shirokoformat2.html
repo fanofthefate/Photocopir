@@ -98,7 +98,7 @@
 			<p id="title">ДРУГИЕ РАЗМЕРЫ (мм)</p>
 			<form action="#" method="POST" id="stampsize">
 				<div class="stamplength">
-					<input type="number" id="len" action="#" class="recalculate Order-info-num-custom length" value="" placeholder="длина"
+					<input type="number" id="len" action="#" min="0" class="recalculate Order-info-num-custom length" value="" placeholder="длина"
 					format ="custom-"
 					custom-bw-ing="140"
 					custom-color-ing="370"
@@ -107,7 +107,7 @@
 				</div>
 				<p>X</p>
 				<div class="stampwidth">
-					<input type="number" action="#" id="wid" class="recalculate Order-info-num-custom width" value="" placeholder="ширина">
+					<input type="number" action="#" min="0" id="wid" class="recalculate Order-info-num-custom width" value="" placeholder="ширина">
 				</div>
 			</form>
 			<strong>Максимальная ширина рулона 91,4 см</strong>
@@ -124,7 +124,7 @@
 			<form action="#" method="POST" id="stampsize1">
 				<p>количество</p>
 				<div class="quantity">
-					<input type="number" action="#" class="recalculate quan Order-info-num" value="1">
+					<input type="number" action="#" class="recalculate quan Order-info-num" min="0" value="1">
 				</div>
 			</form>
 		</section>

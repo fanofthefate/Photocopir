@@ -1,5 +1,41 @@
 <script type="text/javascript">
-    $('.recalculate').on('change', calculate777);
+function calculate999(){
+	var width = parseInt($('.width').val());
+    var height = parseInt($('.height').val());
+    var luversi = $('.luversi').is(':checked') ? 100 : 0;
+}
+function calculate99() {
+    var width = parseInt($('.width').val()),
+    height = parseInt($('.height').val()),
+    p_meter,
+    luversi = $('.luversi').is(':checked') ? 100 : 0;
+    if(width > height)
+    {
+        var temp = width;
+        width = height;
+        height = temp;
+    }
+    p_meter = (width + height)/50; //*2/100
+
+    var total = luversi + parseFloat($('input.radio8:checked').attr($('input.radio8:checked').attr('material') + $('input.radio4:checked').attr('resol')));
+
+    var order_total = total * p_meter * $('.quan').val();
+    if (order_total < 1000) order_total = 1000;
+    	// console.log('order',order);
+    	// console.log('width',width);
+    	// console.log('height',height);
+    	// console.log('total',total);
+    	// console.log('order_total',order_total);
+        $('#pw1').html(order_total);
+        $('.order_cost').html(order_total);
+} 
+$(document).ready(function(){
+	calculate99();
+	$(document).on('change', '.recalculate', function () {
+				calculate99();	
+			});
+});
+    $('.recalculate').on('change',calculate99());
 	$('.firsttwo').trigger('click');
 
 	$('.st4').on('click',function () {
@@ -45,8 +81,8 @@
 		<div class="number3"></div>
 		<p id="numbername">РАЗМЕРЫ в см</p>
 		<form action="#" method="POST" id="size">
-			<input type="number" action="#" name="#" class="recalculate Order-info-num-custom width" value="20">
-			<input type="number" action="#" class="recalculate Order-info-num-custom height" value="20">
+			<input type="number" action="#" name="#" class="recalculate Order-info-num-custom width" min="0" value="20">
+			<input type="number" action="#" class="recalculate Order-info-num-custom height" min="0" value="20">
 			<strong><p style="margin-left: 153px;margin-top: -27px;">X</p></strong>
 		</form>
 		<p style="font-size: 9pt;text-align: center;">В случае большого количества<br/>разноформатных печатных листов<br/>укажите это в комментариях</p>
@@ -74,7 +110,7 @@
 		<form action="#" method="POST"  class="imgquantity" id="stampsize1">
 			<strong><p >количество</p></strong>
 			<div class="quantity">
-				<input type="number" action="#" class="recalculate quan Order-info-num" value="1">
+				<input type="number" action="#" class="recalculate quan Order-info-num" min="0" value="1">
 			</div>
 		</form>
 	</section>

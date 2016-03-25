@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    $('#first-osn').trigger('click');
-    $('#type3').on('click',function(){
+    $('#type3,#type1, #type2').on('click',function(){
         $( ".inp" ).prop( "checked", false );
-        $('.first-osn').trigger('click');
+        $('.added_num').hide();
             });
+
     $(document).ready(function () { 
         $('#type1, #type2').on('click',function(){
             $('[osn-diametr]').each(function(){
@@ -13,6 +13,7 @@
                     $(this).parent().parent().show();
                 }
             });
+            
         });
         $('#type1').trigger('click');
     });
@@ -112,10 +113,10 @@
                     <fieldset><img class="stamp" src="img/pechat_equip/colop-pocket-R40.gif"></fieldset>
                     <div class="radiobutton added">
                         <input type="checkbox" name="rad" class="recalculate radio2 inp" value="ќснастка: colop-pocket-R40"
-                        osnastca-price="" osn-diametr="40"/>
+                        osnastca-price="1600" osn-diametr="40"/>
                     </div>
                     <span>d 40 мм</span>
-                    <strong> р.</strong>
+                    <strong>1600 р.</strong>
                 </div>
                 <div class="absolute">
                     <fieldset><img class="stamp" src="img/pechat_equip/colop-R40.gif"></fieldset>

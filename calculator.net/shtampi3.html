@@ -1,11 +1,21 @@
 <script type="text/javascript">
-  $('input.first6').trigger('click');
-    $(document).ready(function(){
-
-      
-
-    })
-
+    $('#first-osn').trigger('click');
+    $('#type3,#type1, #type2').on('click',function(){
+        $( ".inp" ).prop( "checked", false );
+        $('.first-osn').trigger('click');
+            });
+    $(document).ready(function () { 
+        $('#type1, #type2').on('click',function(){
+            $('[osn-diametr]').each(function(){
+                if(parseFloat($(this).attr('osn-diametr')) < 40) {
+                    $(this).parent().parent().hide();
+                } else {
+                    $(this).parent().parent().show();
+                }
+            });
+        });
+        // $('#type1').trigger('click');
+    });
 </script>
 <section class="back" id="con8">
     <strong id="ssb_strong">ВЫБИРИТЕ ОСНАСТКУ <span>(если нужно)</span></strong>
@@ -38,7 +48,7 @@
                 <div class="absolute">
                     <fieldset><img class="stamp" src="img/pechat_equip/free_d40.gif"></fieldset>
                     <div class="radiobutton added">
-                        <input type="checkbox" name="rad" class="recalculate radio2 inp" value="Оснастка: Бесплатная d40"
+                        <input type="checkbox" name="rad" class="first-osn recalculate radio2 inp" value="Оснастка: Бесплатная d40"
                                osnastca-price="0" osn-diametr="40"/>
                     </div>
                     <span>d 40 мм</span>
